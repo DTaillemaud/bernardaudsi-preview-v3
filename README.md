@@ -36,7 +36,7 @@ Polices Manrope sous OFL et icones Lucide sous ISC : licences conservees dans as
 
 Chaque photo (bandeau de page ou photo a droite d'un point) est un emplacement nomme de
 `content.json` > `slots` : `BAN-PRES` (bandeau), `PRES-01` a `PRES-06` (Presentation),
-`HIST-01` a `HIST-05` (Histoire), etc. Un emplacement sans photo s'affiche en encart avec son nom ;
+`HIST-01` a `HIST-05`, sauf `HIST-02` (Histoire), etc. Un emplacement sans photo s'affiche en encart avec son nom ;
 pour changer une photo, il suffit de donner le nom de l'emplacement et la nouvelle image.
 
 - `?reperes=1` a la fin d'une adresse affiche le nom de chaque photo (retenu dans le navigateur) ;

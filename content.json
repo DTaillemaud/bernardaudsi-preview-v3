@@ -1040,7 +1040,6 @@
           "short": "Histoire",
           "intro": "Ancrée depuis 1863 au cœur de Limoges, Bernardaud incarne l’excellence d’un territoire indissociable de l’histoire de la porcelaine. En tant qu’acteur majeur de l’économie locale, notre usine perpétue un héritage français unique, transformant une tradition artisanale en une puissance industrielle de premier plan.",
           "ref": "HIST",
-          "drawingAlt": "Dessin de la manufacture Bernardaud",
           "story": [
             {
               "paragraphs": [
@@ -1048,8 +1047,9 @@
                 "Aujourd’hui, notre expertise s’étend à la fabrication de pièces techniques complexes. Grâce à une maîtrise pointue des process de fabrication et des propriétés des céramiques, nous mettons notre outil de production au service de secteurs industriels les plus exigeants."
               ],
               "refs": [
-                "HIST-02"
-              ]
+                "HIST-01"
+              ],
+              "alt": "Dessin de la manufacture Bernardaud"
             },
             {
               "paragraphs": [
@@ -2021,7 +2021,6 @@
           "short": "History",
           "intro": "Established in Limoges since 1863, Bernardaud embodies the excellence of a region inseparable from the history of porcelain. As a major player in the local economy, our factory sustains a unique French heritage, turning an artisanal tradition into a leading industrial force.",
           "ref": "HIST",
-          "drawingAlt": "Drawing of the Bernardaud manufacture",
           "story": [
             {
               "paragraphs": [
@@ -2029,8 +2028,9 @@
                 "Today, our expertise extends to the manufacture of complex technical parts. Thanks to in-depth mastery of manufacturing processes and ceramic properties, we put our production tools at the service of the most demanding industrial sectors."
               ],
               "refs": [
-                "HIST-02"
-              ]
+                "HIST-01"
+              ],
+              "alt": "Drawing of the Bernardaud manufacture"
             },
             {
               "paragraphs": [
@@ -2322,13 +2322,6 @@
     "HIST-01": {
       "image": "/assets/dessin-manufacture.webp",
       "fit": "contain"
-    },
-    "HIST-02": {
-      "image": "/assets/manufacture-2025.jpg",
-      "caption": {
-        "fr": "Maison Bernardaud en 2025 · © OdieuxBoby",
-        "en": "Bernardaud house in 2025 · © OdieuxBoby"
-      }
     },
     "HIST-03": {
       "image": "/assets/archive-manufacture-1890.jpg",

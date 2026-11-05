@@ -239,13 +239,13 @@ function generalPresentation() {
 
 // Texte libre : paragraphes à la suite, photos de part et d'autre, sans numéros ni titres.
 function story(blocks = []) {
-  return `<div class="story">${blocks.map(block => `<article class="story-block" data-reveal><div class="story-text">${block.paragraphs.map(text => `<p>${esc(text)}</p>`).join("")}</div><div class="story-media${block.refs.length > 1 ? " is-pair" : ""}">${block.refs.map(ref => slotFigure(ref)).join("")}</div></article>`).join("")}</div>`;
+  return `<div class="story">${blocks.map(block => `<article class="story-block" data-reveal><div class="story-text">${block.paragraphs.map(text => `<p>${esc(text)}</p>`).join("")}</div><div class="story-media${block.refs.length > 1 ? " is-pair" : ""}">${block.refs.map(ref => slotFigure(ref, block.alt)).join("")}</div></article>`).join("")}</div>`;
 }
 
 function historyPage() {
   const id = "histoire";
   const data = page(id);
-  return `${pageTop(id)}<section class="section story-section"><div class="container"><div class="story-drawing" data-reveal>${slotFigure("HIST-01", data.drawingAlt)}</div>${story(data.story)}</div></section>`;
+  return `${pageTop(id)}<section class="section story-section"><div class="container">${story(data.story)}</div></section>`;
 }
 
 function industrial() {

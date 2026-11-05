@@ -752,9 +752,6 @@ tbody tr:nth-child(even) { background: var(--mist); }
 .points .editorial-list { margin-top: 20px; font-size: 17px; }
 /* Histoire : texte libre, sans numéros ni titres */
 .story-section { padding-top: 56px; }
-.story-drawing { max-width: 860px; margin: 0 auto 80px; }
-.story-drawing .point-visual.is-contain .point-frame { padding: 0; border: 0; }
-.story-drawing .point-visual.is-contain img { max-height: 460px; }
 .story { display: grid; gap: 72px; }
 .story-block { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 40px 80px; align-items: center; }
 .story-block:nth-child(even) { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
@@ -763,6 +760,8 @@ tbody tr:nth-child(even) { background: var(--mist); }
 .story-text p + p { margin-top: 24px; }
 .story-media { display: grid; gap: 16px; }
 .story-media.is-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+.story-media .point-visual.is-contain .point-frame { padding: 0; border: 0; background: none; }
+.story-media .point-visual.is-contain img { width: 100%; max-height: 520px; }
 /* Matériaux : vignette de la structure microscopique, comme sur l'ancien site */
 .point-visual.is-vignette .point-frame { aspect-ratio: auto; overflow: visible; background: none; }
 .point-visual.is-vignette img { width: 100%; height: auto; }
@@ -872,7 +871,6 @@ html[data-reperes="on"] .photo-placeholder::before { display: none; }
   .capability-grid.is-large h3 { font-size: 22px; }
   .capability-grid.is-large p { font-size: 16px; }
   .story-text p { font-size: 17px; }
-  .story-drawing { margin-bottom: 52px; }
   .offer-grid-3, .media-gallery-3 { grid-template-columns: 1fr; }
   .manufacturing-flow.no-link > article { grid-template-columns: 1fr; gap: 14px; }
   .manufacturing-flow ul { grid-template-columns: 1fr; }
