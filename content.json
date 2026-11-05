@@ -339,8 +339,10 @@
               "title": "Post-traitement",
               "body": "Usinage, polissage et finitions de surface pour atteindre les dimensions, états de surface et niveaux de précision requis.",
               "refs": [
-                "CERAM-04"
-              ]
+                "CERAM-04",
+                "CERAM-04b"
+              ],
+              "gallery": true
             },
             {
               "title": "Ajout de fonctions",
@@ -1318,8 +1320,10 @@
               "title": "Post-processing",
               "body": "Machining, polishing and surface finishing to reach the required dimensions, surface finishes and precision levels.",
               "refs": [
-                "CERAM-04"
-              ]
+                "CERAM-04",
+                "CERAM-04b"
+              ],
+              "gallery": true
             },
             {
               "title": "Added functions",
@@ -2295,13 +2299,17 @@
       "image": "/assets/manufacture-2025.jpg"
     },
     "PRES-02": {
-      "image": ""
+      "image": "/assets/pres-02-procedes-complementaires.jpg",
+      "ratio": "4 / 3",
+      "pos": "50% 40%"
     },
     "PRES-03": {
       "image": "/assets/site-limoges-nord.jpg"
     },
     "PRES-04": {
-      "image": ""
+      "image": "/assets/pres-04-presence-internationale.webp",
+      "ratio": "29 / 20",
+      "pos": "50% 50%"
     },
     "PRES-05": {
       "image": "/assets/certification-socotec.png",
@@ -2350,48 +2358,72 @@
       "pos": "50% 55%"
     },
     "CERAM-01": {
-      "image": "/assets/ceramique-matiere.jpg"
+      "image": "/assets/ceram-01-matiere-premiere.jpg",
+      "ratio": "1 / 1",
+      "pos": "50% 52%"
     },
     "CERAM-02": {
-      "image": ""
+      "image": "/assets/ceram-02-injection.jpg",
+      "ratio": "4 / 3",
+      "pos": "55% 50%"
     },
     "CERAM-03": {
-      "image": ""
+      "image": "/assets/ceram-03-densification.jpg",
+      "ratio": "4 / 3",
+      "pos": "45% 50%"
     },
     "CERAM-04": {
-      "image": ""
+      "image": "/assets/ceram-04-post-traitement.jpg",
+      "ratio": "4 / 3",
+      "pos": "50% 50%"
     },
     "CERAM-05": {
-      "image": ""
+      "image": "/assets/ceram-05-ajout-de-fonctions.jpg",
+      "ratio": "4 / 3",
+      "pos": "60% 50%"
     },
     "CERAM-06": {
-      "image": ""
+      "image": "/assets/ceram-06-controles-qualite.jpg",
+      "ratio": "4 / 3",
+      "pos": "50% 50%"
     },
     "BAN-SERI": {
       "image": "/assets/bandeau-serigraphie-encre.jpg",
       "pos": "50% 45%"
     },
     "SERI-01": {
-      "image": ""
+      "image": "/assets/seri-01-preparation-graphique.jpg",
+      "ratio": "4 / 3",
+      "pos": "35% 50%"
     },
     "SERI-02": {
-      "image": ""
+      "image": "/assets/seri-02-encres-couleurs.jpg",
+      "ratio": "4 / 3",
+      "pos": "50% 50%"
     },
     "SERI-03": {
-      "image": ""
+      "image": "/assets/seri-03-procede-impression.jpg",
+      "ratio": "4 / 3",
+      "pos": "50% 50%"
     },
     "SERI-04": {
-      "image": ""
+      "image": "/assets/seri-04-preparation-impression.jpg",
+      "ratio": "4 / 3",
+      "pos": "50% 62%"
     },
     "SERI-05": {
-      "image": ""
+      "image": "/assets/seri-05-controle-qualite.jpg",
+      "ratio": "4 / 3",
+      "pos": "50% 40%"
     },
     "BAN-SURF": {
       "image": "/assets/pvd-plots.jpg",
       "pos": "50% 55%"
     },
     "SURF-01": {
-      "image": ""
+      "image": "/assets/surf-01-definition-besoin.jpg",
+      "ratio": "4 / 3",
+      "pos": "45% 50%"
     },
     "SURF-02": {
       "image": ""
@@ -2518,6 +2550,11 @@
     },
     "OUTIL-CARTE": {
       "ratio": "4 / 3"
+    },
+    "CERAM-04b": {
+      "image": "/assets/ceram-04b-decoupe-jet-eau.jpg",
+      "ratio": "4 / 3",
+      "pos": "55% 35%"
     }
   }
 }
