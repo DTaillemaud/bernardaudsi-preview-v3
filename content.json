@@ -82,7 +82,13 @@
     "siteOradour": "/assets/site-oradour.jpg",
     "siteLimogesCentre": "/assets/site-limoges-centre.jpg",
     "siteLimogesNord": "/assets/site-limoges-nord.jpg",
-    "siteAixe": "/assets/site-aixe.jpg"
+    "siteAixe": "/assets/site-aixe.jpg",
+    "salonDga": "/assets/salon-dga-pme-tour.png",
+    "salonSofins": "/assets/salon-sofins.png",
+    "salonCeramicNetwork": "/assets/salon-ceramic-network.png",
+    "salonEphj": "/assets/salon-ephj.png",
+    "salonPec": "/assets/salon-pole-europeen-ceramique.png",
+    "salonMilipol": "/assets/salon-milipol.png"
   },
   "website": {
     "fr": {
@@ -181,7 +187,7 @@
         "eyebrow": "Limoges, France · Depuis 1863",
         "title": "Bernardaud",
         "subtitle": "Solutions industrielles",
-        "intro": "Bernardaud Solutions Industrielles regroupe des activités de céramiques techniques, d’imprimerie sérigraphique, de traitement de surface et de décoration. Ces moyens peuvent être mobilisés du prototype à la production en série.",
+        "intro": "Bernardaud Solutions Industrielles regroupe des activités de céramiques techniques, d’imprimerie sérigraphique, de traitement de surface et de décoration. Ces moyens sont mobilisés du prototype à la production en série.",
         "primary": "Contact",
         "caption": "Site d’Oradour-sur-Glane",
         "scroll": "Découvrir BSI",
@@ -193,7 +199,7 @@
       },
       "pages": {
         "presentation": {
-          "title": "Six générations d’industrie en Haute-Vienne",
+          "title": "Une production 100 % française en Haute-Vienne",
           "short": "Présentation générale",
           "intro": "Bernardaud Solutions Industrielles regroupe les activités de céramiques techniques, sérigraphie, décoration et traitement de surface du groupe.",
           "metrics": [
@@ -290,19 +296,14 @@
               "body": "Conception et impression sérigraphique, pour des applications industrielles et décoratives."
             },
             {
-              "title": "Traitements de surface et décoration",
+              "title": "Traitements de surface",
               "body": "Dépôts PVD, tampographie, pulvérisation, décoration à la feuille ou au pinceau, texturation et sablage."
             }
-          ],
-          "support": {
-            "title": "Développements industriels spécifiques",
-            "body": "Vous apportez un cahier des charges, un plan, une pièce ou une fonction recherchée. BSI étudie si tout ou partie de ses procédés peut fournir une solution. Le laboratoire intégré, le bureau d’études et les ateliers de prototypage interviennent à chaque niveau de maturité, de la preuve de concept à la production en série.",
-            "button": "Soumettre un besoin"
-          }
+          ]
         },
         "ceramiques-techniques": {
           "title": "Céramiques techniques",
-          "intro": "Bernardaud Solutions Industrielles développe et fabrique sur cahier des charges des pièces en céramiques techniques, du prototype à la série. Nos capacités couvrent le choix et la mise au point des matières, plusieurs procédés de mise en forme (pressage, injection, coulage, calibrage) ainsi que le déliantage, le frittage, la finition et le contrôle des pièces.",
+          "intro": "Bernardaud Solutions Industrielles développe et fabrique sur cahier des charges des pièces en céramiques techniques, du prototype à la série. Les capacités couvrent le choix et la mise au point des matières, le choix du procédé de mise en forme (pressage, injection, coulage, calibrage, impression 3D), ainsi que le déliantage, le frittage, la finition et le contrôle des pièces.",
           "steps": [
             {
               "title": "Définition de la matière première",
@@ -581,7 +582,7 @@
             },
             {
               "heading": "L’alumine haute pureté",
-              "subtitle": "L’alumine haute pureté (Al₂O₃) > 98 %",
+              "subtitle": "Haute pureté · Al₂O₃ supérieure à 98 % et 99,7 %",
               "description": [
                 "L’alumine haute densité, de 98% à 99,7% est une céramique quasi monophasée (alpha-corindon) exempte de phase vitreuse.",
                 "Elle présente une porosité quasi nulle et une dureté extrême (~1800 HV). Son inertie chimique est totale face aux agents corrosifs (pH 0-14)."
@@ -678,7 +679,7 @@
         "defense": {
           "title": "Céramiques balistiques haute performance",
           "short": "Défense",
-          "intro": "Fondée à Limoges en 1863, Bernardaud est un fabricant céramique français, entreprise familiale qui associe une expertise matière de longue date à des capacités industrielles modernes. Les installations regroupent formulation céramique, prototypage, mise en forme, frittage, usinage, finition et caractérisation. Cette approche intégrée accompagne les clients de la conception initiale à la qualification, puis à la production en série.",
+          "intro": "Bernardaud Solutions Industrielles développe et produit, en France, des composants céramiques haut de gamme dédiés à la protection balistique.",
           "protection": {
             "eyebrow": "Protection balistique",
             "title": "Une protection légère contre les menaces de haut niveau",
@@ -790,10 +791,12 @@
           },
           "closing": {
             "title": "Produits standards quand la rapidité compte. Développement sur mesure quand l’application l’exige.",
-            "body": "Développons votre prochaine solution de protection.",
             "button": "Écrire à BSI"
           },
-          "ref": "DEF"
+          "ref": "DEF",
+          "introExtra": [
+            "Ces pièces aux formats normalisés (carreaux, hexagones, pellets, plaques SAPI) ou de formes complexes sur mesure répondent aux exigences des forces armées terrestres, aéronautiques et navales."
+          ]
         },
         "industrie": {
           "title": "Industrie",
@@ -875,24 +878,26 @@
             "button": "Soumettre un besoin"
           },
           "ref": "INDUS",
-          "intro": "Résistance à l’usure, aux chocs, aux températures élevées ou aux environnements chimiques, isolation électrique, inertie, précision dimensionnelle, propriétés de surface, marquage ou décoration : les céramiques techniques, la sérigraphie et les traitements de surface répondent à ces fonctions sur des pièces industrielles spécifiques.",
-          "introExtra": [
-            "À partir d’un cahier des charges ou d’une expression de besoin, Bernardaud Solutions Industrielles étudie et développe des pièces à façon en mobilisant tout ou partie de ses procédés, des premières phases de R&D jusqu’à la mise au point du procédé et à l’industrialisation."
-          ],
+          "intro": "Bernardaud Solutions Industrielles met à disposition ses savoir-faire et son outil de production pour concevoir et fabriquer des pièces céramiques adaptées aux contraintes des marchés industriels tels que le nucléaire, l’électronique, l’énergie, le médical, etc.",
           "applicationsTitle": "Applications"
         },
         "horlogerie": {
           "title": "Horlogerie",
-          "intro": "Bernardaud Solutions Industrielles met à disposition des maisons horlogères ses capacités en céramiques techniques, impression sérigraphique et décoration pour le développement et la production de composants à forte exigence de précision, de finition et de répétabilité. Ces savoir-faire peuvent être mobilisés aussi bien pour des pièces uniques et pièces d’art que pour des productions en grande série.",
+          "intro": "Bernardaud Solutions Industrielles met à disposition des maisons horlogères 2 savoir-faire : la production de pièces, en porcelaine ou céramique, finies ou semi-finies et la décoration de pièces horlogères, par sérigraphie ou à la main. Ces savoir-faire peuvent être mobilisés aussi bien pour des pièces uniques (métier d’art) que pour des productions en série.",
           "blocks": [
             {
               "title": "Céramiques techniques",
-              "body": "Développement et fabrication de cadrans, lunettes, maillons et boîtiers en céramique, avec maîtrise des géométries, des états de surface, des couleurs et de la répétabilité en série.",
+              "body": "Développement et fabrication de pièces finies (cadrans), lunettes, ou semi-finies (maillons et boîtiers en porcelaine ou en céramique) avec maîtrise des géométries, des états de surface, des couleurs et de la répétabilité en série.",
               "refs": [
                 "HORLO-01",
                 "HORLO-01b"
               ],
-              "gallery": true
+              "gallery": true,
+              "points": [
+                "Cadrans",
+                "Boîtiers : ébauches en zircone",
+                "Maillons de bracelet"
+              ]
             },
             {
               "title": "Imprimerie sérigraphique",
@@ -902,7 +907,26 @@
                 "HORLO-02b",
                 "HORLO-02c"
               ],
-              "gallery": true
+              "gallery": true,
+              "points": [
+                "Chromos basse température (on-glaze), qui offrent une large liberté chromatique",
+                "Chromos haute température (in-glaze), intégrés plus profondément à l’émail, qui garantissent une résistance à l’usure accrue",
+                "Chromos texturés",
+                "Décors fins, motifs, index et éléments graphiques"
+              ]
+            },
+            {
+              "title": "Savoir-faire manuel",
+              "body": "Pour les pièces d’exception, réalisation par nos meilleurs ouvriers de décors à la main",
+              "points": [
+                "Décors en volume (3D)",
+                "Texturations et reliefs",
+                "Applications de métaux précieux",
+                "Combinaison des techniques de décors"
+              ],
+              "refs": [
+                "HORLO-04"
+              ]
             },
             {
               "title": "Décoration et traitements de surface",
@@ -924,52 +948,61 @@
             "headings": [
               "Salon",
               "Lieu",
-              "Période",
+              "Date",
               "Marché"
             ],
             "rows": [
               [
-                "DGA Tour",
+                "DGA PME Tour",
                 "Montauban",
-                "Décembre",
+                "Décembre 2026",
                 "Défense"
               ],
               [
                 "SOFINS",
                 "Bordeaux",
-                "Avril",
+                "06 au 08 Avril 2027",
                 "Défense"
               ],
               [
                 "Ceramic Week",
                 "Limoges",
-                "Mai",
+                "25 au 27 Mai 2027",
                 "Industrie"
               ],
               [
                 "EPHJ",
                 "Genève",
-                "Juin",
+                "8 au 11 Juin 2027",
                 "Horlogerie"
               ],
               [
-                "Journée Luxe",
+                "Journée Luxe (PEC)",
                 "Neuchâtel",
-                "Septembre",
+                "Septembre 2027",
                 "Luxe, horlogerie"
               ],
               [
                 "Milipol",
                 "Paris",
-                "Novembre",
+                "16 au 19 Novembre 2027",
                 "Défense"
               ],
               [
                 "CEPAS",
                 "Toulouse",
-                "À confirmer",
+                "À confirmer (2027)",
                 "Aéronautique, défense"
               ]
+            ],
+            "logos": [
+              "salonDga",
+              "salonSofins",
+              "salonCeramicNetwork",
+              "salonEphj",
+              "salonPec",
+              "salonMilipol",
+              null
             ]
           },
           "publication": {
@@ -1133,7 +1166,7 @@
         "eyebrow": "Limoges, France · Since 1863",
         "title": "Bernardaud",
         "subtitle": "Industrial Solutions",
-        "intro": "Bernardaud Solutions Industrielles brings together technical ceramics, screen printing, surface treatment and decoration. These capabilities can be used from prototype to series production.",
+        "intro": "Bernardaud Solutions Industrielles brings together technical ceramics, screen printing, surface treatment and decoration. These capabilities are used from prototype to series production.",
         "primary": "Contact",
         "caption": "Oradour-sur-Glane site",
         "scroll": "Discover BSI",
@@ -1145,7 +1178,7 @@
       },
       "pages": {
         "presentation": {
-          "title": "Six generations of industry in Haute-Vienne",
+          "title": "100% French production in Haute-Vienne",
           "short": "Overview",
           "intro": "Bernardaud Solutions Industrielles brings together the group’s technical ceramics, screen printing, decoration and surface treatment activities.",
           "metrics": [
@@ -1242,19 +1275,14 @@
               "body": "Screen-print design and printing for industrial and decorative applications."
             },
             {
-              "title": "Surface treatments and decoration",
+              "title": "Surface treatments",
               "body": "PVD deposition, pad printing, spraying, leaf or brush decoration, texturing and sandblasting."
             }
-          ],
-          "support": {
-            "title": "Specific industrial developments",
-            "body": "You bring a specification, a drawing, a part or a required function. BSI assesses whether all or part of its processes can provide a solution. The in-house laboratory, design office and prototyping workshops work at every maturity level, from proof of concept to series production.",
-            "button": "Submit a need"
-          }
+          ]
         },
         "ceramiques-techniques": {
           "title": "Technical ceramics",
-          "intro": "Bernardaud Solutions Industrielles develops and manufactures technical ceramic parts to specification, from prototype to series. Our capabilities cover material selection and development, several forming processes (pressing, injection, casting, jiggering) as well as debinding, sintering, finishing and part inspection.",
+          "intro": "Bernardaud Solutions Industrielles develops and manufactures technical ceramic parts to specification, from prototype to series. The capabilities cover material selection and development, the choice of forming process (pressing, injection, casting, jiggering, 3D printing), as well as debinding, sintering, finishing and part inspection.",
           "steps": [
             {
               "title": "Raw material definition",
@@ -1533,7 +1561,7 @@
             },
             {
               "heading": "High-purity alumina",
-              "subtitle": "High-purity alumina (Al₂O₃) > 98%",
+              "subtitle": "High purity · Al₂O₃ above 98% and 99.7%",
               "description": [
                 "High-density alumina, from 98% to 99.7%, is a quasi single-phase ceramic (alpha-corundum) free of glassy phase.",
                 "It has almost zero porosity and extreme hardness (~1800 HV). Its chemical inertness is total against corrosive agents (pH 0-14)."
@@ -1630,7 +1658,7 @@
         "defense": {
           "title": "High-performance ballistic ceramics",
           "short": "Defence",
-          "intro": "Founded in Limoges in 1863, Bernardaud is a French, family-owned ceramic manufacturer combining long-standing material expertise with modern industrial capabilities. The facilities bring together ceramic formulation, prototyping, forming, sintering, machining, finishing and characterisation. This integrated approach supports customers from initial design through qualification and series production.",
+          "intro": "Bernardaud Solutions Industrielles develops and produces, in France, high-end ceramic components for ballistic protection.",
           "protection": {
             "eyebrow": "Ballistic protection",
             "title": "Lightweight protection against high-level threats",
@@ -1742,10 +1770,12 @@
           },
           "closing": {
             "title": "Standard products when speed matters. Bespoke development when the application demands it.",
-            "body": "Let’s develop your next protection solution.",
             "button": "Write to BSI"
           },
-          "ref": "DEF"
+          "ref": "DEF",
+          "introExtra": [
+            "These parts, in standard formats (tiles, hexagons, pellets, SAPI plates) or in complex custom shapes, meet the requirements of land, air and naval armed forces."
+          ]
         },
         "industrie": {
           "title": "Industry",
@@ -1827,24 +1857,26 @@
             "button": "Submit a need"
           },
           "ref": "INDUS",
-          "intro": "Resistance to wear, shock, high temperatures or chemical environments, electrical insulation, inertness, dimensional accuracy, surface properties, marking or decoration: technical ceramics, screen printing and surface treatments provide these functions on specific industrial parts.",
-          "introExtra": [
-            "From a specification or a statement of need, Bernardaud Solutions Industrielles studies and develops custom parts using all or part of its processes, from the first R&D phases through process development to industrialisation."
-          ],
+          "intro": "Bernardaud Solutions Industrielles makes its expertise and production facilities available to design and manufacture ceramic parts suited to the constraints of industrial markets such as nuclear, electronics, energy, medical, etc.",
           "applicationsTitle": "Applications"
         },
         "horlogerie": {
           "title": "Watchmaking",
-          "intro": "Bernardaud Solutions Industrielles offers watchmaking houses its capabilities in technical ceramics, screen printing and decoration for the development and production of components with high requirements for precision, finish and repeatability. These skills can be used for one-off pieces and art pieces as well as for large-series production.",
+          "intro": "Bernardaud Solutions Industrielles offers watchmaking houses 2 areas of expertise: the production of finished or semi-finished parts in porcelain or ceramic, and the decoration of watch parts, by screen printing or by hand. These skills can be used for one-off pieces (craft) as well as for series production.",
           "blocks": [
             {
               "title": "Technical ceramics",
-              "body": "Development and manufacture of ceramic dials, bezels, links and cases, with control of geometries, surface finishes, colours and series repeatability.",
+              "body": "Development and manufacture of finished parts (dials), bezels, or semi-finished parts (links and cases in porcelain or ceramic) with control of geometries, surface finishes, colours and series repeatability.",
               "refs": [
                 "HORLO-01",
                 "HORLO-01b"
               ],
-              "gallery": true
+              "gallery": true,
+              "points": [
+                "Dials",
+                "Cases: zirconia blanks",
+                "Bracelet links"
+              ]
             },
             {
               "title": "Screen printing",
@@ -1854,7 +1886,26 @@
                 "HORLO-02b",
                 "HORLO-02c"
               ],
-              "gallery": true
+              "gallery": true,
+              "points": [
+                "Low-temperature transfers (on-glaze), which offer wide colour freedom",
+                "High-temperature transfers (in-glaze), embedded deeper in the glaze, which guarantee greater wear resistance",
+                "Textured transfers",
+                "Fine decorations, patterns, indices and graphic elements"
+              ]
+            },
+            {
+              "title": "Hand craftsmanship",
+              "body": "For exceptional pieces, decorations made by hand by our best craftsmen",
+              "points": [
+                "Volume (3D) decorations",
+                "Textures and reliefs",
+                "Precious metal applications",
+                "Combination of decoration techniques"
+              ],
+              "refs": [
+                "HORLO-04"
+              ]
             },
             {
               "title": "Decoration and surface treatments",
@@ -1876,52 +1927,61 @@
             "headings": [
               "Event",
               "Location",
-              "Period",
+              "Date",
               "Market"
             ],
             "rows": [
               [
-                "DGA Tour",
+                "DGA PME Tour",
                 "Montauban",
-                "December",
+                "December 2026",
                 "Defence"
               ],
               [
                 "SOFINS",
                 "Bordeaux",
-                "April",
+                "6–8 April 2027",
                 "Defence"
               ],
               [
                 "Ceramic Week",
                 "Limoges",
-                "May",
+                "25–27 May 2027",
                 "Industry"
               ],
               [
                 "EPHJ",
                 "Geneva",
-                "June",
+                "8–11 June 2027",
                 "Watchmaking"
               ],
               [
-                "Luxury Day",
+                "Luxury Day (PEC)",
                 "Neuchâtel",
-                "September",
+                "September 2027",
                 "Luxury, watchmaking"
               ],
               [
                 "Milipol",
                 "Paris",
-                "November",
+                "16–19 November 2027",
                 "Defence"
               ],
               [
                 "CEPAS",
                 "Toulouse",
-                "To be confirmed",
+                "To be confirmed (2027)",
                 "Aerospace, defence"
               ]
+            ],
+            "logos": [
+              "salonDga",
+              "salonSofins",
+              "salonCeramicNetwork",
+              "salonEphj",
+              "salonPec",
+              "salonMilipol",
+              null
             ]
           },
           "publication": {
@@ -2455,6 +2515,9 @@
     },
     "INDUS-06": {
       "image": ""
+    },
+    "OUTIL-CARTE": {
+      "ratio": "4 / 3"
     }
   }
 }

@@ -105,10 +105,10 @@ function heading(eyebrow, name, intro, action = "") {
 }
 
 // Accueil : titres et visuels seulement, sans texte sous les cartes.
-function offerCards(detailed = false) {
+function offerCards() {
   const slots = ["technicalParts", "serigraphySps", "pvd"];
   const items = page("offre").items;
-  return `<div class="offer-grid offer-grid-3">${offers.map((id, i) => `<article class="offer-card" data-reveal>${link(id, `<div class="offer-photo">${picture(slots[i], items[i].title)}<span class="photo-arrow">${icon("ArrowUpRight")}</span></div><div class="offer-copy"><span class="offer-number">0${i + 1}</span><h3>${esc(items[i].title)}</h3>${detailed ? `<p>${esc(items[i].body)}</p>` : ""}</div>`)}</article>`).join("")}</div>`;
+  return `<div class="offer-grid offer-grid-3">${offers.map((id, i) => `<article class="offer-card" data-reveal>${link(id, `<div class="offer-photo">${picture(slots[i], items[i].title)}<span class="photo-arrow">${icon("ArrowUpRight")}</span></div><div class="offer-copy"><span class="offer-number">0${i + 1}</span><h3>${esc(items[i].title)}</h3></div>`)}</article>`).join("")}</div>`;
 }
 
 function marketCards(detailed = false) {
@@ -126,11 +126,6 @@ function submitBlock(data) {
   return `<section class="section submit-section"><div class="container submit-layout" data-reveal><div><h2>${esc(data.title)}</h2><p>${esc(data.body)}</p></div>${link("contact", esc(data.button), "button primary", true)}</div></section>`;
 }
 
-function offerSupport() {
-  const data = page("offre").support;
-  return `<section class="section development-support"><div class="container support-layout"><div data-reveal><p class="eyebrow">R&D</p><h2>${esc(data.title)}</h2><p>${esc(data.body)}</p>${link("contact", esc(data.button), "button primary", true)}</div><figure data-reveal>${picture("laboratory", lang === "fr" ? "Microscope du laboratoire Bernardaud" : "Microscope at the Bernardaud laboratory")}</figure></div></section>`;
-}
-
 // « Maîtrise en N étapes » : le même gabarit pour les trois offres.
 function stepsBlock(steps) {
   if (steps[0]?.refs) return `<section class="section steps-section points-section"><div class="container"><div class="steps-heading" data-reveal><p class="eyebrow">${esc(t("ui.expertise"))}</p><h2>${esc(t("ui.steps").replace("{n}", steps.length))}</h2></div>${points(steps)}</div></section>`;
@@ -142,8 +137,10 @@ function overviewBlock(paragraphs, image = "", alt = "") {
   return `<section class="section overview-section"><div class="container overview-layout ${image ? "" : "no-image"}"><div class="overview-text" data-reveal>${text}</div>${image ? `<figure class="overview-figure" data-reveal>${picture(image, alt)}</figure>` : ""}</div></section>`;
 }
 
-function comparisonTable(data) {
-  return `<h2 class="table-heading">${esc(data.title)}</h2><div class="table-scroll" role="region" aria-label="${esc(data.title)}" tabindex="0"><table><thead><tr>${data.headings.map(label => `<th scope="col">${esc(label)}</th>`).join("")}</tr></thead><tbody>${data.rows.map(row => `<tr><th scope="row">${esc(row[0])}</th>${row.slice(1).map(cell => `<td>${esc(cell)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+// Actualités : tableau des salons, avec le logo de chaque événement quand il existe.
+function agendaTable(data) {
+  const rows = data.rows.map((row, i) => `<tr><th scope="row"><span class="agenda-event">${data.logos?.[i] ? picture(data.logos[i], "", "agenda-logo") : '<span class="agenda-logo" aria-hidden="true"></span>'}<span>${esc(row[0])}</span></span></th>${row.slice(1).map(cell => `<td>${esc(cell)}</td>`).join("")}</tr>`).join("");
+  return `<h2 class="table-heading">${esc(data.title)}</h2><div class="table-scroll" role="region" aria-label="${esc(data.title)}" tabindex="0"><table class="agenda-table"><thead><tr>${data.headings.map(label => `<th scope="col">${esc(label)}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 
 function ceramicsDetail() {
@@ -255,11 +252,8 @@ function industrial() {
   const id = "outil-industriel";
   const data = page(id);
   const photos = `<section class="section site-photos-section"><div class="container"><div class="site-photos">${data.photos.map(item => `<figure data-reveal>${picture(item.image, item.caption)}<figcaption>${esc(item.caption)}</figcaption></figure>`).join("")}</div></div></section>`;
-  return `${pageTop(id)}${photos}${sites(data.sites)}`;
-}
-
-function offer() {
-  return `${pageTop("offre")}<section class="section"><div class="container">${offerCards(true)}</div></section>${offerSupport()}`;
+  const map = `<section class="section site-map-section"><div class="container"><div class="site-map" data-reveal>${slotFigure("OUTIL-CARTE", lang === "fr" ? "Carte de France situant les sites de production Bernardaud" : "Map of France showing the Bernardaud production sites")}</div></div></section>`;
+  return `${pageTop(id)}${photos}${map}${sites(data.sites)}`;
 }
 
 function marketsIndex() {
@@ -276,7 +270,7 @@ function defensePage() {
   const applications = `<section class="section application-section"><div class="container"><p class="eyebrow">${esc(t("ui.applications"))}</p><div class="defense-apps">${data.applications.map(item => `<article data-reveal>${slotFigure(item.ref, item.title)}<h3>${esc(item.title)}</h3>${bulletList(item.points)}</article>`).join("")}</div></div></section>`;
   const parts = `<section class="section"><div class="container">${heading(products.title, t("ballistic.title"), products.intro)}<div class="ballistic-gallery">${t("ballistic.products").map(product => `<article data-reveal>${slotFigure(product.ref, product.title)}<div><h3>${esc(product.title)}</h3><p>${esc(product.body)}</p></div></article>`).join("")}</div><div class="material-chips" data-reveal><span>${esc(products.materialsTitle)}</span><ul>${products.materials.map(item => `<li>${esc(item)}</li>`).join("")}</ul></div></div></section>`;
   const value = `<section class="section"><div class="container">${heading(title(id), data.value.title, "")}<div class="capability-grid is-large">${data.value.items.map((item, i) => `<article data-reveal><span>${String(i + 1).padStart(2, "0")}</span><h3>${esc(item.title)}</h3><p>${esc(item.body)}</p></article>`).join("")}</div></div></section>`;
-  const closing = `<section class="section closing-section"><div class="container closing-layout" data-reveal><div><h2>${esc(data.closing.title)}</h2><p>${esc(data.closing.body)}</p></div><div class="closing-actions">${link("contact", esc(data.closing.button), "button primary", true)}<a class="text-link" href="${localURL("assets/protection-balistique.pdf")}" target="_blank" rel="noopener">${esc(t("ui.downloadBrochure"))}${icon("Download")}</a></div></div></section>`;
+  const closing = `<section class="section closing-section"><div class="container closing-layout" data-reveal><div><h2>${esc(data.closing.title)}</h2>${data.closing.body ? `<p>${esc(data.closing.body)}</p>` : ""}</div><div class="closing-actions">${link("contact", esc(data.closing.button), "button primary", true)}<a class="text-link" href="${localURL("assets/protection-balistique.pdf")}" target="_blank" rel="noopener">${esc(t("ui.downloadBrochure"))}${icon("Download")}</a></div></div></section>`;
   return `${pageTop(id)}${protection}${applications}${parts}${value}${closing}`;
 }
 
@@ -327,7 +321,7 @@ function news() {
   const id = "actualites";
   const data = page(id);
   const agenda = data.agenda;
-  return `${pageTop(id)}<section class="section"><div class="container">${comparisonTable(agenda)}</div></section><section class="section publication-section"><div class="container"><article class="publication" data-reveal><div class="publication-image">${picture("defense", title("defense"))}</div><div><p class="eyebrow">${esc(data.publication.eyebrow)}</p><h2>${esc(data.publication.title)}</h2><p>${esc(data.publication.body)}</p><a class="button primary" href="${localURL("assets/protection-balistique.pdf")}" target="_blank" rel="noopener">${esc(t("ui.downloadBrochure"))}${icon("Download")}</a></div></article></div></section>`;
+  return `${pageTop(id)}<section class="section"><div class="container">${agendaTable(agenda)}</div></section><section class="section publication-section"><div class="container"><article class="publication" data-reveal><div class="publication-image">${picture("defense", title("defense"))}</div><div><p class="eyebrow">${esc(data.publication.eyebrow)}</p><h2>${esc(data.publication.title)}</h2><p>${esc(data.publication.body)}</p><a class="button primary" href="${localURL("assets/protection-balistique.pdf")}" target="_blank" rel="noopener">${esc(t("ui.downloadBrochure"))}${icon("Download")}</a></div></article></div></section>`;
 }
 
 function contactBand() {
@@ -347,7 +341,6 @@ function renderRoute() {
   const id = currentId();
   if (id === "home") return home();
   if (!page(id)) return `<section class="section container not-found"><h1>${esc(t("ui.notFound"))}</h1>${link("home", esc(t("ui.backHome")), "button primary", true)}</section>`;
-  if (id === "offre") return offer();
   if (id === "materiaux") return materialIndex();
   if (materials.includes(id)) return materialDetail(id);
   if (id === "marches") return marketsIndex();
