@@ -31,3 +31,19 @@ Ce site de demonstration est public et demande a ne pas etre indexe.
 
 Les photographies et le logo restent la propriete de leurs ayants droit.
 Polices Manrope sous OFL et icones Lucide sous ISC : licences conservees dans assets.
+
+## Version 3 : emplacements photo nommes
+
+Chaque photo (bandeau de page ou photo a droite d'un point) est un emplacement nomme de
+`content.json` > `slots` : `BAN-PRES` (bandeau), `PRES-01` a `PRES-06` (Presentation),
+`HIST-01` a `HIST-05` (Histoire), etc. Un emplacement sans photo s'affiche en encart avec son nom ;
+pour changer une photo, il suffit de donner le nom de l'emplacement et la nouvelle image.
+
+- `?reperes=1` a la fin d'une adresse affiche le nom de chaque photo (retenu dans le navigateur) ;
+  `?reperes=0` l'efface.
+- Un emplacement accepte `image`, `caption` (fr / en), `fit` (`contain` pour un logo), `ratio` (par
+  exemple `3 / 4`) et `pos` (cadrage, par exemple `60% 45%`).
+- Le bandeau d'une page prend l'emplacement `BAN-<code>` ou `<code>` est le champ `ref` de la page ;
+  sans photo, il reste bleu.
+- La rubrique « Presentation » de la barre n'est pas cliquable (`noLink` dans `frontend.js`) : seuls
+  ses trois sous-onglets le sont.

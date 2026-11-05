@@ -14,10 +14,11 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const mobileViewport = window.matchMedia("(max-width: 1100px)");
 // Version 2 : trois sous-pages par rubrique (Présentation, Offre, Marchés), Actualités en page unique.
 const groups = [
-  { id: "presentation", icon: "Factory", children: ["presentation", "histoire", "outil-industriel"] },
-  { id: "offre", icon: "Layers", children: ["ceramiques-techniques", "serigraphie", "traitements-de-surface"] },
+  // noLink : la rubrique de la barre n'est pas une page, seuls ses sous-onglets mènent quelque part.
+  { id: "presentation", icon: "Factory", noLink: true, children: ["presentation", "histoire", "outil-industriel"] },
+  { id: "offre", icon: "Layers", noLink: true, children: ["ceramiques-techniques", "serigraphie", "traitements-de-surface"] },
   { id: "materiaux", icon: "Hexagon", children: ["porcelaine-technique", "alumine", "zta", "zircone"] },
-  { id: "marches", icon: "ShieldCheck", children: ["defense", "horlogerie", "industrie"] },
+  { id: "marches", icon: "ShieldCheck", noLink: true, children: ["defense", "horlogerie", "industrie"] },
   { id: "actualites", icon: "ScanLine", children: [] }
 ];
 const offers = groups[1].children;
@@ -47,6 +48,22 @@ function picture(slot, alt = "", className = "", eager = false) {
   return `<img class="${className}" src="${esc(localURL(content.images[slot]))}" alt="${esc(alt)}" loading="${eager ? "eager" : "lazy"}" ${eager ? 'fetchpriority="high"' : ""} decoding="async">`;
 }
 
+// Emplacements photo nommés (content.slots) : une photo = un nom, repris tel quel pour tout le site.
+// Sans photo, l'emplacement s'affiche en encart avec son nom ; ajouter ?reperes=1 à une adresse affiche le nom de chaque photo (?reperes=0 l'efface).
+const slotInfo = ref => {
+  const slot = content.slots?.[ref];
+  return typeof slot === "string" ? { image: slot } : slot || {};
+};
+
+function slotFigure(ref, alt = "") {
+  const info = slotInfo(ref);
+  const cls = `point-visual${info.fit === "contain" ? " is-contain" : info.fit === "vignette" ? " is-vignette" : ""}`;
+  const data = `data-ref="${esc(ref)}"${info.ratio ? ` data-ratio="${esc(info.ratio)}"` : ""}${info.pos ? ` data-pos="${esc(info.pos)}"` : ""}`;
+  if (!info.image) return `<figure class="${cls} photo-placeholder" ${data} role="img" aria-label="${esc(t("ui.photoToChoose"))} ${esc(ref)}"><span>${esc(t("ui.photoToChoose"))}</span><strong>${esc(ref)}</strong></figure>`;
+  const caption = info.caption?.[lang] ? `<figcaption>${esc(info.caption[lang])}</figcaption>` : "";
+  return `<figure class="${cls}" ${data}><div class="point-frame"><img src="${esc(localURL(info.image))}" alt="${esc(alt)}" loading="lazy" decoding="async"></div>${caption}</figure>`;
+}
+
 function navigationLinks(group) {
   return group.children.map((id, i) => link(id, `<span class="menu-number">${String(i + 1).padStart(2, "0")}</span><span>${esc(title(id))}</span>`, "mega-link", true)).join("");
 }
@@ -54,9 +71,12 @@ function navigationLinks(group) {
 function navGroup(group, index, active) {
   const label = esc(t("ui.sections")[index]);
   if (!group.children.length) return `<div class="nav-group"><div class="nav-item ${group.id === active ? "is-active" : ""}">${link(group.id, label)}</div></div>`;
-  const overview = group.children.includes(group.id) ? "" : link(group.id, esc(t("ui.all")), "text-link", true);
+  const overview = group.noLink || group.children.includes(group.id) ? "" : link(group.id, esc(t("ui.all")), "text-link", true);
+  const head = group.noLink
+    ? `<button type="button" class="nav-toggle nav-toggle-label" aria-expanded="false" aria-controls="nav-${group.id}">${label}${icon("ChevronDown")}</button>`
+    : `${link(group.id, label)}<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-${group.id}" aria-label="${esc(t("ui.overview"))} ${esc(title(group.id))}">${icon("ChevronDown")}</button>`;
   return `<div class="nav-group" data-nav-group="${group.id}">
-        <div class="nav-item ${group.id === active ? "is-active" : ""}">${link(group.id, label)}<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-${group.id}" aria-label="${esc(t("ui.overview"))} ${esc(title(group.id))}">${icon("ChevronDown")}</button></div>
+        <div class="nav-item ${group.id === active ? "is-active" : ""}">${head}</div>
         <div class="mega-menu" id="nav-${group.id}" hidden><div class="mega-intro">${icon(group.icon)}<p class="eyebrow">${label}</p><p>${esc(page(group.id).intro)}</p>${overview}</div><div class="mega-links">${navigationLinks(group)}</div></div>
       </div>`;
 }
@@ -113,6 +133,7 @@ function offerSupport() {
 
 // « Maîtrise en N étapes » : le même gabarit pour les trois offres.
 function stepsBlock(steps) {
+  if (steps[0]?.refs) return `<section class="section steps-section points-section"><div class="container"><div class="steps-heading" data-reveal><p class="eyebrow">${esc(t("ui.expertise"))}</p><h2>${esc(t("ui.steps").replace("{n}", steps.length))}</h2></div>${points(steps)}</div></section>`;
   return `<section class="section steps-section"><div class="container"><div class="steps-heading" data-reveal><p class="eyebrow">${esc(t("ui.expertise"))}</p><h2>${esc(t("ui.steps").replace("{n}", steps.length))}</h2></div><div class="manufacturing-flow no-link">${steps.map((step, i) => `<article data-reveal><span class="flow-number">0${i + 1}</span><div><h3>${esc(step.title)}</h3><p>${esc(step.body)}</p>${step.points?.length ? `<ul>${step.points.map(point => `<li>${icon("Check")}${esc(point)}</li>`).join("")}</ul>` : ""}</div></article>`).join("")}</div></div></section>`;
 }
 
@@ -127,27 +148,50 @@ function comparisonTable(data) {
 
 function ceramicsDetail() {
   const id = "ceramiques-techniques";
-  const data = page(id);
-  const maturity = `<section class="section maturity-section"><div class="container statement-layout" data-reveal><h2>${esc(data.maturity.title)}</h2><p>${esc(data.maturity.body)}</p></div></section>`;
-  return `${pageHero(id)}${subTabs(id)}${stepsBlock(data.steps)}${maturity}${metrics(data.metrics, "thermal-metrics")}${mediaGallery(data.gallery, 3)}<section class="section"><div class="container">${comparisonTable(data.comparison)}</div></section>`;
+  return `${pageTop(id)}${stepsBlock(page(id).steps)}`;
 }
 
 function home() {
-  return `<section class="home-hero"><div class="hero-media">${picture("hero", lang === "fr" ? "Presse d’injection céramique Arburg dans les ateliers Bernardaud" : "Arburg ceramic injection machine at Bernardaud", "hero-photo", true)}</div>
-    <div class="container hero-content"><p class="hero-eyebrow">${esc(t("home.eyebrow"))}</p><h1><span>${esc(t("home.title"))}</span> ${esc(t("home.subtitle"))}</h1><p class="hero-lead">${esc(t("home.intro"))}</p><div class="hero-actions">${link("offre", esc(t("home.primary")), "button light", true)}${link("contact", esc(t("home.secondary")), "hero-text-link", true)}</div></div>
+  return `<section class="home-hero"><div class="hero-media">${picture("hero", lang === "fr" ? "Vue aérienne du site Bernardaud d’Oradour-sur-Glane" : "Aerial view of the Bernardaud site in Oradour-sur-Glane", "hero-photo", true)}</div>
+    <div class="container hero-content"><p class="hero-eyebrow">${esc(t("home.eyebrow"))}</p><h1><span>${esc(t("home.title"))}</span> ${esc(t("home.subtitle"))}</h1><p class="hero-lead">${esc(t("home.intro"))}</p><div class="hero-actions">${link("contact", esc(t("home.primary")), "button light", true)}</div></div>
     <div class="hero-bottom container"><a class="scroll-link" href="#savoir-faire">${icon("ArrowDown")}<span>${esc(t("home.scroll"))}</span></a><span class="hero-caption"><span class="image-caption">${esc(t("home.caption"))}</span></span></div></section>
     <section class="section" id="savoir-faire"><div class="container">${heading(t("ui.expertise"), t("home.offerTitle"), t("home.offerIntro"))}${offerCards()}</div></section>
     <section class="section"><div class="container">${heading(t("ui.applications"), t("home.marketsTitle"), t("home.marketsIntro"))}${marketCards()}</div></section>${contactBand()}`;
 }
 
 function breadcrumb(id) {
-  const group = parent(id);
-  return `<nav class="breadcrumbs" aria-label="${lang === "fr" ? "Fil d’Ariane" : "Breadcrumb"}">${link("home", esc(t("ui.home")))}${icon("ChevronRight")}${group && group !== id ? `${link(group, esc(title(group)))}${icon("ChevronRight")}` : ""}<span aria-current="page">${esc(page(id)?.title || t("ui.notFound"))}</span></nav>`;
+  const group = groups.find(item => item.id === parent(id));
+  const section = group?.noLink
+    ? `<span class="crumb-label">${esc(t("ui.sections")[groups.indexOf(group)])}</span>${icon("ChevronRight")}`
+    : group && group.id !== id ? `${link(group.id, esc(title(group.id)))}${icon("ChevronRight")}` : "";
+  return `<nav class="breadcrumbs" aria-label="${lang === "fr" ? "Fil d’Ariane" : "Breadcrumb"}">${link("home", esc(t("ui.home")))}${icon("ChevronRight")}${section}<span aria-current="page">${esc(page(id) ? title(id) : t("ui.notFound"))}</span></nav>`;
 }
 
+// Bandeau de page : même dessin que l'accueil (photo sous un fondu bleu), titre seul.
+// La photo est l'emplacement « BAN-<code de la page> » de content.slots ; sans photo, le bandeau reste bleu.
 function pageHero(id) {
   const data = page(id);
-  return `<section class="page-hero"><div class="container">${breadcrumb(id)}<div class="page-heading"><div><p class="eyebrow">Bernardaud Solutions Industrielles</p><h1>${esc(data?.title || t("ui.notFound"))}</h1></div><p class="page-lead">${esc(data?.intro || "")}</p></div></div></section>`;
+  const ref = data?.ref ? `BAN-${data.ref}` : "";
+  const info = ref ? slotInfo(ref) : {};
+  const photo = info.image ? `<img class="banner-photo" src="${esc(localURL(info.image))}" alt="" fetchpriority="high" decoding="async">` : "";
+  return `<section class="page-banner${info.image ? " has-photo" : ""}"${ref ? ` data-ref="${ref}"` : ""}${info.pos ? ` data-pos="${esc(info.pos)}"` : ""}><div class="banner-media">${photo}</div><div class="container">${breadcrumb(id)}<div class="banner-heading"><p class="eyebrow">Bernardaud Solutions Industrielles</p><h1>${esc(data?.title || t("ui.notFound"))}</h1></div></div></section>`;
+}
+
+// Le texte qui était à droite du titre ouvre désormais la page, sous le bandeau.
+function pageIntro(id) {
+  const data = page(id);
+  return data?.intro ? `<section class="page-intro"><div class="container">${[data.intro, ...(data.introExtra || [])].map(text => `<p data-reveal>${esc(text)}</p>`).join("")}</div></section>` : "";
+}
+
+const pageTop = id => `${pageHero(id)}${subTabs(id)}${pageIntro(id)}`;
+
+// Points numérotés, chacun avec sa photo à droite (emplacements de content.slots).
+function certificateLinks() {
+  return `<div class="certificate-row">${page("presentation").certificates.map(item => `<a class="certificate" href="${esc(localURL(content.images[item.image]))}" target="_blank" rel="noopener">${picture(item.image, item.title)}<span>${esc(item.title)}</span></a>`).join("")}</div>`;
+}
+
+function points(items = []) {
+  return `<div class="points">${items.map((item, i) => `<article data-reveal><div class="point-text"><span class="detail-number">${String(i + 1).padStart(2, "0")}</span><h2>${esc(item.title)}</h2>${item.body ? `<p>${esc(item.body)}</p>` : ""}${(item.paragraphs || []).map(text => `<p>${esc(text)}</p>`).join("")}${bulletList(item.points)}</div><div class="point-media${item.gallery ? ` is-gallery cols-${item.refs.length}` : ""}">${(item.refs || []).map(ref => slotFigure(ref, item.title)).join("")}${item.certificates ? certificateLinks() : ""}</div></article>`).join("")}</div>`;
 }
 
 function bulletList(items = []) {
@@ -173,20 +217,12 @@ function photoStrip(group) {
 
 function screenPrintingDetail() {
   const id = "serigraphie";
-  const data = page(id);
-  const creative = `<section class="section technical-section"><div class="container">${heading(t("ui.expertise"), data.creative.title, data.creative.intro)}${technicalGrid(data.creative.items)}</div></section>`;
-  const precision = `<section class="section technical-band"><div class="container">${heading(t("ui.expertise"), data.precision.title, data.precision.body)}<dl class="precision-metrics">${data.precision.metrics.map(metric => `<div data-reveal><dt>${esc(metric.label)}</dt><dd>${esc(metric.value)}</dd></div>`).join("")}</dl><p class="precision-note">${esc(data.precision.note)}</p>${technicalGrid(data.precision.items, 4)}</div></section>`;
-  const digital = `<section class="section"><div class="container digital-layout"><div data-reveal><p class="eyebrow">${esc(t("ui.expertise"))}</p><h2>${esc(data.digital.title)}</h2><p>${esc(data.digital.body)}</p></div><figure data-reveal>${picture(data.digital.image, data.digital.caption)}<figcaption>${esc(data.digital.caption)}</figcaption></figure></div></section>`;
-  const strips = `<section class="section strips-section"><div class="container">${data.strips.map(photoStrip).join("")}</div></section>`;
-  return `${pageHero(id)}${subTabs(id)}${overviewBlock(data.overview, "serigraphySps", lang === "fr" ? "Machine d’impression sérigraphique SPS" : "SPS screen-printing machine")}${stepsBlock(data.steps)}${creative}${precision}${digital}${strips}${mediaGallery(data.gallery)}`;
+  return `${pageTop(id)}${stepsBlock(page(id).steps)}`;
 }
 
 function surfaceTreatmentDetail() {
   const id = "traitements-de-surface";
-  const data = page(id);
-  const processes = `<section class="section technical-section"><div class="container">${heading(t("ui.expertise"), data.processes.title, data.processes.intro)}${technicalGrid(data.processes.items, 3)}</div></section>`;
-  const controls = `<section class="section"><div class="container">${heading(t("ui.quality"), data.controls.title, data.controls.intro)}<div class="surface-controls"><figure data-reveal>${picture("laboratory", lang === "fr" ? "Microscope du laboratoire Bernardaud" : "Microscope at the Bernardaud laboratory")}</figure>${technicalGrid(data.controls.items, 2)}</div></div></section>`;
-  return `${pageHero(id)}${subTabs(id)}${overviewBlock(data.overview, "pvd", lang === "fr" ? "Dépôts PVD colorés sur des pièces céramiques" : "Coloured PVD deposits on ceramic parts")}${stepsBlock(data.steps)}${processes}${controls}`;
+  return `${pageTop(id)}${stepsBlock(page(id).steps)}`;
 }
 
 function applicationGroups(items) {
@@ -195,88 +231,103 @@ function applicationGroups(items) {
 }
 
 function sites(list) {
-  return `<section class="section sites-section"><div class="container">${heading(title("outil-industriel"), t("ui.sites"), t("ui.sitesIntro"))}<div class="site-grid">${list.map((site, i) => `<article data-reveal>${icon(["Factory", "ScanLine", "Layers", "Package"][i])}<p class="eyebrow">${esc(site.role)}</p><h3>${esc(site.name)}</h3><p>${esc(site.details)}</p>${bulletList(site.points)}</article>`).join("")}</div></div></section>`;
+  return `<section class="section sites-section"><div class="container">${heading(title("outil-industriel"), t("ui.sites"))}<div class="site-grid">${list.map((site, i) => `<article data-reveal>${icon(["Factory", "ScanLine", "Layers", "Package"][i])}<p class="eyebrow">${esc(site.role)}</p><h3>${esc(site.name)}</h3><p>${esc(site.details)}</p>${bulletList(site.points)}</article>`).join("")}</div></div></section>`;
 }
 
 function generalPresentation() {
   const id = "presentation";
   const data = page(id);
-  const cert = data.certifications;
-  const certification = `<section class="section certification-section"><div class="container certification-layout"><div data-reveal><p class="eyebrow">${esc(t("ui.quality"))}</p><h2>${esc(cert.title)}</h2><p>${esc(cert.body)}</p></div><div class="certification-media" data-reveal>${picture(cert.logo, cert.logoAlt, "certification-logo")}<div class="certificate-row">${cert.certificates.map(item => `<a class="certificate" href="${esc(localURL(content.images[item.image]))}" target="_blank" rel="noopener">${picture(item.image, item.title)}<span>${esc(item.title)}</span></a>`).join("")}</div></div></div></section>`;
-  const research = `<section class="section research-section"><div class="container research-layout"><div data-reveal><p class="eyebrow">R&D</p><h2>${esc(data.research.title)}</h2><p>${esc(data.research.body)}</p></div><figure data-reveal>${picture(data.research.image, data.research.alt)}</figure></div></section>`;
-  return `${pageHero(id)}${subTabs(id)}${metrics(data.metrics)}<section class="section presentation-content"><div class="container">${sections(data.sections)}</div></section>${certification}${research}`;
+  return `${pageTop(id)}${metrics(data.metrics)}<section class="section points-section"><div class="container">${points(data.sections)}</div></section>`;
+}
+
+// Texte libre : paragraphes à la suite, photos de part et d'autre, sans numéros ni titres.
+function story(blocks = []) {
+  return `<div class="story">${blocks.map(block => `<article class="story-block" data-reveal><div class="story-text">${block.paragraphs.map(text => `<p>${esc(text)}</p>`).join("")}</div><div class="story-media${block.refs.length > 1 ? " is-pair" : ""}">${block.refs.map(ref => slotFigure(ref)).join("")}</div></article>`).join("")}</div>`;
 }
 
 function historyPage() {
   const id = "histoire";
   const data = page(id);
-  return `${pageHero(id)}${subTabs(id)}<section class="section presentation-content"><div class="container"><figure class="page-visual drawing" data-reveal>${picture("history", data.title)}</figure>${sections(data.sections, "timeline")}</div></section>${mediaGallery(data.gallery)}`;
+  return `${pageTop(id)}<section class="section story-section"><div class="container"><div class="story-drawing" data-reveal>${slotFigure("HIST-01", data.drawingAlt)}</div>${story(data.story)}</div></section>`;
 }
 
 function industrial() {
   const id = "outil-industriel";
   const data = page(id);
-  const certificates = page("presentation").certifications.certificates;
   const photos = `<section class="section site-photos-section"><div class="container"><div class="site-photos">${data.photos.map(item => `<figure data-reveal>${picture(item.image, item.caption)}<figcaption>${esc(item.caption)}</figcaption></figure>`).join("")}</div></div></section>`;
-  const certification = `<section class="section certification-links"><div class="container" data-reveal><h2>${esc(data.certifications.title)}</h2><p>${esc(data.certifications.body)}</p><div class="certificate-links">${certificates.map(item => `<a class="text-link" href="${esc(localURL(content.images[item.image]))}" target="_blank" rel="noopener">${esc(item.title)}${icon("Download")}</a>`).join("")}</div></div></section>`;
-  const partners = `<section class="section partners-section"><div class="container partners-layout"><div data-reveal><h2>${esc(data.partners.title)}</h2><p>${esc(data.partners.body)}</p></div><figure data-reveal>${picture(data.partners.image, data.partners.alt)}</figure></div></section>`;
-  return `${pageHero(id)}${subTabs(id)}${photos}${sites(data.sites)}${certification}${partners}`;
+  return `${pageTop(id)}${photos}${sites(data.sites)}`;
 }
 
 function offer() {
-  return `${pageHero("offre")}<section class="section"><div class="container">${offerCards(true)}</div></section>${offerSupport()}`;
+  return `${pageTop("offre")}<section class="section"><div class="container">${offerCards(true)}</div></section>${offerSupport()}`;
 }
 
 function marketsIndex() {
-  return `${pageHero("marches")}<section class="section"><div class="container">${marketCards(true)}</div></section>${submitBlock(page("marches").submit)}`;
+  return `${pageTop("marches")}<section class="section"><div class="container">${marketCards(true)}</div></section>${submitBlock(page("marches").submit)}`;
 }
 
+// Défense : le déroulé de la plaquette (photo de couverture, protection, applications, composants, proposition de valeur, conclusion).
 function defensePage() {
   const id = "defense";
   const data = page(id);
   const products = data.products;
-  const capabilities = `<section class="section site-capabilities"><div class="container">${heading(t("ui.expertise"), data.site.title, "")}<div class="capability-columns">${data.site.columns.map(column => `<div data-reveal><h3>${esc(column.title)}</h3>${column.intro ? `<p>${esc(column.intro)}</p>` : ""}${bulletList(column.points)}</div>`).join("")}</div></div></section>`;
   const system = data.protection.system;
-  const protection = `<section class="section protection-section"><div class="container">${heading(data.protection.eyebrow, data.protection.title, data.protection.body)}<div class="armour-system" data-reveal><figure>${picture(system.image, system.alt)}</figure><div><h3>${esc(system.title)}</h3><ol>${system.steps.map((step, i) => `<li><span>${i + 1}</span><div><strong>${esc(step.title)}</strong><p>${esc(step.body)}</p></div></li>`).join("")}</ol></div></div></div></section>`;
-  const parts = `<section class="section"><div class="container">${heading(products.title, t("ballistic.title"), products.intro)}<div class="ballistic-gallery">${t("ballistic.products").map((product, i) => `<figure data-reveal>${picture(["ballisticTiles", "defense", "multiCurvature"][i], product.title)}<figcaption><h3>${esc(product.title)}</h3><p>${esc(product.body)}</p></figcaption></figure>`).join("")}</div><div class="material-chips" data-reveal><span>${esc(products.materialsTitle)}</span><ul>${products.materials.map(item => `<li>${esc(item)}</li>`).join("")}</ul></div></div></section>`;
-  const levels = `<section class="section levels-section"><div class="container statement-layout" data-reveal><h2>${esc(data.levels.title)}</h2><p>${esc(data.levels.body)}</p></div></section>`;
-  const value = `<section class="section"><div class="container">${heading(title(id), data.value.title, "")}<div class="capability-grid">${data.value.items.map((item, i) => `<article data-reveal><span>${String(i + 1).padStart(2, "0")}</span><h3>${esc(item.title)}</h3><p>${esc(item.body)}</p></article>`).join("")}</div></div></section>`;
-  const quote = `<section class="section statement-section"><div class="container statement-layout" data-reveal><blockquote><p>« ${esc(data.quote.body)} »</p><footer><strong>${esc(data.quote.author)}</strong><span>${esc(data.quote.role)}</span></footer></blockquote></div></section>`;
+  const protection = `<section class="section protection-section"><div class="container">${heading(data.protection.eyebrow, data.protection.title, data.protection.body)}<div class="armour-system" data-reveal>${slotFigure(system.ref, system.alt)}<div><h3>${esc(system.title)}</h3><ol>${system.steps.map((step, i) => `<li><span>${i + 1}</span><div><strong>${esc(step.title)}</strong><p>${esc(step.body)}</p></div></li>`).join("")}</ol></div></div></div></section>`;
+  const applications = `<section class="section application-section"><div class="container"><p class="eyebrow">${esc(t("ui.applications"))}</p><div class="defense-apps">${data.applications.map(item => `<article data-reveal>${slotFigure(item.ref, item.title)}<h3>${esc(item.title)}</h3>${bulletList(item.points)}</article>`).join("")}</div></div></section>`;
+  const parts = `<section class="section"><div class="container">${heading(products.title, t("ballistic.title"), products.intro)}<div class="ballistic-gallery">${t("ballistic.products").map(product => `<article data-reveal>${slotFigure(product.ref, product.title)}<div><h3>${esc(product.title)}</h3><p>${esc(product.body)}</p></div></article>`).join("")}</div><div class="material-chips" data-reveal><span>${esc(products.materialsTitle)}</span><ul>${products.materials.map(item => `<li>${esc(item)}</li>`).join("")}</ul></div></div></section>`;
+  const value = `<section class="section"><div class="container">${heading(title(id), data.value.title, "")}<div class="capability-grid is-large">${data.value.items.map((item, i) => `<article data-reveal><span>${String(i + 1).padStart(2, "0")}</span><h3>${esc(item.title)}</h3><p>${esc(item.body)}</p></article>`).join("")}</div></div></section>`;
   const closing = `<section class="section closing-section"><div class="container closing-layout" data-reveal><div><h2>${esc(data.closing.title)}</h2><p>${esc(data.closing.body)}</p></div><div class="closing-actions">${link("contact", esc(data.closing.button), "button primary", true)}<a class="text-link" href="${localURL("assets/protection-balistique.pdf")}" target="_blank" rel="noopener">${esc(t("ui.downloadBrochure"))}${icon("Download")}</a></div></div></section>`;
-  return `${pageHero(id)}${subTabs(id)}${metrics(data.metrics)}${capabilities}${protection}${applicationGroups(data.applications)}${parts}${levels}${value}${mediaGallery(data.tests)}${quote}${closing}`;
+  return `${pageTop(id)}${protection}${applications}${parts}${value}${closing}`;
 }
 
 function watchPage() {
   const id = "horlogerie";
   const data = page(id);
-  const galleries = `<section class="section strips-section"><div class="container">${data.galleries.map(photoStrip).join("")}<p class="strip-note">${esc(t("ui.illustration"))}</p></div></section>`;
-  return `${pageHero(id)}${subTabs(id)}<section class="section detail-content"><div class="container detail-layout text-only">${sections(data.blocks)}</div></section>${galleries}`;
+  return `${pageTop(id)}<section class="section points-section"><div class="container">${points(data.blocks)}<p class="strip-note">${esc(t("ui.illustration"))}</p></div></section>`;
 }
 
 function industryPage() {
   const id = "industrie";
   const data = page(id);
-  const showcase = `<section class="section showcase-section"><div class="container">${heading(t("ui.applications"), data.showcase.title, "")}<div class="showcase-grid">${data.showcase.items.map(item => `<figure data-reveal>${picture(item.image, `${item.sector} : ${item.part}`)}<figcaption><strong>${esc(item.sector)}</strong><span>${esc(item.part)}</span></figcaption></figure>`).join("")}</div></div></section>`;
-  return `${pageHero(id)}${subTabs(id)}${overviewBlock(data.overview)}${showcase}${applicationGroups(data.applications)}${submitBlock(data.submit)}`;
+  return `${pageTop(id)}<section class="section points-section"><div class="container"><div class="steps-heading" data-reveal><p class="eyebrow">${esc(t("ui.applications"))}</p><h2>${esc(data.applicationsTitle)}</h2></div>${points(data.applications)}</div></section>${submitBlock(data.submit)}`;
 }
 
 function materialIndex() {
   const data = page("materiaux");
-  return `${pageHero("materiaux")}<section class="section"><div class="container">${sections(data.sections)}<div class="material-index">${materials.map((id, i) => link(id, `<span class="material-formula">${chemistry[i]}</span><div><span class="material-id">0${i + 1}</span><h2>${esc(title(id))}</h2><p>${esc(page(id).intro)}</p></div>${icon("ArrowUpRight")}`, "material-row")).join("")}</div><div class="other-materials" data-reveal><h2>${esc(data.other.title)}</h2><p>${esc(data.other.body)}</p></div></div></section>`;
+  const props = data.properties;
+  const rows = materials.map((id, i) => link(id, `<div class="material-thumb">${slotFigure(`MAT-0${i + 1}`)}</div><div><span class="material-id">0${i + 1}</span><h2>${esc(title(id))}</h2><p>${esc(page(id).summary)}</p></div>${icon("ArrowUpRight")}`, "material-row")).join("");
+  return `${pageTop("materiaux")}<section class="section"><div class="container"><div class="properties-block" data-reveal><h2>${esc(props.title)}</h2>${props.paragraphs.map(text => `<p>${esc(text)}</p>`).join("")}<ul class="property-chips">${props.chips.map(chip => `<li>${esc(chip)}</li>`).join("")}</ul></div><div class="material-index">${rows}</div></div></section>`;
+}
+
+// Une page de matériau reprend les éléments de l'ancien site : texte, avantages, applications, vignette de la structure, tableau.
+function materialBlock(block) {
+  const advantages = block.advantages ? `<p class="material-label">${esc(block.advantages.title)}</p><p>${esc(block.advantages.body)}</p>` : "";
+  const applications = block.applications ? `<h3>${esc(block.applications.title)}</h3>${bulletList(block.applications.points)}` : "";
+  return `<article class="material-block" data-reveal><div class="material-text">${block.heading ? `<h2>${esc(block.heading)}</h2>` : ""}${block.subtitle ? `<p class="material-subtitle">${esc(block.subtitle)}</p>` : ""}${(block.description || []).map(text => `<p>${esc(text)}</p>`).join("")}${advantages}${applications}</div><div class="material-media">${slotFigure(block.ref)}</div></article>`;
+}
+
+const propertyGroup = i => (i < 3 ? 0 : i < 8 ? 1 : i === 8 ? 2 : 3);
+
+function propertiesTable(id, heading) {
+  const table = content.materialTables[id];
+  const units = ["%", "g/cm³", "%", "", "MPa·m½", "GPa", "MPa", "m/s", "W·m⁻¹·K⁻¹", "Ω·cm"];
+  const groups = t("ui.propertyGroups");
+  const number = value => (lang === "fr" ? value.replaceAll(".", ",") : value);
+  const rows = table.values.map((values, i) => `<tr><td class="group-cell">${i === 0 || propertyGroup(i) !== propertyGroup(i - 1) ? esc(groups[propertyGroup(i)]) : ""}</td><th scope="row">${esc(t("ui.propertyLabels")[i])}</th><td>${esc(units[i])}</td>${values.map(value => `<td>${esc(number(value))}</td>`).join("")}</tr>`).join("");
+  return `<section class="section material-table-section"><div class="container"><h2 class="table-heading">${esc(heading)}</h2><div class="table-scroll" role="region" aria-label="${esc(heading)}" tabindex="0"><table class="property-table"><thead><tr><th scope="col">${esc(t("ui.characteristics"))}</th><th scope="col">${esc(t("ui.property"))}</th><th scope="col">${esc(t("ui.unit"))}</th>${table.grades.map(grade => `<th scope="col">${esc(grade === "Porcelaine" ? title(id) : grade)}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></div></div></section>`;
 }
 
 function materialDetail(id) {
   const data = page(id);
-  const table = content.materialTables[id];
-  const units = ["%", "g/cm³", "%", "", "MPa·m½", "GPa", "MPa", "m/s", "W·m⁻¹·K⁻¹"];
-  return `${pageHero(id)}<nav class="material-tabs" aria-label="${esc(t("ui.materials"))}"><div class="container">${materials.map(item => link(item, esc(title(item)), item === id ? "active" : "")).join("")}</div></nav><section class="section"><div class="container"><div class="material-formula material-heading-formula">${chemistry[materials.indexOf(id)]}</div><div class="material-editorial"><div>${sections(data.sections)}</div><aside class="application-list"><h3>${lang === "fr" ? "Applications industrielles" : "Industrial applications"}</h3>${bulletList(data.points)}</aside></div><h2 class="table-heading">${esc(t("ui.properties"))}</h2><div class="table-scroll" role="region" aria-label="${esc(t("ui.properties"))}" tabindex="0"><table><thead><tr><th scope="col">${esc(t("ui.property"))}</th><th scope="col">${esc(t("ui.unit"))}</th>${table.grades.map(grade => `<th scope="col">${esc(grade === "Porcelaine" ? title(id) : grade)}</th>`).join("")}</tr></thead><tbody>${table.values.map((values, i) => `<tr><th scope="row">${esc(t("ui.propertyLabels")[i])}</th><td>${esc(units[i])}</td>${values.map(value => `<td>${esc(value === "Selon grade" ? (lang === "fr" ? value : "Grade-dependent") : lang === "fr" ? value.replaceAll(".", ",") : value)}</td>`).join("")}</tr>`).join("")}</tbody></table></div><p class="technical-note">${esc(t("ui.tableNote"))}</p></div></section>`;
+  const tabs = `<nav class="material-tabs" aria-label="${esc(t("ui.materials"))}"><div class="container">${materials.map(item => link(item, esc(title(item)), item === id ? "active" : "")).join("")}</div></nav>`;
+  return `${pageHero(id)}${tabs}${pageIntro(id)}<section class="section material-section"><div class="container">${data.blocks.map(materialBlock).join("")}</div></section>${propertiesTable(id, data.tableTitle)}`;
 }
 
 function news() {
   const id = "actualites";
   const data = page(id);
   const agenda = data.agenda;
-  return `${pageHero(id)}<section class="section"><div class="container">${comparisonTable(agenda)}</div></section><section class="section publication-section"><div class="container"><article class="publication" data-reveal><div class="publication-image">${picture("defense", title("defense"))}</div><div><p class="eyebrow">${esc(data.publication.eyebrow)}</p><h2>${esc(data.publication.title)}</h2><p>${esc(data.publication.body)}</p><a class="button primary" href="${localURL("assets/protection-balistique.pdf")}" target="_blank" rel="noopener">${esc(t("ui.downloadBrochure"))}${icon("Download")}</a></div></article></div></section>`;
+  return `${pageTop(id)}<section class="section"><div class="container">${comparisonTable(agenda)}</div></section><section class="section publication-section"><div class="container"><article class="publication" data-reveal><div class="publication-image">${picture("defense", title("defense"))}</div><div><p class="eyebrow">${esc(data.publication.eyebrow)}</p><h2>${esc(data.publication.title)}</h2><p>${esc(data.publication.body)}</p><a class="button primary" href="${localURL("assets/protection-balistique.pdf")}" target="_blank" rel="noopener">${esc(t("ui.downloadBrochure"))}${icon("Download")}</a></div></article></div></section>`;
 }
 
 function contactBand() {
@@ -285,7 +336,7 @@ function contactBand() {
 
 function contact() {
   const settings = content.settings;
-  return `${pageHero("contact")}<section class="section contact-section"><div class="container contact-layout"><div class="contact-copy" data-reveal><h2>${esc(t("ui.contactDetails"))}</h2><p>${esc(t("ui.contactIntro"))}</p><a class="button primary" href="mailto:${esc(settings.contactEmail)}?subject=${encodeURIComponent(t("ui.contactSubject"))}">${esc(get("contact.button"))}${icon("Mail")}</a></div><div class="contact-details" data-reveal><div>${icon("Mail")}<div><span>${esc(t("ui.email"))}</span><a href="mailto:${esc(settings.contactEmail)}">${esc(settings.contactEmail)}</a></div></div><div>${icon("Phone")}<div><span>${esc(t("ui.phone"))}</span><a href="tel:${esc(settings.contactPhone.replace("(0)", "").replace(/[^+\d]/g, ""))}">${esc(settings.contactPhone)}</a></div></div><div>${icon("MapPin")}<div><span>${esc(t("ui.address"))}</span><p>${esc(settings.address)}</p></div></div></div></div></section><section class="contact-photo">${picture("industrial", lang === "fr" ? "La manufacture Bernardaud à Limoges" : "The Bernardaud manufacture in Limoges")}</section>`;
+  return `${pageTop("contact")}<section class="section contact-section"><div class="container contact-layout"><div class="contact-copy" data-reveal><h2>${esc(t("ui.contactDetails"))}</h2><p>${esc(t("ui.contactIntro"))}</p><a class="button primary" href="mailto:${esc(settings.contactEmail)}?subject=${encodeURIComponent(t("ui.contactSubject"))}">${esc(get("contact.button"))}${icon("Mail")}</a></div><div class="contact-details" data-reveal><div>${icon("Mail")}<div><span>${esc(t("ui.email"))}</span><a href="mailto:${esc(settings.contactEmail)}">${esc(settings.contactEmail)}</a></div></div><div>${icon("Phone")}<div><span>${esc(t("ui.phone"))}</span><a href="tel:${esc(settings.contactPhone.replace("(0)", "").replace(/[^+\d]/g, ""))}">${esc(settings.contactPhone)}</a></div></div><div>${icon("MapPin")}<div><span>${esc(t("ui.address"))}</span><p>${esc(settings.address)}</p></div></div></div></div></section><section class="contact-photo">${picture("industrial", lang === "fr" ? "La manufacture Bernardaud à Limoges" : "The Bernardaud manufacture in Limoges")}</section>`;
 }
 
 function renderFooter() {
@@ -311,7 +362,7 @@ function renderRoute() {
   if (id === "industrie") return industryPage();
   if (id === "actualites") return news();
   if (id === "contact") return contact();
-  if (id === "confidentialite") return `${pageHero(id)}<section class="section container">${sections(page(id).sections)}<button type="button" class="button primary" data-cookie-settings>${esc(t("ui.cookieSettings"))}</button></section>`;
+  if (id === "confidentialite") return `${pageTop(id)}<section class="section container">${sections(page(id).sections)}<button type="button" class="button primary" data-cookie-settings>${esc(t("ui.cookieSettings"))}</button></section>`;
   return `<section class="section container not-found"><h1>${esc(t("ui.notFound"))}</h1>${link("home", esc(t("ui.backHome")), "button primary", true)}</section>`;
 }
 
@@ -425,8 +476,26 @@ function render() {
   document.querySelectorAll('a[href="/assets/protection-balistique.pdf"]').forEach(anchor => { anchor.href = localURL("assets/protection-balistique.pdf"); });
   cookieBanner();
   bindHeader();
+  applySlotStyles();
   initMotion();
   updateScroll();
+}
+
+// Cadrage des photos : lu dans content.slots (data-ratio, data-pos), appliqué ici plutôt qu'en style en ligne.
+function applySlotStyles() {
+  document.querySelectorAll("[data-ratio]").forEach(node => node.style.setProperty("--ratio", node.dataset.ratio));
+  document.querySelectorAll("[data-pos]").forEach(node => node.style.setProperty("--pos", node.dataset.pos));
+}
+
+// ?reperes=1 affiche le nom de chaque photo (retenu dans ce navigateur), ?reperes=0 l'efface.
+function applyReperes() {
+  try {
+    const asked = new URLSearchParams(location.search).get("reperes");
+    if (asked !== null) localStorage.setItem("bsi_reperes", asked === "0" ? "0" : "1");
+    document.documentElement.dataset.reperes = localStorage.getItem("bsi_reperes") === "1" ? "on" : "";
+  } catch {
+    document.documentElement.dataset.reperes = "";
+  }
 }
 
 document.addEventListener("click", event => {
@@ -486,8 +555,10 @@ async function load() {
     content = await response.json();
     const saved = localStorage.getItem("bsi_lang");
     lang = ["fr", "en"].includes(saved) ? saved : navigator.language?.startsWith("en") ? "en" : content.settings.defaultLang;
+    applyReperes();
     render();
-  } catch {
+  } catch (error) {
+    console.error(error);
     document.querySelector("#app").innerHTML = '<section class="section container not-found"><h1>Le contenu n’a pas pu être chargé.</h1><button class="button primary" type="button" id="retryLoad">Réessayer</button></section>';
     document.querySelector("#retryLoad").addEventListener("click", load);
   }

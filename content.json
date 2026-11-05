@@ -10,7 +10,7 @@
   "images": {
     "logo": "/assets/logo-bsi.webp",
     "stamp": "/assets/logo-bsi-estampille.webp",
-    "hero": "/assets/injection-arburg.webp",
+    "hero": "/assets/usine-oradour-vue-aerienne.webp",
     "history": "/assets/dessin-manufacture.webp",
     "industrial": "/assets/manufacture-aerienne.webp",
     "defense": "/assets/ballistic-2.png",
@@ -92,15 +92,18 @@
         "products": [
           {
             "title": "Carreaux, hexagones et pellets",
-            "body": "Éléments céramiques pour les architectures de protection modulaires."
+            "body": "Éléments céramiques pour les architectures de protection modulaires.",
+            "ref": "DEF-PIECE-1"
           },
           {
             "title": "Plaques monolithiques",
-            "body": "Format 250 × 300 mm, épaisseurs de 3,5 à 12 mm selon le développement."
+            "body": "Format 250 × 300 mm, épaisseurs de 3,5 à 12 mm selon le développement.",
+            "ref": "DEF-PIECE-2"
           },
           {
             "title": "Pièces multi-courbures",
-            "body": "Formes complexes étudiées pour l’intégration et l’ergonomie du système."
+            "body": "Formes complexes étudiées pour l’intégration et l’ergonomie du système.",
+            "ref": "DEF-PIECE-3"
           }
         ]
       },
@@ -119,12 +122,11 @@
         "materials": "Matériaux",
         "properties": "Propriétés indicatives",
         "property": "Propriété",
-        "unit": "Unité",
+        "unit": "Unités",
         "quality": "Qualité & environnement",
         "process": "Du premier essai à la série",
         "processIntro": "Un accompagnement continu, avec un interlocuteur à chaque étape de votre développement.",
         "sites": "Quatre sites de production",
-        "sitesIntro": "Production céramique, impression, décoration et logistique en Haute-Vienne.",
         "admin": "Administration",
         "privacy": "Confidentialité",
         "cookieSettings": "Préférences cookies",
@@ -150,7 +152,8 @@
           "Module de Young",
           "Résistance à la flexion",
           "Vitesse ultrasonique",
-          "Conductivité thermique"
+          "Conductivité thermique",
+          "Résistivité"
         ],
         "sections": [
           "Présentation",
@@ -161,19 +164,26 @@
         ],
         "steps": "Maîtrise en {n} étapes",
         "certificates": "Certificats",
-        "versionLabel": "Version 2 · après première relecture (novembre 2026)",
+        "versionLabel": "Version 3 · retours du 4 novembre 2026, en cours (novembre 2026)",
         "illustration": "Visuel d’illustration généré par IA",
         "submitCta": "Écrire à BSI",
-        "downloadBrochure": "Consulter la brochure · PDF (en anglais)"
+        "downloadBrochure": "Consulter la brochure · PDF (en anglais)",
+        "photoToChoose": "Photo à choisir",
+        "characteristics": "Caractéristiques",
+        "propertyGroups": [
+          "Intrinsèques",
+          "Mécaniques",
+          "Thermiques",
+          "Électriques"
+        ]
       },
       "home": {
         "eyebrow": "Limoges, France · Depuis 1863",
         "title": "Bernardaud",
         "subtitle": "Solutions industrielles",
         "intro": "Bernardaud Solutions Industrielles regroupe des activités de céramiques techniques, d’imprimerie sérigraphique, de traitement de surface et de décoration. Ces moyens peuvent être mobilisés du prototype à la production en série.",
-        "primary": "Offre",
-        "secondary": "Contact",
-        "caption": "Injection céramique",
+        "primary": "Contact",
+        "caption": "Site d’Oradour-sur-Glane",
         "scroll": "Découvrir BSI",
         "offerTitle": "Trois expertises",
         "offerIntro": "Bernardaud Solutions Industrielles intervient de l’étude et du prototype jusqu’à la production en série. Nos différents procédés peuvent être utilisés séparément ou combinés sur un même projet industriel.",
@@ -210,47 +220,66 @@
               "body": "Depuis 1863 Bernardaud exploite quatre sites de production en Haute-Vienne regroupant des activités de fabrication céramique, sérigraphie, décoration et traitement de surface, dans le cadre de systèmes de management certifiés ISO 9001 et ISO 14001. Entreprise familiale depuis six générations, Bernardaud associe une production intégrée en Haute-Vienne à une présence commerciale internationale.",
               "paragraphs": [
                 "La famille Bernardaud reste directement impliquée dans la direction et les activités du groupe, ce qui favorise une prise de décision rapide et des investissements industriels de long terme."
+              ],
+              "refs": [
+                "PRES-01"
               ]
             },
             {
               "title": "Des procédés complémentaires",
-              "body": "Céramiques techniques, sérigraphie, décoration et traitement de surface peuvent être utilisés séparément ou combinés sur un même projet industriel."
+              "body": "Céramiques techniques, sérigraphie, décoration et traitement de surface peuvent être utilisés séparément ou combinés sur un même projet industriel.",
+              "refs": [
+                "PRES-02"
+              ]
             },
             {
               "title": "Une production intégrée",
-              "body": "60 000 m² d’installations industrielles et 750 collaborateurs, ouvriers, ingénieurs et chercheurs, réunis sur quatre sites en Haute-Vienne."
+              "body": "60 000 m² d’installations industrielles et 750 collaborateurs, ouvriers, ingénieurs et chercheurs, réunis sur quatre sites en Haute-Vienne.",
+              "refs": [
+                "PRES-03"
+              ]
             },
             {
               "title": "Une présence internationale",
-              "body": "Bernardaud est présent en Chine, au Japon et aux États-Unis. 75 % des ventes sont réalisées à l’export."
+              "body": "Bernardaud est présent en Chine, au Japon et aux États-Unis. 75 % des ventes sont réalisées à l’export.",
+              "refs": [
+                "PRES-04"
+              ]
+            },
+            {
+              "title": "ISO 9001 et ISO 14001",
+              "body": "Les sites de production sont certifiés ISO 9001 pour le management de la qualité et ISO 14001 pour le management environnemental. La démarche RSE fait l’objet d’une évaluation EcoVadis.",
+              "refs": [
+                "PRES-05"
+              ],
+              "certificates": true
+            },
+            {
+              "title": "Un écosystème local de recherche et développement",
+              "body": "Implantée au sein du pôle européen de la céramique à Limoges, Bernardaud Solutions Industrielles s’appuie sur un environnement qui associe recherche, transfert de technologies et expertise industrielle.",
+              "paragraphs": [
+                "En complément des moyens internes, Bernardaud Solutions Industrielles travaille avec l’IRCER (Institut de recherche sur les céramiques), le CTTC (Centre de transfert de technologies céramiques), le CITRA (traitements de surface) et le CEDREM, pour les phases de recherche, de caractérisation et de développement."
+              ],
+              "refs": [
+                "PRES-06"
+              ]
             }
           ],
-          "certifications": {
-            "title": "ISO 9001 et ISO 14001",
-            "body": "Les sites de production sont certifiés ISO 9001 pour le management de la qualité et ISO 14001 pour le management environnemental. La démarche RSE fait l’objet d’une évaluation EcoVadis.",
-            "logo": "isoLogo",
-            "logoAlt": "SOCOTEC Certification : ISO 9001 et ISO 14001, certifié",
-            "certificates": [
-              {
-                "image": "isoCert9001",
-                "title": "Certificat ISO 9001:2015"
-              },
-              {
-                "image": "isoCert14001",
-                "title": "Certificat ISO 14001:2015"
-              }
-            ]
-          },
-          "research": {
-            "title": "Un écosystème local de recherche et développement",
-            "body": "Implantée au sein du pôle européen de la céramique à Limoges, Bernardaud Solutions Industrielles s’appuie sur un environnement qui associe recherche, transfert de technologies et expertise industrielle.",
-            "image": "laboratory",
-            "alt": "Microscope du laboratoire Bernardaud"
-          }
+          "ref": "PRES",
+          "certificates": [
+            {
+              "image": "isoCert9001",
+              "title": "Certificat ISO 9001:2015"
+            },
+            {
+              "image": "isoCert14001",
+              "title": "Certificat ISO 14001:2015"
+            }
+          ]
         },
         "offre": {
           "title": "Offre",
-          "intro": "Bernardaud Solutions Industrielles regroupe quatre activités : céramiques techniques, imprimerie sérigraphique, décoration et traitements de surface, ainsi que développements industriels spécifiques. Ces capacités peuvent être mobilisées séparément ou conjointement, du prototype à la production en série.",
+          "intro": "Bernardaud Solutions Industrielles regroupe trois activités : céramiques techniques, imprimerie sérigraphique et traitements de surface. Ces capacités peuvent être mobilisées séparément ou conjointement, du prototype à la production en série.",
           "items": [
             {
               "title": "Céramiques techniques",
@@ -273,11 +302,14 @@
         },
         "ceramiques-techniques": {
           "title": "Céramiques techniques",
-          "intro": "Bernardaud Solutions Industrielles développe et fabrique sur cahier des charges des pièces en céramiques techniques, du prototype à la série. Les capacités couvrent le choix et la mise au point des matières, quatre procédés de mise en forme (pressage, injection, coulage, calibrage), ainsi que le déliantage, le frittage, la finition et le contrôle des pièces.",
+          "intro": "Bernardaud Solutions Industrielles développe et fabrique sur cahier des charges des pièces en céramiques techniques, du prototype à la série. Nos capacités couvrent le choix et la mise au point des matières, plusieurs procédés de mise en forme (pressage, injection, coulage, calibrage) ainsi que le déliantage, le frittage, la finition et le contrôle des pièces.",
           "steps": [
             {
               "title": "Définition de la matière première",
-              "body": "Sélection et mise au point de la formulation selon les propriétés recherchées, le procédé de mise en forme et les contraintes de la pièce."
+              "body": "Sélection et mise au point de la formulation selon les propriétés recherchées, le procédé de mise en forme et les contraintes de la pièce.",
+              "refs": [
+                "CERAM-01"
+              ]
             },
             {
               "title": "Mise en forme",
@@ -290,293 +322,101 @@
                 "Coulage sous pression robotisé",
                 "Calibrage",
                 "Impression 3D"
+              ],
+              "refs": [
+                "CERAM-02"
               ]
             },
             {
               "title": "Densification",
               "body": "Maîtrise des cycles de déliantage, cuisson et frittage pour obtenir les propriétés mécaniques, dimensionnelles et de densité attendues.",
-              "points": [
-                "Déliantage thermique ou en milieu aqueux, selon la formulation",
-                "Fours électriques, gaz et tunnels gaz, de 980 à 1 700 °C",
-                "Fours jusqu’à 15 m³",
-                "Frittage laser pour des applications spécifiques, selon étude technique"
+              "refs": [
+                "CERAM-03"
               ]
             },
             {
               "title": "Post-traitement",
               "body": "Usinage, polissage et finitions de surface pour atteindre les dimensions, états de surface et niveaux de précision requis.",
-              "points": [
-                "Découpe jet d’eau",
-                "Finition robotisée"
+              "refs": [
+                "CERAM-04"
               ]
             },
             {
               "title": "Ajout de fonctions",
-              "body": "Intégration de traitements, revêtements, décors, marquages, interfaces ou assemblages selon l’usage final de la pièce."
+              "body": "Intégration de traitements, revêtements, décors, marquages, interfaces ou assemblages complémentaires selon l’usage final de la pièce.",
+              "refs": [
+                "CERAM-05"
+              ]
             },
             {
               "title": "Contrôles qualité",
-              "body": "Contrôles dimensionnels, visuels et fonctionnels définis selon le cahier des charges, avec suivi de la conformité des pièces avant mise en série ou livraison."
-            }
-          ],
-          "maturity": {
-            "title": "Tous les niveaux de maturité technologique",
-            "body": "Bernardaud Solutions Industrielles intervient à tous les niveaux de maturité technologique, des premiers TRL consacrés à la faisabilité et à la preuve de concept jusqu’aux phases de qualification, d’industrialisation et de production en série. Cette continuité permet de suivre un même projet depuis les premiers essais matière et prototypes jusqu’à un procédé de fabrication stabilisé et répétable."
-          },
-          "metrics": [
-            {
-              "value": "24",
-              "label": "fours de grande capacité"
-            },
-            {
-              "value": "1 700 °C",
-              "label": "température maximale"
-            },
-            {
-              "value": "15 m³",
-              "label": "volume maximal de four"
-            }
-          ],
-          "gallery": {
-            "title": "Parc machines",
-            "intro": "Injection, coulage sous pression robotisé, découpe jet d’eau, finition robotisée et fours de cuisson, à Oradour-sur-Glane.",
-            "items": [
-              {
-                "image": "ceramicInjection",
-                "title": "Injection céramique (CIM)",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "ceramicRobot",
-                "title": "Coulage sous pression robotisé",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "ceramicPress",
-                "title": "Équipement de production",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "ceramicWorkshop",
-                "title": "Atelier de production",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "ceramicWaterjet",
-                "title": "Découpe jet d’eau",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "ceramicFinishing",
-                "title": "Finition robotisée",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "kiln1",
-                "title": "Four de cuisson",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "kiln2",
-                "title": "Four de cuisson",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "kiln3",
-                "title": "Four de cuisson",
-                "credit": "Bernardaud"
-              }
-            ]
-          },
-          "comparison": {
-            "title": "Choisir le procédé de mise en forme",
-            "headings": [
-              "Procédé",
-              "Atouts",
-              "Pièces types"
-            ],
-            "rows": [
-              [
-                "Coulage",
-                "Liberté de forme, parois fines",
-                "Pièces creuses ou de volume"
-              ],
-              [
-                "Calibrage",
-                "Cadence, régularité de surface",
-                "Pièces de révolution"
-              ],
-              [
-                "Pressage uniaxial · 50 t",
-                "Densification, répétabilité",
-                "Plaques et composants plats"
-              ],
-              [
-                "Injection · CIM",
-                "Complexité, précision, série",
-                "Petits composants techniques"
+              "body": "Contrôles dimensionnels, visuels et fonctionnels définis selon le cahier des charges, avec suivi de la conformité des pièces avant mise en série ou livraison.",
+              "refs": [
+                "CERAM-06"
               ]
-            ]
-          }
+            }
+          ],
+          "ref": "CERAM",
+          "introExtra": [
+            "Bernardaud Solutions Industrielles intervient à tous les niveaux de maturité technologique, des premiers TRL consacrés à la faisabilité et à la preuve de concept jusqu’aux phases de qualification, d’industrialisation et de production en série. Cette continuité permet d’accompagner un même projet depuis les premiers essais matière et prototypes jusqu’à un procédé de fabrication stabilisé et répétable."
+          ]
         },
         "serigraphie": {
           "title": "Imprimerie sérigraphique",
-          "intro": "Conception et impression sérigraphique, pour des applications industrielles et décoratives.",
-          "overview": [
-            "Bernardaud Solutions Industrielles conçoit et imprime des chromos pour des applications esthétiques ou fonctionnelles. L’imprimerie intègre une équipe d’infographie et de développement dédiée à la préparation des fichiers, à la séparation des couleurs, à la mise au point des teintes et au choix du procédé d’impression.",
-            "Les équipements impriment des motifs simples comme des décors complexes, avec des finitions spécifiques : dégradés maîtrisés, effets de matière, textures, superpositions de couleurs, dépôts techniques."
-          ],
+          "intro": "Bernardaud Solutions Industrielles conçoit et imprime des chromos pour des applications esthétiques ou fonctionnelles, sur une grande variété de supports. L’imprimerie intègre une équipe d’infographie et de développement dédiée à la préparation des fichiers, à la séparation des couleurs, à la mise au point des teintes et au choix du procédé d’impression.",
           "steps": [
             {
               "title": "Définition du besoin et préparation graphique",
-              "body": "Analyse du support, du motif, des contraintes esthétiques ou fonctionnelles et des volumes à produire. L’équipe d’infographie prépare les fichiers, réalise la séparation des couleurs et adapte le dessin au procédé d’impression retenu."
+              "body": "Analyse du support, du motif, des contraintes esthétiques ou fonctionnelles et des volumes à produire. L’équipe d’infographie prépare les fichiers, réalise la séparation des couleurs et adapte le dessin au procédé d’impression retenu.",
+              "refs": [
+                "SERI-01"
+              ]
             },
             {
               "title": "Développement des encres et des couleurs",
-              "body": "Mise au point des teintes, des formulations et des niveaux de dépôt en fonction du support (céramique, cristal, métal, verre), du rendu recherché et des contraintes de cuisson ou d’utilisation."
+              "body": "Mise au point des teintes, des formulations et des niveaux de dépôt en fonction du support (céramique, cristal, métal, verre), du rendu recherché et des contraintes de cuisson ou d’utilisation.",
+              "refs": [
+                "SERI-02"
+              ]
             },
             {
               "title": "Choix du procédé d’impression",
-              "body": "Sélection de la technologie la plus adaptée au support, à la finesse recherchée, au nombre de couleurs et aux volumes.",
-              "points": [
-                "Sérigraphie à plat",
-                "Sérigraphie rotative",
-                "Impression de chromos",
-                "Impression numérique",
-                "Jet d’encre sérigraphique indirect"
+              "body": "Sélection de la technologie la plus adaptée au support, à la finesse recherchée, au nombre de couleurs et aux volumes : sérigraphie à plat, sérigraphie rotative, impression de chromos, impression numérique, jet d’encre indirect ou autres procédés techniques disponibles dans l’imprimerie.",
+              "refs": [
+                "SERI-03"
               ]
             },
             {
               "title": "Préparation et impression",
-              "body": "Préparation des écrans et réglage des paramètres d’impression : dépôt, repérage, superposition des couleurs et régularité du motif."
+              "body": "Préparation des écrans et réglage des paramètres d’impression : dépôt, repérage, superposition des couleurs et régularité du motif.",
+              "refs": [
+                "SERI-04"
+              ]
             },
             {
               "title": "Contrôles qualité",
-              "body": "Contrôle des couleurs, du repérage, de la finesse du motif, de l’homogénéité des dépôts et de la répétabilité entre séries."
-            }
-          ],
-          "creative": {
-            "title": "Création graphique et colorimétrie",
-            "intro": "Le dessin, la séparation des couleurs et les formulations sont développés ensemble avant le passage en production.",
-            "items": [
-              {
-                "title": "Création artistique et DAO",
-                "body": "Les équipes graphiques conçoivent les décors et préparent leur séparation pour une reproduction adaptée au procédé industriel."
-              },
-              {
-                "title": "Mise au point des couleurs",
-                "body": "Les couleurs et les frittes sont préparées et mélangées en interne, avec des essais de rendu et de répétabilité sur le support choisi."
-              },
-              {
-                "title": "Grand feu et petit feu",
-                "body": "Décors de grand feu autour de 1 200 °C et de petit feu autour de 800 °C, ainsi que les métaux précieux : or, platine et argent, selon le projet."
-              }
-            ]
-          },
-          "precision": {
-            "title": "Équipements et précision",
-            "body": "Bernardaud réalise ses propres chromos, transferts à chaud ou à froid, de la fabrication des écrans à l’impression.",
-            "metrics": [
-              {
-                "value": "1 µm",
-                "label": "précision de dépôt de l’émulsion"
-              },
-              {
-                "value": "6",
-                "label": "machines d’impression"
-              },
-              {
-                "value": "120 µm",
-                "label": "finesse de motifs"
-              }
-            ],
-            "note": "Repères d’équipements et de procédés. La finesse réalisable et la tenue du décor sont à confirmer selon le motif, le support et les conditions de production.",
-            "items": [
-              {
-                "title": "Films et écrans",
-                "body": "Préparation des films et fabrication des écrans en interne."
-              },
-              {
-                "title": "Dépôt maîtrisé",
-                "body": "Contrôle de l’émulsion pour restituer les détails."
-              },
-              {
-                "title": "Transferts à chaud et à froid",
-                "body": "Choix du chromo et de son application selon le support."
-              },
-              {
-                "title": "Production intégrée",
-                "body": "Mise au point, essais et impression en série coordonnés dans un même atelier."
-              }
-            ]
-          },
-          "digital": {
-            "title": "Jet d’encre sérigraphique indirect",
-            "body": "L’impression numérique par jet d’encre sérigraphique indirect complète la sérigraphie pour les développements graphiques et la personnalisation. Le procédé est choisi selon le décor, le support et les quantités.",
-            "image": "digitalPrinter",
-            "caption": "Équipement d’impression numérique"
-          },
-          "strips": [
-            {
-              "title": "Les couleurs",
-              "images": [
-                "screenColors1",
-                "screenColors2",
-                "screenColors3"
-              ]
-            },
-            {
-              "title": "La sérigraphie",
-              "images": [
-                "screenPrint1",
-                "screenPrint2",
-                "screenPrint3",
-                "screenPrint4"
-              ]
-            },
-            {
-              "title": "La dépose et les compléments manuels",
-              "images": [
-                "screenManual1",
-                "screenManual2"
-              ]
-            },
-            {
-              "title": "La cuisson des décors",
-              "images": [
-                "screenFiring1",
-                "screenFiring2"
+              "body": "Contrôle des couleurs, du repérage, de la finesse du motif, de l’homogénéité des dépôts et de la répétabilité entre séries.",
+              "refs": [
+                "SERI-05"
               ]
             }
           ],
-          "gallery": {
-            "title": "Du transfert au décor imprimé",
-            "intro": "Préparation et contrôle des décors dans les ateliers Bernardaud.",
-            "items": [
-              {
-                "image": "printingDetail",
-                "title": "Contrôle d’un décor sérigraphique",
-                "credit": "© OdieuxBoby / Bernardaud"
-              },
-              {
-                "image": "printedDecoration",
-                "title": "Le décor après impression",
-                "credit": "© OdieuxBoby / Bernardaud"
-              }
-            ]
-          }
+          "ref": "SERI",
+          "introExtra": [
+            "Les équipements permettent de travailler aussi bien des motifs simples que des décors complexes, avec des finitions spécifiques telles que dégradés maîtrisés, effets de matière, textures, superpositions de couleurs ou dépôts techniques."
+          ]
         },
         "traitements-de-surface": {
-          "title": "Traitements de surface et décoration",
+          "title": "Traitements de surface",
           "short": "Traitements de surface",
-          "intro": "Bernardaud Solutions Industrielles réalise des traitements de surface et des décors à finalité esthétique ou fonctionnelle. Les capacités couvrent les dépôts PVD, la pulvérisation, la décoration à la feuille et au pinceau, ainsi que la texturation et la finition de surface.",
-          "overview": [
-            "Ces procédés travaillent la couleur, la brillance, la texture, le relief, l’aspect métallique ou des propriétés fonctionnelles de surface, selon le cahier des charges du client."
-          ],
+          "intro": "Bernardaud Solutions Industrielles réalise des traitements de surface et des décors à finalité esthétique ou fonctionnelle sur différents types de supports. Les capacités couvrent les dépôts PVD, la pulvérisation, la décoration à la feuille et au pinceau, ainsi que différentes techniques de texturation et de finition de surface.",
           "steps": [
             {
               "title": "Définition du besoin et du rendu recherché",
-              "body": "Analyse du support, de la fonction attendue, de l’aspect recherché, des contraintes d’usage et des volumes à produire."
+              "body": "Analyse du support, de la fonction attendue, de l’aspect recherché, des contraintes d’usage et des volumes à produire.",
+              "refs": [
+                "SURF-01"
+              ]
             },
             {
               "title": "Production",
@@ -587,73 +427,23 @@
                 "Pulvérisation",
                 "Décoration à la feuille ou au pinceau",
                 "Texturation et sablage"
+              ],
+              "refs": [
+                "SURF-02"
               ]
             },
             {
               "title": "Contrôles qualité",
-              "body": "Contrôle de l’aspect, de la couleur, de l’homogénéité, de l’adhérence, de la rugosité ou des propriétés fonctionnelles selon les exigences du cahier des charges du client."
+              "body": "Contrôle de l’aspect, de la couleur, de l’homogénéité, de l’adhérence, de la rugosité ou des propriétés fonctionnelles selon les exigences du cahier des charges du client.",
+              "refs": [
+                "SURF-03"
+              ]
             }
           ],
-          "processes": {
-            "title": "Moyens de production",
-            "intro": "Le procédé est défini selon la matière, la géométrie et les sollicitations de la pièce.",
-            "items": [
-              {
-                "title": "Dépôts PVD",
-                "body": "Dépôt de couches minces sous vide pour la métallisation et les finitions esthétiques ou fonctionnelles."
-              },
-              {
-                "title": "Tampographie",
-                "body": "Transfert d’un décor par tampon, y compris sur des surfaces non planes."
-              },
-              {
-                "title": "Pulvérisation",
-                "body": "Application de revêtements après préparation de la surface."
-              },
-              {
-                "title": "Décoration à la feuille ou au pinceau",
-                "body": "Traitements manuels : dépose de feuilles et compléments au pinceau."
-              },
-              {
-                "title": "Texturation et sablage",
-                "body": "Modification mécanique de la surface pour travailler la rugosité, l’adhérence, le frottement ou un aspect mat et structuré."
-              },
-              {
-                "title": "Émaillage",
-                "body": "Dépôt d’émail et cuisson à basse ou haute température, selon le support et l’état de surface recherché."
-              }
-            ]
-          },
-          "controls": {
-            "title": "Caractériser et contrôler les surfaces",
-            "intro": "Les essais sont sélectionnés selon le traitement et la fonction attendue ; ils accompagnent la mise au point et la validation du procédé.",
-            "items": [
-              {
-                "title": "Rugosité",
-                "body": "Mesure de paramètres tels que Ra, Rz, Rp et Rsk, selon le besoin de caractérisation."
-              },
-              {
-                "title": "Homogénéité du dépôt",
-                "body": "Évaluation de la régularité et de l’uniformité du revêtement."
-              },
-              {
-                "title": "Adhérence",
-                "body": "Essais d’adhérence et d’arrachement adaptés au couple support–revêtement."
-              },
-              {
-                "title": "Tenue à l’environnement",
-                "body": "Essais en température et en humidité selon les conditions d’usage prévues."
-              },
-              {
-                "title": "Conductivité électrique",
-                "body": "Caractérisation des propriétés électriques des surfaces fonctionnelles."
-              },
-              {
-                "title": "Validation fonctionnelle",
-                "body": "Vérification du comportement de la pièce traitée par rapport aux critères du projet."
-              }
-            ]
-          }
+          "ref": "SURF",
+          "introExtra": [
+            "Ces procédés permettent de travailler la couleur, la brillance, la texture, le relief, l’aspect métallique ou certaines propriétés fonctionnelles de surface, selon le cahier des charges du client."
+          ]
         },
         "outil-industriel": {
           "title": "Quatre sites de production en Haute-Vienne",
@@ -701,7 +491,7 @@
             {
               "name": "Limoges",
               "role": "Traitements de surface et décoration",
-              "details": "Dépôts PVD et procédés de décoration pour modifier l’aspect ou les propriétés fonctionnelles des pièces.",
+              "details": "Procédés de traitements de surface pour modifier l’aspect ou les propriétés fonctionnelles des pièces.",
               "points": [
                 "Traitements de surface par PVD, pulvérisation, émaillage, sablage",
                 "Tampographie, décoration à la feuille et au pinceau",
@@ -715,131 +505,161 @@
               "points": []
             }
           ],
-          "certifications": {
-            "title": "Certifications",
-            "body": "Les sites de production sont certifiés ISO 9001 et ISO 14001. Les certificats sont disponibles :"
-          },
-          "partners": {
-            "title": "Partenaires techniques et scientifiques",
-            "body": "En complément des moyens internes, Bernardaud Solutions Industrielles travaille avec l’IRCER (Institut de recherche sur les céramiques), le CTTC (Centre de transfert de technologies céramiques), le CITRA (traitements de surface) et le CEDREM, pour les phases de recherche, de caractérisation et de développement.",
-            "image": "researchEcosystem",
-            "alt": "Pôle européen de la céramique, IRCER, CITRA et CTTC autour de la Manufacture Bernardaud"
-          }
+          "ref": "OUTIL"
         },
         "materiaux": {
-          "title": "Céramiques techniques",
+          "title": "Céramiques techniques proposées par Bernardaud Solutions industrielles",
           "short": "Matériaux",
-          "intro": "Les céramiques techniques associent des propriétés mécaniques, thermiques, électriques et chimiques adaptées aux applications industrielles exigeantes.",
-          "sections": [
-            {
-              "title": "Propriétés",
-              "body": "Selon leur composition et leur microstructure, les céramiques techniques peuvent offrir une faible densité, une bonne stabilité dimensionnelle, une dureté élevée, une forte résistance à l’usure et à l’abrasion, une bonne isolation électrique, une résistance aux environnements chimiques exigeants et une tenue aux hautes températures."
-            },
-            {
-              "title": "Choisir selon l’application",
-              "body": "Le choix du matériau dépend des conditions d’utilisation, des sollicitations mécaniques, thermiques, chimiques ou électriques, ainsi que des contraintes de mise en forme, de production et de coût."
-            }
-          ],
-          "other": {
-            "title": "Autres céramiques techniques",
-            "body": "Bernardaud Solutions Industrielles travaille également d’autres familles et nuances de céramiques techniques pour des contraintes thermiques, mécaniques, électriques ou chimiques spécifiques."
+          "intro": "Les céramiques techniques présentent des propriétés singulières les rendant adaptées, voire incontournables, pour un bon nombre d’applications industrielles :",
+          "ref": "MAT",
+          "properties": {
+            "title": "Propriétés des céramiques",
+            "paragraphs": [
+              "Leur stabilité dimensionnelle, régie par un faible coefficient de dilatation et un module d’élasticité élevé, garantit une précision géométrique constante sous contraintes mécaniques et thermiques.",
+              "Les céramiques techniques affichent une faible densité (environ 3,9 à 6,0 g/cm³), permettant un allègement structurel par rapport aux métaux et alliages.",
+              "Sur le plan de la durabilité, leur dureté extrême confère une résistance à l’usure et à l’abrasion exceptionnelle, prolongeant la vie des composants en friction.",
+              "Leur structure atomique, principalement iono-covalente, leur assure une inertie chimique totale face aux acides et bases forts, ainsi qu’une excellente isolation électrique (rigidité diélectrique élevée), même à des températures extrêmes.",
+              "Leur réfractarité permet des usages à hautes températures (au delà de 1500°C) sans fluage ni perte de propriétés mécaniques."
+            ],
+            "chips": [
+              "Faible densité",
+              "Stabilité dimensionnelle",
+              "Dureté",
+              "Résistance à l’usure",
+              "Inertie chimique",
+              "Isolation électrique",
+              "Usages à hautes températures",
+              "Biocompatibilité"
+            ]
           }
         },
         "porcelaine-technique": {
           "title": "Porcelaine technique",
-          "intro": "La porcelaine technique appartient à la famille des céramiques silicatées.",
-          "points": [
-            "Isolateurs et composants électriques",
-            "Pièces techniques pour équipements industriels",
-            "Supports et composants nécessitant une bonne isolation électrique",
-            "Applications industrielles recherchant un bon rapport performance/coût"
-          ],
-          "sections": [
+          "intro": "La porcelaine technique est une céramique silicatée renforcée par une dispersion de cristaux d’alumine (30 % à 75 %).",
+          "summary": "La porcelaine technique est une céramique silicatée renforcée par une dispersion de cristaux d’alumine (30 % à 75 %).",
+          "blocks": [
             {
-              "title": "Isolation, résistance et maîtrise des coûts",
-              "body": "Sa composition associe une phase vitreuse et des phases cristallines qui lui permettent de combiner isolation électrique, résistance mécanique et maîtrise des coûts."
-            },
-            {
-              "title": "Un équilibre technique et économique",
-              "body": "Elle convient lorsque l’application recherche un équilibre entre performances techniques, aptitude à la production en série et compétitivité économique."
+              "description": [
+                "Sa microstructure complexe associe une phase vitreuse issue du feldspath et une phase cristalline de corindon et de mullite.",
+                "Sa densification, s’opérant aux alentours de 1400°C, permet d’obtenir un matériau étanche et isolant.",
+                "Elle se distingue par une rigidité diélectrique élevée et une résistance à la flexion nettement supérieure aux porcelaines siliceuses traditionnelles.",
+                "Elle représente le point d’entrée des céramiques techniques pour son excellent rapport performance/prix."
+              ],
+              "ref": "MAT-01"
             }
-          ]
+          ],
+          "tableTitle": "Caractéristiques de la porcelaine technique"
         },
         "alumine": {
           "title": "Alumines",
           "short": "Alumines",
-          "intro": "Alumine Al₂O₃ : pureté de 90 à 99,7 %.",
-          "points": [
-            "Billes et éléments de broyage",
-            "Tubes de protection thermique",
-            "Buses et pièces soumises à l’abrasion",
-            "Guides-fils",
-            "Vannes, composants de pompes et pièces d’usure",
-            "Isolants et supports électriques",
-            "Composants pour l’électronique et les semi-conducteurs",
-            "Tubes et équipements de laboratoire",
-            "Applications médicales selon les nuances",
-            "Protection balistique pour certaines formulations"
-          ],
-          "sections": [
+          "summary": "L’alumine de pureté intermédiaire (Al₂O₃) < 98 % · L’alumine haute pureté (Al₂O₃) > 98 %",
+          "blocks": [
             {
-              "title": "Pureté intermédiaire · Al₂O₃ de 90 à 96 %",
-              "body": "Compromis entre résistance mécanique, dureté, résistance à l’usure, propriétés électriques et coût. La teneur en alumine, plus élevée que dans les porcelaines techniques, améliore les performances mécaniques, la résistance à l’abrasion et la tenue thermique."
+              "heading": "L’alumine",
+              "subtitle": "L’alumine de pureté intermédiaire (Al₂O₃) < 98 %",
+              "description": [
+                "L’alumine de pureté intermédiaire, entre 90 % et 96 % marquent le passage aux céramiques à matrice d’oxyde dominante.",
+                "Elles contiennent une phase vitreuse résiduelle (silicates) qui facilite le frittage à des températures modérées 1500°C.",
+                "Leurs duretés et leurs résistances à la compression sont nettement accrues par rapport à la porcelaine technique."
+              ],
+              "advantages": {
+                "title": "Avantages par rapport à la porcelaine alumineuse :",
+                "body": "Une résistance à l’abrasion et une dureté plus élevée, ainsi qu’une meilleure stabilité thermique permettant des usages mécaniques plus sévères."
+              },
+              "applications": {
+                "title": "Applications industrielles :",
+                "points": [
+                  "Billes de broyage",
+                  "Tubes de protection thermique",
+                  "Buses de sablage et guides-fils textiles",
+                  "Vannes",
+                  "Supports"
+                ]
+              },
+              "ref": "MAT-02"
             },
             {
-              "title": "Haute pureté · Al₂O₃ supérieure à 98 %",
-              "body": "Grande dureté, bonne stabilité thermique, excellentes propriétés diélectriques, forte résistance à l’usure et aux environnements chimiques exigeants. Adaptée aux applications qui demandent précision, résistance mécanique, isolation électrique et durabilité."
+              "heading": "L’alumine haute pureté",
+              "subtitle": "L’alumine haute pureté (Al₂O₃) > 98 %",
+              "description": [
+                "L’alumine haute densité, de 98% à 99,7% est une céramique quasi monophasée (alpha-corindon) exempte de phase vitreuse.",
+                "Elle présente une porosité quasi nulle et une dureté extrême (~1800 HV). Son inertie chimique est totale face aux agents corrosifs (pH 0-14)."
+              ],
+              "advantages": {
+                "title": "Avantages par rapport à l’alumine 92-96 % :",
+                "body": "Une rigidité structurelle nettement supérieure (Module de Young ~380 GPa), une meilleure conductivité thermique et une résistance chimique absolue due à l’absence de silicates, sensibles aux attaques acides ou basiques."
+              },
+              "applications": {
+                "title": "Applications industrielles :",
+                "points": [
+                  "Protection balistique",
+                  "Composants pour semi-conducteurs",
+                  "Instrumentation médicale et implants orthopédiques",
+                  "Creusets de laboratoire de haute précision et vannes pour fluides corrosifs"
+                ]
+              },
+              "ref": "MAT-02b"
             }
-          ]
+          ],
+          "tableTitle": "Caractéristiques de l’alumine et de l’alumine haute pureté"
         },
         "zta": {
           "title": "ZTA",
-          "intro": "Alumine renforcée à la zircone – Al₂O₃ + ZrO₂.",
-          "points": [
-            "Composants de pompes et de vannes",
-            "Pièces soumises à l’usure et aux chocs",
-            "Composants mécaniques à haute résistance",
-            "Applications balistiques",
-            "Outils et composants industriels soumis à de fortes sollicitations",
-            "Applications médicales selon les formulations"
-          ],
-          "sections": [
+          "intro": "ZTA, l’alumine renforcée à la zircone (Al₂O₃ + ZrO₂)",
+          "summary": "ZTA, l’alumine renforcée à la zircone (Al₂O₃ + ZrO₂)",
+          "blocks": [
             {
-              "title": "Zirconia Toughened Alumina",
-              "body": "Le ZTA – Zirconia Toughened Alumina – est un matériau composite associant une matrice d’alumine à des particules de zircone."
-            },
-            {
-              "title": "Dureté, ténacité et résistance aux fissures",
-              "body": "Cette combinaison permet d’améliorer la ténacité et la résistance à la propagation des fissures, tout en conservant une grande partie de la dureté et de la résistance à l’usure propres à l’alumine."
-            },
-            {
-              "title": "Sollicitations mécaniques élevées",
-              "body": "Le ZTA offre un compromis pour les applications soumises à des contraintes mécaniques élevées."
+              "description": [
+                "Le ZTA est un matériau composite constitué d’une matrice d’alumine dans laquelle sont dispersées des particules de zircone (généralement 10 à 20 %).",
+                "Ce matériau exploite le mécanisme de « renforcement par transformation de phase » pour stopper la propagation des micro-fissures."
+              ],
+              "advantages": {
+                "title": "Avantages par rapport à l’alumine haute densité :",
+                "body": "Une ténacité (résistance à la rupture) plus élevée (5-8 MPa·m^0.5 contre 3-4 pour l’alumine). Il offre un compromis idéal entre la dureté de l’alumine et la résilience de la zircone, réduisant le risque de rupture fragile."
+              },
+              "applications": {
+                "title": "Applications industrielles :",
+                "points": [
+                  "Protection balistique",
+                  "Outils de coupe pour métaux durs",
+                  "Composants de pompes haute pression et pistons céramiques",
+                  "Prothèses orthopédiques"
+                ]
+              },
+              "ref": "MAT-03"
             }
-          ]
+          ],
+          "tableTitle": "Caractéristiques de la ZTA"
         },
         "zircone": {
           "title": "Zircone",
-          "intro": "Zircone ZrO₂.",
-          "points": [
-            "Composants de pompes et de vannes",
-            "Pièces tribologiques et composants d’usure",
-            "Outils et éléments de coupe",
-            "Composants pour capteurs",
-            "Applications automobiles",
-            "Pièces horlogères",
-            "Applications dentaires et médicales selon les nuances"
-          ],
-          "sections": [
+          "intro": "La zircone (ZrO₂)",
+          "summary": "La zircone (ZrO₂)",
+          "blocks": [
             {
-              "title": "Ténacité et résistance mécanique",
-              "body": "La zircone stabilisée se distingue par une ténacité et une résistance mécanique supérieures à celles de la plupart des céramiques d’oxydes."
-            },
-            {
-              "title": "Comportement sous contrainte",
-              "body": "Sa microstructure lui permet de limiter la propagation des fissures sous contrainte. Elle présente également une faible conductivité thermique et peut équiper des composants soumis à des sollicitations mécaniques élevées."
+              "description": [
+                "La zircone tétragonale polycristalline, stabilisée à l’yttrium, représente l’apogée de la résistance mécanique des céramiques d’oxydes.",
+                "Surnommée « l’acier céramique », elle possède une structure métastable qui se transforme localement sous contrainte pour comprimer les fissures naissantes."
+              ],
+              "advantages": {
+                "title": "Avantages par rapport au ZTA :",
+                "body": "Une ténacité maximale (> 8 MPa·m^0.5) et une résistance à la flexion dépassant les 1000 MPa. Elle possède également une faible conductivité thermique (isolant thermique) et un coefficient de dilatation proche de celui de l’acier, facilitant les assemblages (frettage)."
+              },
+              "applications": {
+                "title": "Applications industrielles :",
+                "points": [
+                  "Couteaux industriels",
+                  "Composants tribologiques soumis à des chocs (vannes, sièges)",
+                  "Applications dentaires et capteurs d’oxygène (sondes lambda)",
+                  "Pièces moteur",
+                  "Horlogerie"
+                ]
+              },
+              "ref": "MAT-04"
             }
-          ]
+          ],
+          "tableTitle": "Caractéristiques de la zircone"
         },
         "marches": {
           "title": "Marchés",
@@ -859,64 +679,12 @@
           "title": "Céramiques balistiques haute performance",
           "short": "Défense",
           "intro": "Fondée à Limoges en 1863, Bernardaud est un fabricant céramique français, entreprise familiale qui associe une expertise matière de longue date à des capacités industrielles modernes. Les installations regroupent formulation céramique, prototypage, mise en forme, frittage, usinage, finition et caractérisation. Cette approche intégrée accompagne les clients de la conception initiale à la qualification, puis à la production en série.",
-          "metrics": [
-            {
-              "value": "160 ans",
-              "label": "d’histoire"
-            },
-            {
-              "value": "750",
-              "label": "collaborateurs"
-            },
-            {
-              "value": "4 sites",
-              "label": "de production céramique en région de Limoges"
-            },
-            {
-              "value": "60 000 m²",
-              "label": "dédiés à la production"
-            }
-          ],
-          "site": {
-            "title": "Un site industriel unique en France",
-            "columns": [
-              {
-                "title": "Du prototypage à la production en série",
-                "intro": "Les capacités comprennent :",
-                "points": [
-                  "Pressage axial et semi-isostatique",
-                  "Injection céramique",
-                  "Coulage et coulage sous pression",
-                  "Découpe jet d’eau et finition robotisée",
-                  "Déliantage et frittage à haute température",
-                  "Traitement de surface et texturation",
-                  "Caractérisation matière, mécanique et fonctionnelle"
-                ]
-              },
-              {
-                "title": "Capacités de développement et de validation",
-                "intro": "",
-                "points": [
-                  "Formulation et sélection des matières",
-                  "Conception pour la fabrication",
-                  "Prototypage rapide",
-                  "Analyse de la matière et de la microstructure",
-                  "Mesure de densité et de dureté",
-                  "Essais mécaniques et ultrasoniques",
-                  "Contrôle de surface",
-                  "Essais balistiques comparatifs",
-                  "Industrialisation et production en série"
-                ]
-              }
-            ]
-          },
           "protection": {
             "eyebrow": "Protection balistique",
             "title": "Une protection légère contre les menaces de haut niveau",
             "body": "Les céramiques balistiques protègent contre des projectiles à grande vitesse tout en limitant la masse du système de protection. Leur dureté extrême endommage et fragmente le projectile à l’impact. La céramique contribue aussi à disperser l’énergie de l’impact, de façon contrôlée, sur une surface plus large. Elle est associée à un matériau de support, généralement polyéthylène, aramide ou composite, qui capte les fragments et absorbe l’énergie résiduelle.",
             "system": {
               "title": "Fonctionnement d’un système de blindage céramique",
-              "image": "armourVest",
               "alt": "Gilet pare-balles : plaque céramique hexagonale intégrée dans le système de protection",
               "steps": [
                 {
@@ -931,7 +699,8 @@
                   "title": "Système de protection individuelle complet",
                   "body": "Assure les niveaux de protection et d’ergonomie requis en optimisant masse, épaisseur et coût."
                 }
-              ]
+              ],
+              "ref": "DEF-SYS"
             }
           },
           "applications": [
@@ -940,7 +709,8 @@
               "points": [
                 "Plaques de protection corporelle",
                 "Boucliers balistiques"
-              ]
+              ],
+              "ref": "DEF-APP-1"
             },
             {
               "title": "Véhicules blindés, camions de commandement et logistiques, tourelles",
@@ -949,7 +719,8 @@
                 "Protection du plancher contre les mines",
                 "Protection du toit",
                 "Protection du tireur"
-              ]
+              ],
+              "ref": "DEF-APP-2"
             },
             {
               "title": "Navires blindés, vedettes de garde-côtes",
@@ -958,21 +729,24 @@
                 "Protection de la cabine d’équipage",
                 "Protection des tourelles",
                 "Protection du tireur"
-              ]
+              ],
+              "ref": "DEF-APP-3"
             },
             {
               "title": "Aéronefs à voilure fixe, hélicoptères à voilure tournante",
               "points": [
                 "Plancher du cockpit",
                 "Panneaux de protection latéraux"
-              ]
+              ],
+              "ref": "DEF-APP-4"
             },
             {
               "title": "Radars, postes de commandement mobiles",
               "points": [
                 "Boîtiers",
                 "Panneaux latéraux"
-              ]
+              ],
+              "ref": "DEF-APP-5"
             }
           ],
           "products": {
@@ -984,10 +758,6 @@
               "Zircone"
             ],
             "materialsTitle": "Matières"
-          },
-          "levels": {
-            "title": "Niveaux de protection",
-            "body": "Les composants Bernardaud sont adaptés aux niveaux de protection VPAM, NIJ III+ et NIJ IV, selon la configuration du système complet."
           },
           "value": {
             "title": "Proposition de valeur",
@@ -1018,65 +788,15 @@
               }
             ]
           },
-          "tests": {
-            "title": "Essais",
-            "intro": "Moyens d’essais et plaques céramiques en cours de qualification.",
-            "items": [
-              {
-                "image": "testTunnel",
-                "title": "Moyens d’essais",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "testPlates",
-                "title": "Plaques céramiques",
-                "credit": "Bernardaud"
-              }
-            ]
-          },
-          "quote": {
-            "body": "Réactivité, innovation continue et indépendance industrielle sont aujourd’hui essentielles pour répondre aux défis de la défense. Depuis le cœur de la France, Bernardaud offre une capacité industrielle robuste, qui associe excellence de fabrication et qualité sans compromis, pour accompagner l’évolution des besoins des forces de défense et de sécurité.",
-            "author": "Michel Bernardaud",
-            "role": "Président-directeur général"
-          },
           "closing": {
             "title": "Produits standards quand la rapidité compte. Développement sur mesure quand l’application l’exige.",
             "body": "Développons votre prochaine solution de protection.",
             "button": "Écrire à BSI"
-          }
+          },
+          "ref": "DEF"
         },
         "industrie": {
           "title": "Industrie",
-          "intro": "Céramiques techniques, sérigraphie et traitements de surface pour des pièces industrielles sur cahier des charges.",
-          "overview": [
-            "Résistance à l’usure, aux chocs, aux températures élevées ou aux environnements chimiques, isolation électrique, inertie, précision dimensionnelle, propriétés de surface, marquage ou décoration : les céramiques techniques, la sérigraphie et les traitements de surface répondent à ces fonctions sur des pièces industrielles spécifiques.",
-            "À partir d’un cahier des charges ou d’une expression de besoin, Bernardaud Solutions Industrielles étudie et développe des pièces à façon en mobilisant tout ou partie de ses procédés, des premières phases de R&D jusqu’à la mise au point du procédé et à l’industrialisation."
-          ],
-          "showcase": {
-            "title": "Applications",
-            "items": [
-              {
-                "sector": "Énergie",
-                "part": "Rotor",
-                "image": "marketIndustry"
-              },
-              {
-                "sector": "Nucléaire",
-                "part": "Conteneur",
-                "image": "industryContainer"
-              },
-              {
-                "sector": "Industrie",
-                "part": "Supports de cuisson",
-                "image": "industryKilnSupport"
-              },
-              {
-                "sector": "Médical",
-                "part": "Moule de gants",
-                "image": "industryGloveMold"
-              }
-            ]
-          },
           "applications": [
             {
               "title": "Stabilité dimensionnelle",
@@ -1085,6 +805,9 @@
                 "Inserts",
                 "Renforts",
                 "Composants de précision"
+              ],
+              "refs": [
+                "INDUS-01"
               ]
             },
             {
@@ -1094,6 +817,9 @@
                 "Guides",
                 "Protections",
                 "Pièces de friction"
+              ],
+              "refs": [
+                "INDUS-02"
               ]
             },
             {
@@ -1103,6 +829,9 @@
                 "Équipements de laboratoire",
                 "Vannes",
                 "Composants en contact avec des fluides corrosifs"
+              ],
+              "refs": [
+                "INDUS-03"
               ]
             },
             {
@@ -1111,6 +840,9 @@
                 "Substrats",
                 "Isolateurs",
                 "Supports électriques"
+              ],
+              "refs": [
+                "INDUS-04"
               ]
             },
             {
@@ -1119,6 +851,9 @@
                 "Supports de cuisson",
                 "Protections thermiques",
                 "Composants de fours"
+              ],
+              "refs": [
+                "INDUS-05"
               ]
             },
             {
@@ -1128,6 +863,9 @@
                 "Réduction du frottement",
                 "Fonctionnalisation des surfaces",
                 "Finitions esthétiques"
+              ],
+              "refs": [
+                "INDUS-06"
               ]
             }
           ],
@@ -1135,7 +873,13 @@
             "title": "Votre pièce ou votre application n’apparaît pas ici ?",
             "body": "Même si vous ne voyez pas votre produit ou votre marché sur le site, soumettez-nous votre problème.",
             "button": "Soumettre un besoin"
-          }
+          },
+          "ref": "INDUS",
+          "intro": "Résistance à l’usure, aux chocs, aux températures élevées ou aux environnements chimiques, isolation électrique, inertie, précision dimensionnelle, propriétés de surface, marquage ou décoration : les céramiques techniques, la sérigraphie et les traitements de surface répondent à ces fonctions sur des pièces industrielles spécifiques.",
+          "introExtra": [
+            "À partir d’un cahier des charges ou d’une expression de besoin, Bernardaud Solutions Industrielles étudie et développe des pièces à façon en mobilisant tout ou partie de ses procédés, des premières phases de R&D jusqu’à la mise au point du procédé et à l’industrialisation."
+          ],
+          "applicationsTitle": "Applications"
         },
         "horlogerie": {
           "title": "Horlogerie",
@@ -1144,58 +888,33 @@
             {
               "title": "Céramiques techniques",
               "body": "Développement et fabrication de cadrans, lunettes, maillons et boîtiers en céramique, avec maîtrise des géométries, des états de surface, des couleurs et de la répétabilité en série.",
-              "points": [
-                "Cadrans",
-                "Boîtiers : ébauches en zircone",
-                "Lunettes et bagues avec index",
-                "Maillons de bracelet"
-              ]
+              "refs": [
+                "HORLO-01",
+                "HORLO-01b"
+              ],
+              "gallery": true
             },
             {
               "title": "Imprimerie sérigraphique",
               "body": "Conception et production de chromos de haute précision, applicables sur différents matériaux et composants horlogers.",
-              "points": [
-                "Chromos basse température (on-glaze), qui offrent une large liberté chromatique",
-                "Chromos haute température (in-glaze), intégrés à l’émail lors de la cuisson",
-                "Décors fins, motifs, index et éléments graphiques"
-              ]
+              "refs": [
+                "HORLO-02",
+                "HORLO-02b",
+                "HORLO-02c"
+              ],
+              "gallery": true
             },
             {
               "title": "Décoration et traitements de surface",
               "body": "Décoration de composants fournis par le client, avec mise au point des couleurs, motifs, effets de surface et finitions selon le cahier des charges.",
-              "points": [
-                "PVD",
-                "Texturation et création de reliefs",
-                "Coloration de la matière",
-                "Dépôts de métaux précieux : or et platine",
-                "Cadrans, carrures, lunettes, bracelets et verres saphir"
-              ]
+              "refs": [
+                "HORLO-03",
+                "HORLO-03b"
+              ],
+              "gallery": true
             }
           ],
-          "galleries": [
-            {
-              "title": "Cadrans décorés",
-              "images": [
-                "watchDial1",
-                "watchDial2",
-                "watchDial3"
-              ]
-            },
-            {
-              "title": "Lunettes et bagues, décors avec index",
-              "images": [
-                "watchBezel1",
-                "watchBezel2"
-              ]
-            },
-            {
-              "title": "Ébauches de boîtiers en zircone",
-              "images": [
-                "watchCase1",
-                "watchCase2"
-              ]
-            }
-          ]
+          "ref": "HORLO"
         },
         "actualites": {
           "title": "Actualités",
@@ -1282,49 +1001,39 @@
           ]
         },
         "histoire": {
-          "title": "D’un métier historique à un ensemble de procédés",
+          "title": "Bernardaud : L’Intelligence de la Main, la Puissance de l’Industrie",
           "short": "Histoire",
-          "intro": "Fondée à Limoges en 1863, Bernardaud a fait évoluer son outil industriel de génération en génération : de la manufacture de porcelaine aux céramiques techniques, à la sérigraphie, à la décoration et aux traitements de surface.",
-          "sections": [
+          "intro": "Ancrée depuis 1863 au cœur de Limoges, Bernardaud incarne l’excellence d’un territoire indissociable de l’histoire de la porcelaine. En tant qu’acteur majeur de l’économie locale, notre usine perpétue un héritage français unique, transformant une tradition artisanale en une puissance industrielle de premier plan.",
+          "ref": "HIST",
+          "drawingAlt": "Dessin de la manufacture Bernardaud",
+          "story": [
             {
-              "title": "1863 : la manufacture de porcelaine",
-              "body": "Bernardaud est fondée à Limoges. Son métier historique repose sur la maîtrise de la porcelaine, de la cuisson, de la couleur et du décor."
+              "paragraphs": [
+                "Notre trajectoire est celle d’une mutation réussie : si les arts décoratifs français et le travail de nos artisans demeurent le socle de notre identité, Bernardaud est aujourd’hui une entreprise industrielle moderne, à la pointe des innovations technologiques du producteur céramique opérant sur 4 sites de production et exportant dans le monde entier.",
+                "Aujourd’hui, notre expertise s’étend à la fabrication de pièces techniques complexes. Grâce à une maîtrise pointue des process de fabrication et des propriétés des céramiques, nous mettons notre outil de production au service de secteurs industriels les plus exigeants."
+              ],
+              "refs": [
+                "HIST-02"
+              ]
             },
             {
-              "title": "Des investissements industriels continus",
-              "body": "Four tunnel, pressage isostatique, injection, traitements de surface PVD : chaque génération a ajouté de nouveaux équipements et de nouveaux procédés à l’outil industriel."
+              "paragraphs": [
+                "Depuis sa création en 1863, la Maison Bernardaud illustre le passage d’un savoir-faire artisanal, où chaque pièce de porcelaine était façonnée et décorée à la main, vers une production progressivement mécanisée et industrialisée."
+              ],
+              "refs": [
+                "HIST-03",
+                "HIST-04"
+              ]
             },
             {
-              "title": "Un ensemble de procédés",
-              "body": "Ces investissements ont fait de Bernardaud, au-delà de son activité historique, un ensemble de procédés mobilisés pour des applications industrielles : céramiques techniques, imprimerie sérigraphique, décoration et traitements de surface."
+              "paragraphs": [
+                "Aujourd’hui, tout en intégrant des techniques modernes et automatisées, l’entreprise continue de valoriser le travail artistique et la création, mêlant tradition et innovation jusqu’en 2026."
+              ],
+              "refs": [
+                "HIST-05"
+              ]
             }
-          ],
-          "gallery": {
-            "title": "La manufacture, d’hier à aujourd’hui",
-            "intro": "Vues de la manufacture et des équipements de cuisson, conservées dans les archives et les ateliers Bernardaud.",
-            "items": [
-              {
-                "image": "archiveManufacture",
-                "title": "La manufacture en 1890",
-                "credit": "Archives Bernardaud"
-              },
-              {
-                "image": "manufactureToday",
-                "title": "La manufacture en 2025",
-                "credit": "© OdieuxBoby / Bernardaud"
-              },
-              {
-                "image": "archiveWoodKiln",
-                "title": "Les anciens fours à bois",
-                "credit": "Archives Bernardaud"
-              },
-              {
-                "image": "archiveTunnelKiln",
-                "title": "Un four tunnel historique",
-                "credit": "Archives Bernardaud"
-              }
-            ]
-          }
+          ]
         }
       }
     },
@@ -1335,15 +1044,18 @@
         "products": [
           {
             "title": "Tiles, hexagons and pellets",
-            "body": "Ceramic elements for modular protection architectures."
+            "body": "Ceramic elements for modular protection architectures.",
+            "ref": "DEF-PIECE-1"
           },
           {
             "title": "Monolithic plates",
-            "body": "250 × 300 mm format, thicknesses from 3.5 to 12 mm depending on the development."
+            "body": "250 × 300 mm format, thicknesses from 3.5 to 12 mm depending on the development.",
+            "ref": "DEF-PIECE-2"
           },
           {
             "title": "Multi-curvature parts",
-            "body": "Complex shapes designed for system integration and ergonomics."
+            "body": "Complex shapes designed for system integration and ergonomics.",
+            "ref": "DEF-PIECE-3"
           }
         ]
       },
@@ -1362,12 +1074,11 @@
         "materials": "Materials",
         "properties": "Indicative properties",
         "property": "Property",
-        "unit": "Unit",
+        "unit": "Units",
         "quality": "Quality & environment",
         "process": "From first trial to production",
         "processIntro": "Continuous support, with a contact at each stage of your development.",
         "sites": "Four production sites",
-        "sitesIntro": "Ceramic production, printing, decoration and logistics in Haute-Vienne.",
         "admin": "Administration",
         "privacy": "Privacy",
         "cookieSettings": "Cookie preferences",
@@ -1393,7 +1104,8 @@
           "Young’s modulus",
           "Flexural strength",
           "Ultrasonic velocity",
-          "Thermal conductivity"
+          "Thermal conductivity",
+          "Resistivity"
         ],
         "sections": [
           "Company",
@@ -1404,19 +1116,26 @@
         ],
         "steps": "Mastery in {n} steps",
         "certificates": "Certificates",
-        "versionLabel": "Version 2 · after first review (November 2026)",
+        "versionLabel": "Version 3 · feedback of 4 November 2026, in progress (November 2026)",
         "illustration": "Illustration generated by AI",
         "submitCta": "Write to BSI",
-        "downloadBrochure": "View the brochure · PDF (English)"
+        "downloadBrochure": "View the brochure · PDF (English)",
+        "photoToChoose": "Photo to choose",
+        "characteristics": "Characteristics",
+        "propertyGroups": [
+          "Intrinsic",
+          "Mechanical",
+          "Thermal",
+          "Electrical"
+        ]
       },
       "home": {
         "eyebrow": "Limoges, France · Since 1863",
         "title": "Bernardaud",
         "subtitle": "Industrial Solutions",
         "intro": "Bernardaud Solutions Industrielles brings together technical ceramics, screen printing, surface treatment and decoration. These capabilities can be used from prototype to series production.",
-        "primary": "Offer",
-        "secondary": "Contact",
-        "caption": "Ceramic injection",
+        "primary": "Contact",
+        "caption": "Oradour-sur-Glane site",
         "scroll": "Discover BSI",
         "offerTitle": "Three areas of expertise",
         "offerIntro": "Bernardaud Solutions Industrielles works from the initial study and prototype to series production. Our different processes can be used separately or combined on a single industrial project.",
@@ -1453,47 +1172,66 @@
               "body": "Since 1863 Bernardaud has operated four production sites in Haute-Vienne covering ceramic manufacturing, screen printing, decoration and surface treatment, under management systems certified ISO 9001 and ISO 14001. A family business for six generations, Bernardaud combines integrated production in Haute-Vienne with an international commercial presence.",
               "paragraphs": [
                 "The Bernardaud family remains directly involved in the management and activities of the group, which supports fast decisions and long-term industrial investment."
+              ],
+              "refs": [
+                "PRES-01"
               ]
             },
             {
               "title": "Complementary processes",
-              "body": "Technical ceramics, screen printing, decoration and surface treatment can be used separately or combined on a single industrial project."
+              "body": "Technical ceramics, screen printing, decoration and surface treatment can be used separately or combined on a single industrial project.",
+              "refs": [
+                "PRES-02"
+              ]
             },
             {
               "title": "Integrated production",
-              "body": "60,000 m² of industrial facilities and 750 employees, workers, engineers and researchers, across four sites in Haute-Vienne."
+              "body": "60,000 m² of industrial facilities and 750 employees, workers, engineers and researchers, across four sites in Haute-Vienne.",
+              "refs": [
+                "PRES-03"
+              ]
             },
             {
               "title": "An international presence",
-              "body": "Bernardaud is present in China, Japan and the United States. 75% of sales are made abroad."
+              "body": "Bernardaud is present in China, Japan and the United States. 75% of sales are made abroad.",
+              "refs": [
+                "PRES-04"
+              ]
+            },
+            {
+              "title": "ISO 9001 and ISO 14001",
+              "body": "The production sites are certified ISO 9001 for quality management and ISO 14001 for environmental management. The CSR approach is assessed by EcoVadis.",
+              "refs": [
+                "PRES-05"
+              ],
+              "certificates": true
+            },
+            {
+              "title": "A local research and development ecosystem",
+              "body": "Located within the European ceramics hub in Limoges, Bernardaud Solutions Industrielles relies on an environment that combines research, technology transfer and industrial expertise.",
+              "paragraphs": [
+                "In addition to its in-house resources, Bernardaud Solutions Industrielles works with IRCER (Institute for Ceramic Research), CTTC (Ceramic Technology Transfer Centre), CITRA (surface treatments) and CEDREM, for research, characterisation and development phases."
+              ],
+              "refs": [
+                "PRES-06"
+              ]
             }
           ],
-          "certifications": {
-            "title": "ISO 9001 and ISO 14001",
-            "body": "The production sites are certified ISO 9001 for quality management and ISO 14001 for environmental management. The CSR approach is assessed by EcoVadis.",
-            "logo": "isoLogo",
-            "logoAlt": "SOCOTEC Certification: ISO 9001 and ISO 14001, certified",
-            "certificates": [
-              {
-                "image": "isoCert9001",
-                "title": "ISO 9001:2015 certificate"
-              },
-              {
-                "image": "isoCert14001",
-                "title": "ISO 14001:2015 certificate"
-              }
-            ]
-          },
-          "research": {
-            "title": "A local research and development ecosystem",
-            "body": "Located within the European ceramics hub in Limoges, Bernardaud Solutions Industrielles relies on an environment that combines research, technology transfer and industrial expertise.",
-            "image": "laboratory",
-            "alt": "Microscope in the Bernardaud laboratory"
-          }
+          "ref": "PRES",
+          "certificates": [
+            {
+              "image": "isoCert9001",
+              "title": "ISO 9001:2015 certificate"
+            },
+            {
+              "image": "isoCert14001",
+              "title": "ISO 14001:2015 certificate"
+            }
+          ]
         },
         "offre": {
           "title": "Offer",
-          "intro": "Bernardaud Solutions Industrielles brings together four activities: technical ceramics, screen printing, decoration and surface treatments, as well as specific industrial developments. These capabilities can be used separately or together, from prototype to series production.",
+          "intro": "Bernardaud Solutions Industrielles brings together three activities: technical ceramics, screen printing and surface treatments. These capabilities can be used separately or together, from prototype to series production.",
           "items": [
             {
               "title": "Technical ceramics",
@@ -1516,11 +1254,14 @@
         },
         "ceramiques-techniques": {
           "title": "Technical ceramics",
-          "intro": "Bernardaud Solutions Industrielles develops and manufactures technical ceramic parts to specification, from prototype to series. Capabilities cover material selection and development, four forming process families (pressing, injection, casting, jiggering), as well as debinding, sintering, finishing and part inspection.",
+          "intro": "Bernardaud Solutions Industrielles develops and manufactures technical ceramic parts to specification, from prototype to series. Our capabilities cover material selection and development, several forming processes (pressing, injection, casting, jiggering) as well as debinding, sintering, finishing and part inspection.",
           "steps": [
             {
               "title": "Raw material definition",
-              "body": "Selection and development of the formulation according to the required properties, the forming process and the constraints of the part."
+              "body": "Selection and development of the formulation according to the required properties, the forming process and the constraints of the part.",
+              "refs": [
+                "CERAM-01"
+              ]
             },
             {
               "title": "Forming",
@@ -1533,293 +1274,101 @@
                 "Robotic pressure casting",
                 "Jiggering",
                 "3D printing"
+              ],
+              "refs": [
+                "CERAM-02"
               ]
             },
             {
               "title": "Densification",
               "body": "Control of debinding, firing and sintering cycles to obtain the expected mechanical, dimensional and density properties.",
-              "points": [
-                "Thermal or aqueous debinding, depending on the formulation",
-                "Electric, gas and gas tunnel kilns, from 980 to 1,700 °C",
-                "Kilns up to 15 m³",
-                "Laser sintering for specific applications, subject to technical study"
+              "refs": [
+                "CERAM-03"
               ]
             },
             {
               "title": "Post-processing",
               "body": "Machining, polishing and surface finishing to reach the required dimensions, surface finishes and precision levels.",
-              "points": [
-                "Waterjet cutting",
-                "Robotic finishing"
+              "refs": [
+                "CERAM-04"
               ]
             },
             {
               "title": "Added functions",
-              "body": "Integration of treatments, coatings, decorations, markings, interfaces or assemblies according to the end use of the part."
+              "body": "Integration of treatments, coatings, decorations, markings, interfaces or complementary assemblies according to the end use of the part.",
+              "refs": [
+                "CERAM-05"
+              ]
             },
             {
               "title": "Quality control",
-              "body": "Dimensional, visual and functional checks defined by the specification, with conformity tracking before series launch or delivery."
-            }
-          ],
-          "maturity": {
-            "title": "Every level of technology maturity",
-            "body": "Bernardaud Solutions Industrielles works at every level of technology maturity, from the first TRLs devoted to feasibility and proof of concept through to qualification, industrialisation and series production. This continuity allows a single project to be followed from the first material trials and prototypes to a stable, repeatable manufacturing process."
-          },
-          "metrics": [
-            {
-              "value": "24",
-              "label": "large-capacity kilns"
-            },
-            {
-              "value": "1,700 °C",
-              "label": "maximum temperature"
-            },
-            {
-              "value": "15 m³",
-              "label": "maximum kiln volume"
-            }
-          ],
-          "gallery": {
-            "title": "Equipment",
-            "intro": "Injection moulding, robotic pressure casting, waterjet cutting, robotic finishing and firing kilns, at Oradour-sur-Glane.",
-            "items": [
-              {
-                "image": "ceramicInjection",
-                "title": "Ceramic injection moulding (CIM)",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "ceramicRobot",
-                "title": "Robotic pressure casting",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "ceramicPress",
-                "title": "Production equipment",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "ceramicWorkshop",
-                "title": "Production workshop",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "ceramicWaterjet",
-                "title": "Waterjet cutting",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "ceramicFinishing",
-                "title": "Robotic finishing",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "kiln1",
-                "title": "Firing kiln",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "kiln2",
-                "title": "Firing kiln",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "kiln3",
-                "title": "Firing kiln",
-                "credit": "Bernardaud"
-              }
-            ]
-          },
-          "comparison": {
-            "title": "Choosing the forming process",
-            "headings": [
-              "Process",
-              "Strengths",
-              "Typical parts"
-            ],
-            "rows": [
-              [
-                "Casting",
-                "Freedom of shape, thin walls",
-                "Hollow or large-volume parts"
-              ],
-              [
-                "Jiggering",
-                "Cycle rate, surface consistency",
-                "Round parts"
-              ],
-              [
-                "Uniaxial pressing · 50 t",
-                "Densification, repeatability",
-                "Plates and flat components"
-              ],
-              [
-                "Injection · CIM",
-                "Complexity, precision, series",
-                "Small technical components"
+              "body": "Dimensional, visual and functional checks defined by the specification, with conformity tracking before series launch or delivery.",
+              "refs": [
+                "CERAM-06"
               ]
-            ]
-          }
+            }
+          ],
+          "ref": "CERAM",
+          "introExtra": [
+            "Bernardaud Solutions Industrielles works at every level of technology maturity, from the first TRLs devoted to feasibility and proof of concept through to qualification, industrialisation and series production. This continuity allows a single project to be supported from the first material trials and prototypes to a stable, repeatable manufacturing process."
+          ]
         },
         "serigraphie": {
           "title": "Screen printing",
-          "intro": "Screen-print design and printing for industrial and decorative applications.",
-          "overview": [
-            "Bernardaud Solutions Industrielles designs and prints transfers for aesthetic or functional applications. The print shop includes a graphics and development team dedicated to file preparation, colour separation, colour matching and the choice of printing process.",
-            "The equipment prints simple patterns as well as complex decorations, with specific finishes: controlled gradients, material effects, textures, colour overlays, technical deposits."
-          ],
+          "intro": "Bernardaud Solutions Industrielles designs and prints transfers for aesthetic or functional applications, on a wide variety of substrates. The print shop includes a graphics and development team dedicated to file preparation, colour separation, shade development and the choice of printing process.",
           "steps": [
             {
-              "title": "Requirement definition and graphic preparation",
-              "body": "Analysis of the substrate, the pattern, aesthetic or functional constraints and the volumes to produce. The graphics team prepares the files, separates the colours and adapts the design to the selected printing process."
+              "title": "Defining the need and graphic preparation",
+              "body": "Analysis of the substrate, the pattern, the aesthetic or functional constraints and the volumes to be produced. The graphics team prepares the files, carries out colour separation and adapts the design to the chosen printing process.",
+              "refs": [
+                "SERI-01"
+              ]
             },
             {
-              "title": "Ink and colour development",
-              "body": "Development of shades, formulations and deposit levels according to the substrate (ceramic, crystal, metal, glass), the desired result and the firing or service constraints."
+              "title": "Developing inks and colours",
+              "body": "Development of shades, formulations and deposit levels according to the substrate (ceramic, crystal, metal, glass), the desired rendering and the firing or use constraints.",
+              "refs": [
+                "SERI-02"
+              ]
             },
             {
-              "title": "Choice of printing process",
-              "body": "Selection of the technology best suited to the substrate, the required fineness, the number of colours and the volumes.",
-              "points": [
-                "Flat screen printing",
-                "Rotary screen printing",
-                "Transfer printing",
-                "Digital printing",
-                "Indirect screen-printing inkjet"
+              "title": "Choosing the printing process",
+              "body": "Selection of the technology best suited to the substrate, the required fineness, the number of colours and the volumes: flat screen printing, rotary screen printing, transfer printing, digital printing, indirect inkjet or other technical processes available in the print shop.",
+              "refs": [
+                "SERI-03"
               ]
             },
             {
               "title": "Preparation and printing",
-              "body": "Screen preparation and adjustment of printing parameters: deposit, registration, colour overlay and pattern consistency."
+              "body": "Preparation of the screens and adjustment of printing parameters: deposit, registration, colour overlay and pattern regularity.",
+              "refs": [
+                "SERI-04"
+              ]
             },
             {
               "title": "Quality control",
-              "body": "Checks on colours, registration, pattern fineness, deposit uniformity and repeatability between batches."
-            }
-          ],
-          "creative": {
-            "title": "Graphic design and colour science",
-            "intro": "Design, colour separation and formulations are developed together before moving to production.",
-            "items": [
-              {
-                "title": "Artwork and CAD",
-                "body": "The graphics teams design the decorations and prepare their separation for reproduction with the industrial process."
-              },
-              {
-                "title": "Colour development",
-                "body": "Colours and frits are prepared and mixed in-house, with trials of rendering and repeatability on the chosen substrate."
-              },
-              {
-                "title": "High fire and low fire",
-                "body": "High-fire decorations at around 1,200 °C and low-fire decorations at around 800 °C, as well as precious metals: gold, platinum and silver, depending on the project."
-              }
-            ]
-          },
-          "precision": {
-            "title": "Equipment and precision",
-            "body": "Bernardaud makes its own transfers, hot or cold, from screen making to printing.",
-            "metrics": [
-              {
-                "value": "1 µm",
-                "label": "emulsion deposit accuracy"
-              },
-              {
-                "value": "6",
-                "label": "printing machines"
-              },
-              {
-                "value": "120 µm",
-                "label": "pattern fineness"
-              }
-            ],
-            "note": "Equipment and process benchmarks. Achievable fineness and decoration durability are to be confirmed according to pattern, substrate and production conditions.",
-            "items": [
-              {
-                "title": "Films and screens",
-                "body": "Films prepared and screens made in-house."
-              },
-              {
-                "title": "Controlled deposit",
-                "body": "Emulsion control to reproduce fine detail."
-              },
-              {
-                "title": "Hot and cold transfers",
-                "body": "Choice of transfer and application method according to the substrate."
-              },
-              {
-                "title": "Integrated production",
-                "body": "Development, trials and series printing coordinated in a single workshop."
-              }
-            ]
-          },
-          "digital": {
-            "title": "Indirect screen-printing inkjet",
-            "body": "Digital printing by indirect screen-printing inkjet complements screen printing for graphic development and personalisation. The process is chosen according to the design, the substrate and the quantities.",
-            "image": "digitalPrinter",
-            "caption": "Digital printing equipment"
-          },
-          "strips": [
-            {
-              "title": "Colours",
-              "images": [
-                "screenColors1",
-                "screenColors2",
-                "screenColors3"
-              ]
-            },
-            {
-              "title": "Screen printing",
-              "images": [
-                "screenPrint1",
-                "screenPrint2",
-                "screenPrint3",
-                "screenPrint4"
-              ]
-            },
-            {
-              "title": "Placing and manual finishing",
-              "images": [
-                "screenManual1",
-                "screenManual2"
-              ]
-            },
-            {
-              "title": "Decoration firing",
-              "images": [
-                "screenFiring1",
-                "screenFiring2"
+              "body": "Checks on colours, registration, pattern fineness, deposit homogeneity and repeatability between series.",
+              "refs": [
+                "SERI-05"
               ]
             }
           ],
-          "gallery": {
-            "title": "From transfer to printed decoration",
-            "intro": "Preparation and inspection of decorations in the Bernardaud workshops.",
-            "items": [
-              {
-                "image": "printingDetail",
-                "title": "Inspection of a screen-printed decoration",
-                "credit": "© OdieuxBoby / Bernardaud"
-              },
-              {
-                "image": "printedDecoration",
-                "title": "The decoration after printing",
-                "credit": "© OdieuxBoby / Bernardaud"
-              }
-            ]
-          }
+          "ref": "SERI",
+          "introExtra": [
+            "The equipment can handle simple patterns as well as complex decorations, with specific finishes such as controlled gradients, material effects, textures, colour overlays or technical deposits."
+          ]
         },
         "traitements-de-surface": {
-          "title": "Surface treatments and decoration",
+          "title": "Surface treatments",
           "short": "Surface treatments",
-          "intro": "Bernardaud Solutions Industrielles carries out surface treatments and decorations for aesthetic or functional purposes. Capabilities cover PVD deposition, spraying, leaf and brush decoration, as well as texturing and surface finishing.",
-          "overview": [
-            "These processes work on colour, gloss, texture, relief, metallic appearance or functional surface properties, according to the customer’s specification."
-          ],
+          "intro": "Bernardaud Solutions Industrielles carries out surface treatments and decorations for aesthetic or functional purposes on different types of substrates. Its capabilities cover PVD deposition, spraying, leaf and brush decoration, as well as various texturing and surface finishing techniques.",
           "steps": [
             {
               "title": "Definition of the need and the desired result",
-              "body": "Analysis of the substrate, the expected function, the desired appearance, the service constraints and the volumes to produce."
+              "body": "Analysis of the substrate, the expected function, the desired appearance, the service constraints and the volumes to produce.",
+              "refs": [
+                "SURF-01"
+              ]
             },
             {
               "title": "Production",
@@ -1830,73 +1379,23 @@
                 "Spraying",
                 "Leaf or brush decoration",
                 "Texturing and sandblasting"
+              ],
+              "refs": [
+                "SURF-02"
               ]
             },
             {
               "title": "Quality control",
-              "body": "Checks on appearance, colour, uniformity, adhesion, roughness or functional properties according to the customer’s specification."
+              "body": "Checks on appearance, colour, uniformity, adhesion, roughness or functional properties according to the customer’s specification.",
+              "refs": [
+                "SURF-03"
+              ]
             }
           ],
-          "processes": {
-            "title": "Production capabilities",
-            "intro": "The process is defined according to the material, the geometry and the loads on the part.",
-            "items": [
-              {
-                "title": "PVD deposition",
-                "body": "Thin-film deposition under vacuum for metallisation and aesthetic or functional finishes."
-              },
-              {
-                "title": "Pad printing",
-                "body": "Transfer of a decoration by pad, including on non-flat surfaces."
-              },
-              {
-                "title": "Spraying",
-                "body": "Application of coatings after surface preparation."
-              },
-              {
-                "title": "Leaf or brush decoration",
-                "body": "Manual treatments: leaf application and brush finishing."
-              },
-              {
-                "title": "Texturing and sandblasting",
-                "body": "Mechanical modification of the surface to work on roughness, adhesion, friction or a matt, structured appearance."
-              },
-              {
-                "title": "Glazing",
-                "body": "Glaze deposition and low- or high-temperature firing, depending on the substrate and the desired surface finish."
-              }
-            ]
-          },
-          "controls": {
-            "title": "Characterising and controlling surfaces",
-            "intro": "Tests are selected according to the treatment and the expected function; they support process development and validation.",
-            "items": [
-              {
-                "title": "Roughness",
-                "body": "Measurement of parameters such as Ra, Rz, Rp and Rsk, depending on the characterisation need."
-              },
-              {
-                "title": "Deposit uniformity",
-                "body": "Assessment of the regularity and uniformity of the coating."
-              },
-              {
-                "title": "Adhesion",
-                "body": "Adhesion and pull-off tests suited to the substrate–coating pair."
-              },
-              {
-                "title": "Environmental resistance",
-                "body": "Temperature and humidity tests according to the expected conditions of use."
-              },
-              {
-                "title": "Electrical conductivity",
-                "body": "Characterisation of the electrical properties of functional surfaces."
-              },
-              {
-                "title": "Functional validation",
-                "body": "Verification of the treated part’s behaviour against the project criteria."
-              }
-            ]
-          }
+          "ref": "SURF",
+          "introExtra": [
+            "These processes make it possible to work on colour, gloss, texture, relief, metallic appearance or certain functional surface properties, according to the customer’s specification."
+          ]
         },
         "outil-industriel": {
           "title": "Four production sites in Haute-Vienne",
@@ -1944,7 +1443,7 @@
             {
               "name": "Limoges",
               "role": "Surface treatments and decoration",
-              "details": "PVD deposition and decoration processes to change the appearance or functional properties of parts.",
+              "details": "Surface treatment processes to change the appearance or functional properties of parts.",
               "points": [
                 "Surface treatments by PVD, spraying, glazing, sandblasting",
                 "Pad printing, leaf and brush decoration",
@@ -1958,131 +1457,161 @@
               "points": []
             }
           ],
-          "certifications": {
-            "title": "Certifications",
-            "body": "The production sites are certified ISO 9001 and ISO 14001. The certificates are available:"
-          },
-          "partners": {
-            "title": "Technical and scientific partners",
-            "body": "In addition to its in-house resources, Bernardaud Solutions Industrielles works with IRCER (Institute for Ceramic Research), CTTC (Ceramic Technology Transfer Centre), CITRA (surface treatments) and CEDREM, for research, characterisation and development phases.",
-            "image": "researchEcosystem",
-            "alt": "European ceramics hub, IRCER, CITRA and CTTC around the Bernardaud Manufacture"
-          }
+          "ref": "OUTIL"
         },
         "materiaux": {
-          "title": "Technical ceramics",
+          "title": "Technical ceramics offered by Bernardaud Solutions Industrielles",
           "short": "Materials",
-          "intro": "Technical ceramics combine mechanical, thermal, electrical and chemical properties suited to demanding industrial applications.",
-          "sections": [
-            {
-              "title": "Measured properties",
-              "body": "Depending on their composition and microstructure, technical ceramics can offer low density, good dimensional stability, high hardness, strong resistance to wear and abrasion, good electrical insulation, resistance to harsh chemical environments and high-temperature performance."
-            },
-            {
-              "title": "Choosing according to the application",
-              "body": "The choice of material depends on operating conditions, mechanical, thermal, chemical or electrical loads, as well as forming, production and cost constraints."
-            }
-          ],
-          "other": {
-            "title": "Other technical ceramics",
-            "body": "Bernardaud Solutions Industrielles also works with other families and grades of technical ceramics for specific thermal, mechanical, electrical or chemical constraints."
+          "intro": "Technical ceramics have distinctive properties that make them well suited, even essential, for many industrial applications:",
+          "ref": "MAT",
+          "properties": {
+            "title": "Properties of ceramics",
+            "paragraphs": [
+              "Their dimensional stability, governed by a low coefficient of expansion and a high elastic modulus, ensures constant geometric accuracy under mechanical and thermal stress.",
+              "Technical ceramics have a low density (about 3.9 to 6.0 g/cm³), allowing structural weight savings compared with metals and alloys.",
+              "In terms of durability, their extreme hardness gives exceptional wear and abrasion resistance, extending the life of components subject to friction.",
+              "Their mainly ionic-covalent atomic structure gives them total chemical inertness to strong acids and bases, as well as excellent electrical insulation (high dielectric strength), even at extreme temperatures.",
+              "Their refractoriness allows use at high temperatures (above 1500°C) without creep or loss of mechanical properties."
+            ],
+            "chips": [
+              "Low density",
+              "Dimensional stability",
+              "Hardness",
+              "Wear resistance",
+              "Chemical inertness",
+              "Electrical insulation",
+              "High-temperature use",
+              "Biocompatibility"
+            ]
           }
         },
         "porcelaine-technique": {
           "title": "Technical porcelain",
-          "intro": "Technical porcelain belongs to the silicate ceramics family.",
-          "points": [
-            "Insulators and electrical components",
-            "Technical components for industrial equipment",
-            "Supports and components requiring electrical insulation",
-            "Industrial applications seeking a good performance-to-cost ratio"
-          ],
-          "sections": [
+          "intro": "Technical porcelain is a silicate ceramic reinforced by a dispersion of alumina crystals (30% to 75%).",
+          "summary": "Technical porcelain is a silicate ceramic reinforced by a dispersion of alumina crystals (30% to 75%).",
+          "blocks": [
             {
-              "title": "Insulation, strength and cost control",
-              "body": "Its composition combines a glassy phase with crystalline phases, providing electrical insulation, mechanical strength and cost control."
-            },
-            {
-              "title": "Technical and economic balance",
-              "body": "It suits applications that seek a balance between technical performance, suitability for series production and economic competitiveness."
+              "description": [
+                "Its complex microstructure combines a glassy phase derived from feldspar with a crystalline phase of corundum and mullite.",
+                "Its densification, which takes place at around 1400°C, produces a watertight, insulating material.",
+                "It is characterised by high dielectric strength and a flexural strength clearly superior to traditional siliceous porcelains.",
+                "It is the entry point to technical ceramics, thanks to its excellent performance/price ratio."
+              ],
+              "ref": "MAT-01"
             }
-          ]
+          ],
+          "tableTitle": "Characteristics of technical porcelain"
         },
         "alumine": {
           "title": "Aluminas",
           "short": "Aluminas",
-          "intro": "Alumina Al₂O₃: purity from 90 to 99.7%.",
-          "points": [
-            "Grinding balls and media",
-            "Thermal protection tubes",
-            "Nozzles and parts subject to abrasion",
-            "Wire guides",
-            "Valves, pump components and wear parts",
-            "Electrical insulators and supports",
-            "Components for electronics and semiconductors",
-            "Laboratory tubes and equipment",
-            "Medical applications depending on grade",
-            "Ballistic protection for certain formulations"
-          ],
-          "sections": [
+          "summary": "Intermediate-purity alumina (Al₂O₃) < 98% · High-purity alumina (Al₂O₃) > 98%",
+          "blocks": [
             {
-              "title": "Intermediate purity · Al₂O₃ 90 to 96%",
-              "body": "A balance between mechanical strength, hardness, wear resistance, electrical properties and cost. The alumina content, higher than in technical porcelains, improves mechanical performance, abrasion resistance and thermal resistance."
+              "heading": "Alumina",
+              "subtitle": "Intermediate-purity alumina (Al₂O₃) < 98%",
+              "description": [
+                "Intermediate-purity alumina, between 90% and 96%, marks the transition to ceramics with a dominant oxide matrix.",
+                "They contain a residual glassy phase (silicates) that makes sintering easier at moderate temperatures of 1500°C.",
+                "Their hardness and compressive strength are clearly increased compared with technical porcelain."
+              ],
+              "advantages": {
+                "title": "Advantages over aluminous porcelain:",
+                "body": "Higher abrasion resistance and hardness, as well as better thermal stability allowing more severe mechanical uses."
+              },
+              "applications": {
+                "title": "Industrial applications:",
+                "points": [
+                  "Grinding balls",
+                  "Thermal protection tubes",
+                  "Sandblasting nozzles and textile thread guides",
+                  "Valves",
+                  "Supports"
+                ]
+              },
+              "ref": "MAT-02"
             },
             {
-              "title": "High purity · Al₂O₃ above 98%",
-              "body": "High hardness, good thermal stability, excellent dielectric properties, strong resistance to wear and harsh chemical environments. Suited to applications requiring precision, mechanical strength, electrical insulation and durability."
+              "heading": "High-purity alumina",
+              "subtitle": "High-purity alumina (Al₂O₃) > 98%",
+              "description": [
+                "High-density alumina, from 98% to 99.7%, is a quasi single-phase ceramic (alpha-corundum) free of glassy phase.",
+                "It has almost zero porosity and extreme hardness (~1800 HV). Its chemical inertness is total against corrosive agents (pH 0-14)."
+              ],
+              "advantages": {
+                "title": "Advantages over 92-96% alumina:",
+                "body": "Clearly higher structural rigidity (Young’s modulus ~380 GPa), better thermal conductivity and absolute chemical resistance due to the absence of silicates, which are sensitive to acid or alkaline attack."
+              },
+              "applications": {
+                "title": "Industrial applications:",
+                "points": [
+                  "Ballistic protection",
+                  "Semiconductor components",
+                  "Medical instrumentation and orthopaedic implants",
+                  "High-precision laboratory crucibles and valves for corrosive fluids"
+                ]
+              },
+              "ref": "MAT-02b"
             }
-          ]
+          ],
+          "tableTitle": "Characteristics of alumina and high-purity alumina"
         },
         "zta": {
           "title": "ZTA",
-          "intro": "Zirconia-toughened alumina – Al₂O₃ + ZrO₂.",
-          "points": [
-            "Pump and valve components",
-            "Wear- and impact-loaded parts",
-            "High-strength mechanical components",
-            "Ballistic applications",
-            "Heavily loaded industrial tools and components",
-            "Medical applications depending on formulation"
-          ],
-          "sections": [
+          "intro": "ZTA, alumina toughened with zirconia (Al₂O₃ + ZrO₂)",
+          "summary": "ZTA, alumina toughened with zirconia (Al₂O₃ + ZrO₂)",
+          "blocks": [
             {
-              "title": "Zirconia Toughened Alumina",
-              "body": "ZTA, or Zirconia Toughened Alumina, is a composite material with an alumina matrix containing zirconia particles."
-            },
-            {
-              "title": "Hardness, toughness and crack resistance",
-              "body": "This combination improves toughness and resistance to crack propagation while retaining much of alumina’s hardness and wear resistance."
-            },
-            {
-              "title": "High mechanical loads",
-              "body": "ZTA offers a balance for applications subject to high mechanical stress."
+              "description": [
+                "ZTA is a composite material made of an alumina matrix in which zirconia particles are dispersed (generally 10 to 20%).",
+                "This material uses the “transformation toughening” mechanism to stop the propagation of micro-cracks."
+              ],
+              "advantages": {
+                "title": "Advantages over high-density alumina:",
+                "body": "Higher toughness (resistance to fracture): 5-8 MPa·m^0.5 against 3-4 for alumina. It offers an ideal compromise between the hardness of alumina and the resilience of zirconia, reducing the risk of brittle fracture."
+              },
+              "applications": {
+                "title": "Industrial applications:",
+                "points": [
+                  "Ballistic protection",
+                  "Cutting tools for hard metals",
+                  "High-pressure pump components and ceramic pistons",
+                  "Orthopaedic prostheses"
+                ]
+              },
+              "ref": "MAT-03"
             }
-          ]
+          ],
+          "tableTitle": "Characteristics of ZTA"
         },
         "zircone": {
           "title": "Zirconia",
-          "intro": "Zirconia ZrO₂.",
-          "points": [
-            "Pump and valve components",
-            "Tribological components and wear parts",
-            "Tools and cutting elements",
-            "Sensor components",
-            "Automotive applications",
-            "Watch components",
-            "Dental and medical applications depending on grade"
-          ],
-          "sections": [
+          "intro": "Zirconia (ZrO₂)",
+          "summary": "Zirconia (ZrO₂)",
+          "blocks": [
             {
-              "title": "Toughness and mechanical strength",
-              "body": "Stabilised zirconia offers higher toughness and mechanical strength than most oxide ceramics."
-            },
-            {
-              "title": "Behaviour under stress",
-              "body": "Its microstructure helps limit crack propagation under stress. It also has low thermal conductivity and can be used for components subject to high mechanical loads."
+              "description": [
+                "Yttria-stabilised tetragonal polycrystalline zirconia represents the peak of mechanical strength among oxide ceramics.",
+                "Nicknamed “ceramic steel”, it has a metastable structure that transforms locally under stress to compress emerging cracks."
+              ],
+              "advantages": {
+                "title": "Advantages over ZTA:",
+                "body": "Maximum toughness (> 8 MPa·m^0.5) and a flexural strength exceeding 1000 MPa. It also has low thermal conductivity (thermal insulator) and a coefficient of expansion close to that of steel, making assemblies easier (shrink fitting)."
+              },
+              "applications": {
+                "title": "Industrial applications:",
+                "points": [
+                  "Industrial knives",
+                  "Tribological components subject to shocks (valves, seats)",
+                  "Dental applications and oxygen sensors (lambda probes)",
+                  "Engine parts",
+                  "Watchmaking"
+                ]
+              },
+              "ref": "MAT-04"
             }
-          ]
+          ],
+          "tableTitle": "Characteristics of zirconia"
         },
         "marches": {
           "title": "Markets",
@@ -2102,64 +1631,12 @@
           "title": "High-performance ballistic ceramics",
           "short": "Defence",
           "intro": "Founded in Limoges in 1863, Bernardaud is a French, family-owned ceramic manufacturer combining long-standing material expertise with modern industrial capabilities. The facilities bring together ceramic formulation, prototyping, forming, sintering, machining, finishing and characterisation. This integrated approach supports customers from initial design through qualification and series production.",
-          "metrics": [
-            {
-              "value": "160 years",
-              "label": "of history"
-            },
-            {
-              "value": "750",
-              "label": "employees"
-            },
-            {
-              "value": "4 plants",
-              "label": "ceramic production, Limoges region"
-            },
-            {
-              "value": "60,000 m²",
-              "label": "dedicated to production"
-            }
-          ],
-          "site": {
-            "title": "An industrial site, unique in France",
-            "columns": [
-              {
-                "title": "From prototyping to serial production",
-                "intro": "Capabilities include:",
-                "points": [
-                  "Axial and semi-isostatic pressing",
-                  "Ceramic injection moulding",
-                  "Casting and die casting",
-                  "Waterjet cutting and robotic finishing",
-                  "Debinding and high-temperature sintering",
-                  "Surface treatment and texturing",
-                  "Material, mechanical and functional characterisation"
-                ]
-              },
-              {
-                "title": "Development and validation capabilities",
-                "intro": "",
-                "points": [
-                  "Material formulation and selection",
-                  "Design for manufacturing",
-                  "Rapid prototyping",
-                  "Material and microstructure analysis",
-                  "Density and hardness measurement",
-                  "Mechanical and ultrasonic testing",
-                  "Surface inspection",
-                  "Comparative ballistic testing",
-                  "Industrialisation and serial production"
-                ]
-              }
-            ]
-          },
           "protection": {
             "eyebrow": "Ballistic protection",
             "title": "Lightweight protection against high-level threats",
             "body": "Ballistic ceramics provide protection against high-velocity projectiles while limiting the weight of the complete armour system. Their extreme hardness damages and fragments the projectile on impact. The ceramic also helps to disperse the impact energy, in a controlled manner, over a wider area. It is combined with a backing material, typically polyethylene, aramid or composite, to capture fragments and absorb the remaining energy.",
             "system": {
               "title": "How a ceramic armour system works",
-              "image": "armourVest",
               "alt": "Body armour vest: hexagonal ceramic plate integrated into the protection system",
               "steps": [
                 {
@@ -2174,7 +1651,8 @@
                   "title": "Complete body armour system",
                   "body": "Provides the required protection and ergonomic levels while optimising weight, thickness and cost."
                 }
-              ]
+              ],
+              "ref": "DEF-SYS"
             }
           },
           "applications": [
@@ -2183,7 +1661,8 @@
               "points": [
                 "Hard body armour plates",
                 "Ballistic shields"
-              ]
+              ],
+              "ref": "DEF-APP-1"
             },
             {
               "title": "Armoured vehicles, command and logistic trucks, turrets",
@@ -2192,7 +1671,8 @@
                 "Mine floor protection",
                 "Roof protection",
                 "Gunner protection"
-              ]
+              ],
+              "ref": "DEF-APP-2"
             },
             {
               "title": "Armoured ships, coast guard boats",
@@ -2201,21 +1681,24 @@
                 "Crew cabin protection",
                 "Turret protection",
                 "Gunner protection"
-              ]
+              ],
+              "ref": "DEF-APP-3"
             },
             {
               "title": "Fixed-wing aircraft, rotary-wing helicopters",
               "points": [
                 "Cockpit floor",
                 "Side protection panels"
-              ]
+              ],
+              "ref": "DEF-APP-4"
             },
             {
               "title": "Radars, mobile command posts",
               "points": [
                 "Casing",
                 "Side panels"
-              ]
+              ],
+              "ref": "DEF-APP-5"
             }
           ],
           "products": {
@@ -2227,10 +1710,6 @@
               "Zirconia"
             ],
             "materialsTitle": "Materials"
-          },
-          "levels": {
-            "title": "Protection levels",
-            "body": "Bernardaud components are suitable for VPAM, NIJ III+ and NIJ IV protection standards, depending on the configuration of the complete system."
           },
           "value": {
             "title": "Value proposition",
@@ -2261,65 +1740,15 @@
               }
             ]
           },
-          "tests": {
-            "title": "Testing",
-            "intro": "Test facilities and ceramic plates undergoing qualification.",
-            "items": [
-              {
-                "image": "testTunnel",
-                "title": "Test facilities",
-                "credit": "Bernardaud"
-              },
-              {
-                "image": "testPlates",
-                "title": "Ceramic plates",
-                "credit": "Bernardaud"
-              }
-            ]
-          },
-          "quote": {
-            "body": "Responsiveness, continuous innovation and industrial independence are now essential to meeting today’s defence challenges. From the heart of France, Bernardaud provides a robust industrial capability, combining manufacturing excellence with uncompromising quality to support the evolving needs of defence and security forces.",
-            "author": "Michel Bernardaud",
-            "role": "Chairman and CEO"
-          },
           "closing": {
             "title": "Standard products when speed matters. Bespoke development when the application demands it.",
             "body": "Let’s develop your next protection solution.",
             "button": "Write to BSI"
-          }
+          },
+          "ref": "DEF"
         },
         "industrie": {
           "title": "Industry",
-          "intro": "Technical ceramics, screen printing and surface treatments for industrial parts made to specification.",
-          "overview": [
-            "Resistance to wear, shock, high temperatures or chemical environments, electrical insulation, inertness, dimensional accuracy, surface properties, marking or decoration: technical ceramics, screen printing and surface treatments provide these functions on specific industrial parts.",
-            "From a specification or a statement of need, Bernardaud Solutions Industrielles studies and develops custom parts using all or part of its processes, from the first R&D phases through process development to industrialisation."
-          ],
-          "showcase": {
-            "title": "Applications",
-            "items": [
-              {
-                "sector": "Energy",
-                "part": "Rotor",
-                "image": "marketIndustry"
-              },
-              {
-                "sector": "Nuclear",
-                "part": "Container",
-                "image": "industryContainer"
-              },
-              {
-                "sector": "Industry",
-                "part": "Kiln supports",
-                "image": "industryKilnSupport"
-              },
-              {
-                "sector": "Medical",
-                "part": "Glove mould",
-                "image": "industryGloveMold"
-              }
-            ]
-          },
           "applications": [
             {
               "title": "Dimensional stability",
@@ -2328,6 +1757,9 @@
                 "Inserts",
                 "Reinforcements",
                 "Precision components"
+              ],
+              "refs": [
+                "INDUS-01"
               ]
             },
             {
@@ -2337,6 +1769,9 @@
                 "Guides",
                 "Protective parts",
                 "Friction parts"
+              ],
+              "refs": [
+                "INDUS-02"
               ]
             },
             {
@@ -2346,6 +1781,9 @@
                 "Laboratory equipment",
                 "Valves",
                 "Components in contact with corrosive fluids"
+              ],
+              "refs": [
+                "INDUS-03"
               ]
             },
             {
@@ -2354,6 +1792,9 @@
                 "Substrates",
                 "Insulators",
                 "Electrical supports"
+              ],
+              "refs": [
+                "INDUS-04"
               ]
             },
             {
@@ -2362,6 +1803,9 @@
                 "Kiln supports",
                 "Thermal protection",
                 "Furnace components"
+              ],
+              "refs": [
+                "INDUS-05"
               ]
             },
             {
@@ -2371,6 +1815,9 @@
                 "Friction reduction",
                 "Surface functionalisation",
                 "Aesthetic finishes"
+              ],
+              "refs": [
+                "INDUS-06"
               ]
             }
           ],
@@ -2378,7 +1825,13 @@
             "title": "Your part or application is not listed here?",
             "body": "Even if you do not see your product or your market on the site, submit your problem to us.",
             "button": "Submit a need"
-          }
+          },
+          "ref": "INDUS",
+          "intro": "Resistance to wear, shock, high temperatures or chemical environments, electrical insulation, inertness, dimensional accuracy, surface properties, marking or decoration: technical ceramics, screen printing and surface treatments provide these functions on specific industrial parts.",
+          "introExtra": [
+            "From a specification or a statement of need, Bernardaud Solutions Industrielles studies and develops custom parts using all or part of its processes, from the first R&D phases through process development to industrialisation."
+          ],
+          "applicationsTitle": "Applications"
         },
         "horlogerie": {
           "title": "Watchmaking",
@@ -2387,58 +1840,33 @@
             {
               "title": "Technical ceramics",
               "body": "Development and manufacture of ceramic dials, bezels, links and cases, with control of geometries, surface finishes, colours and series repeatability.",
-              "points": [
-                "Dials",
-                "Cases: zirconia blanks",
-                "Bezels and rings with indexes",
-                "Bracelet links"
-              ]
+              "refs": [
+                "HORLO-01",
+                "HORLO-01b"
+              ],
+              "gallery": true
             },
             {
               "title": "Screen printing",
               "body": "Design and production of high-precision transfers, applicable to different materials and watch components.",
-              "points": [
-                "Low-temperature (on-glaze) transfers, offering wide colour freedom",
-                "High-temperature (in-glaze) transfers, integrated into the glaze during firing",
-                "Fine decorations, patterns, indexes and graphic elements"
-              ]
+              "refs": [
+                "HORLO-02",
+                "HORLO-02b",
+                "HORLO-02c"
+              ],
+              "gallery": true
             },
             {
               "title": "Decoration and surface treatments",
               "body": "Decoration of customer-supplied components, with development of colours, patterns, surface effects and finishes according to the specification.",
-              "points": [
-                "PVD",
-                "Texturing and relief creation",
-                "Material colouring",
-                "Precious metal deposits: gold and platinum",
-                "Dials, cases, bezels, bracelets and sapphire crystals"
-              ]
+              "refs": [
+                "HORLO-03",
+                "HORLO-03b"
+              ],
+              "gallery": true
             }
           ],
-          "galleries": [
-            {
-              "title": "Decorated dials",
-              "images": [
-                "watchDial1",
-                "watchDial2",
-                "watchDial3"
-              ]
-            },
-            {
-              "title": "Bezels and rings, decorations with indexes",
-              "images": [
-                "watchBezel1",
-                "watchBezel2"
-              ]
-            },
-            {
-              "title": "Zirconia case blanks",
-              "images": [
-                "watchCase1",
-                "watchCase2"
-              ]
-            }
-          ]
+          "ref": "HORLO"
         },
         "actualites": {
           "title": "News",
@@ -2525,49 +1953,39 @@
           ]
         },
         "histoire": {
-          "title": "From a historic craft to a set of industrial processes",
+          "title": "Bernardaud: The Intelligence of the Hand, the Power of Industry",
           "short": "History",
-          "intro": "Founded in Limoges in 1863, Bernardaud has developed its industrial base generation after generation: from the porcelain manufacture to technical ceramics, screen printing, decoration and surface treatments.",
-          "sections": [
+          "intro": "Established in Limoges since 1863, Bernardaud embodies the excellence of a region inseparable from the history of porcelain. As a major player in the local economy, our factory sustains a unique French heritage, turning an artisanal tradition into a leading industrial force.",
+          "ref": "HIST",
+          "drawingAlt": "Drawing of the Bernardaud manufacture",
+          "story": [
             {
-              "title": "1863: the porcelain manufacture",
-              "body": "Bernardaud is founded in Limoges. Its historic craft rests on mastery of porcelain, firing, colour and decoration."
+              "paragraphs": [
+                "Our path is one of successful transformation: while French decorative arts and the work of our craftspeople remain the foundation of our identity, Bernardaud is today a modern industrial company, at the cutting edge of the technological innovations of the ceramics producer, operating on 4 production sites and exporting worldwide.",
+                "Today, our expertise extends to the manufacture of complex technical parts. Thanks to in-depth mastery of manufacturing processes and ceramic properties, we put our production tools at the service of the most demanding industrial sectors."
+              ],
+              "refs": [
+                "HIST-02"
+              ]
             },
             {
-              "title": "Continuous industrial investment",
-              "body": "Tunnel kiln, isostatic pressing, injection moulding, PVD surface treatments: each generation has added new equipment and new processes to the industrial base."
+              "paragraphs": [
+                "Since its founding in 1863, the House of Bernardaud has illustrated the shift from artisanal know-how, where every piece of porcelain was shaped and decorated by hand, to progressively mechanised and industrialised production."
+              ],
+              "refs": [
+                "HIST-03",
+                "HIST-04"
+              ]
             },
             {
-              "title": "A set of industrial processes",
-              "body": "These investments have made Bernardaud, beyond its historic activity, a set of processes used for industrial applications: technical ceramics, screen printing, decoration and surface treatments."
+              "paragraphs": [
+                "Today, while integrating modern and automated techniques, the company continues to value artistic work and creation, combining tradition and innovation through to 2026."
+              ],
+              "refs": [
+                "HIST-05"
+              ]
             }
-          ],
-          "gallery": {
-            "title": "The manufacture, then and now",
-            "intro": "Views of the manufacture and firing equipment, kept in the Bernardaud archives and workshops.",
-            "items": [
-              {
-                "image": "archiveManufacture",
-                "title": "The manufacture in 1890",
-                "credit": "Bernardaud archives"
-              },
-              {
-                "image": "manufactureToday",
-                "title": "The manufacture in 2025",
-                "credit": "© OdieuxBoby / Bernardaud"
-              },
-              {
-                "image": "archiveWoodKiln",
-                "title": "The old wood-fired kilns",
-                "credit": "Bernardaud archives"
-              },
-              {
-                "image": "archiveTunnelKiln",
-                "title": "A historic tunnel kiln",
-                "credit": "Bernardaud archives"
-              }
-            ]
-          }
+          ]
         }
       }
     }
@@ -2604,6 +2022,9 @@
         ],
         [
           "10"
+        ],
+        [
+          "1×10¹²"
         ]
       ]
     },
@@ -2678,6 +2099,13 @@
           "24",
           "26",
           "30"
+        ],
+        [
+          "1×10¹⁴",
+          "1×10¹⁵",
+          "1×10¹⁵",
+          "1×10¹⁴",
+          "1×10¹⁴"
         ]
       ]
     },
@@ -2722,6 +2150,10 @@
         [
           "10",
           "10"
+        ],
+        [
+          "1×10¹³",
+          "1×10¹³"
         ]
       ]
     },
@@ -2731,7 +2163,7 @@
       ],
       "values": [
         [
-          "Selon grade"
+          "–"
         ],
         [
           "6"
@@ -2784,6 +2216,245 @@
       "title": "Cookie settings",
       "accept": "Accept",
       "reject": "Reject"
+    }
+  },
+  "slots": {
+    "BAN-PRES": {
+      "image": "/assets/manufacture-aerienne.webp",
+      "pos": "60% 45%"
+    },
+    "BAN-HIST": {
+      "image": "/assets/histoire-bandeau-emaillage.jpg",
+      "pos": "70% 50%"
+    },
+    "BAN-OUTIL": {
+      "image": "/assets/atelier-production.webp",
+      "pos": "60% 50%"
+    },
+    "PRES-01": {
+      "image": "/assets/manufacture-2025.jpg"
+    },
+    "PRES-02": {
+      "image": ""
+    },
+    "PRES-03": {
+      "image": "/assets/site-limoges-nord.jpg"
+    },
+    "PRES-04": {
+      "image": ""
+    },
+    "PRES-05": {
+      "image": "/assets/certification-socotec.png",
+      "fit": "contain"
+    },
+    "PRES-06": {
+      "image": "/assets/laboratoire.webp",
+      "pos": "50% 40%"
+    },
+    "HIST-01": {
+      "image": "/assets/dessin-manufacture.webp",
+      "fit": "contain"
+    },
+    "HIST-02": {
+      "image": "/assets/manufacture-2025.jpg",
+      "caption": {
+        "fr": "Maison Bernardaud en 2025 · © OdieuxBoby",
+        "en": "Bernardaud house in 2025 · © OdieuxBoby"
+      }
+    },
+    "HIST-03": {
+      "image": "/assets/archive-manufacture-1890.jpg",
+      "ratio": "1 / 1",
+      "caption": {
+        "fr": "Manufacture Bernardaud en 1890",
+        "en": "Bernardaud manufacture in 1890"
+      }
+    },
+    "HIST-04": {
+      "image": "/assets/archive-four-bois.jpg",
+      "ratio": "1 / 1",
+      "caption": {
+        "fr": "Four à bois – Archive Bernardaud",
+        "en": "Wood-fired kiln – Bernardaud archive"
+      }
+    },
+    "HIST-05": {
+      "image": "/assets/archive-four-tunnel.jpg",
+      "caption": {
+        "fr": "Four tunnel Bernardaud",
+        "en": "Bernardaud tunnel kiln"
+      }
+    },
+    "BAN-CERAM": {
+      "image": "/assets/bandeau-ceramique-poudre.jpg",
+      "pos": "50% 55%"
+    },
+    "CERAM-01": {
+      "image": "/assets/ceramique-matiere.jpg"
+    },
+    "CERAM-02": {
+      "image": ""
+    },
+    "CERAM-03": {
+      "image": ""
+    },
+    "CERAM-04": {
+      "image": ""
+    },
+    "CERAM-05": {
+      "image": ""
+    },
+    "CERAM-06": {
+      "image": ""
+    },
+    "BAN-SERI": {
+      "image": "/assets/bandeau-serigraphie-encre.jpg",
+      "pos": "50% 45%"
+    },
+    "SERI-01": {
+      "image": ""
+    },
+    "SERI-02": {
+      "image": ""
+    },
+    "SERI-03": {
+      "image": ""
+    },
+    "SERI-04": {
+      "image": ""
+    },
+    "SERI-05": {
+      "image": ""
+    },
+    "BAN-SURF": {
+      "image": "/assets/pvd-plots.jpg",
+      "pos": "50% 55%"
+    },
+    "SURF-01": {
+      "image": ""
+    },
+    "SURF-02": {
+      "image": ""
+    },
+    "SURF-03": {
+      "image": ""
+    },
+    "BAN-MAT": {
+      "image": "/assets/bandeau-ceramique-poudre.jpg",
+      "pos": "50% 55%"
+    },
+    "MAT-01": {
+      "image": "/assets/structure-porcelaine-alumine.jpg",
+      "fit": "vignette"
+    },
+    "MAT-02": {
+      "image": "/assets/structure-porcelaine-alumine.jpg",
+      "fit": "vignette"
+    },
+    "MAT-02b": {
+      "image": "/assets/structure-porcelaine-alumine.jpg",
+      "fit": "vignette"
+    },
+    "MAT-03": {
+      "image": "/assets/structure-zta.jpg",
+      "fit": "vignette"
+    },
+    "MAT-04": {
+      "image": "/assets/structure-zircone.jpg",
+      "fit": "vignette"
+    },
+    "BAN-DEF": {
+      "image": "/assets/bandeau-defense-couverture.jpg",
+      "pos": "50% 40%"
+    },
+    "DEF-SYS": {
+      "image": "/assets/defense-assemblage-carreaux.jpg",
+      "fit": "vignette"
+    },
+    "DEF-APP-1": {
+      "image": "/assets/defense-application-1.jpg",
+      "ratio": "1 / 1"
+    },
+    "DEF-APP-2": {
+      "image": "/assets/defense-application-2.jpg",
+      "ratio": "1 / 1"
+    },
+    "DEF-APP-3": {
+      "image": "/assets/defense-application-3.jpg",
+      "ratio": "1 / 1"
+    },
+    "DEF-APP-4": {
+      "image": "/assets/defense-application-4.jpg",
+      "ratio": "1 / 1"
+    },
+    "DEF-APP-5": {
+      "image": "/assets/defense-application-5.jpg",
+      "ratio": "1 / 1"
+    },
+    "DEF-PIECE-1": {
+      "image": "/assets/ballistic-1.png",
+      "ratio": "1 / 1"
+    },
+    "DEF-PIECE-2": {
+      "image": "/assets/ballistic-2.png",
+      "ratio": "1 / 1"
+    },
+    "DEF-PIECE-3": {
+      "image": "/assets/ballistic-3.png",
+      "ratio": "1 / 1"
+    },
+    "BAN-HORLO": {
+      "image": "/assets/horlogerie-cadran-2.jpg",
+      "pos": "50% 45%"
+    },
+    "HORLO-01": {
+      "image": "/assets/horlogerie-boitier-1.jpg",
+      "ratio": "1 / 1"
+    },
+    "HORLO-01b": {
+      "image": "/assets/horlogerie-boitier-2.jpg",
+      "ratio": "1 / 1"
+    },
+    "HORLO-02": {
+      "image": "/assets/horlogerie-cadran-1.jpg",
+      "ratio": "1 / 1"
+    },
+    "HORLO-02b": {
+      "image": "/assets/horlogerie-cadran-2.jpg",
+      "ratio": "1 / 1"
+    },
+    "HORLO-02c": {
+      "image": "/assets/horlogerie-cadran-3.jpg",
+      "ratio": "1 / 1"
+    },
+    "HORLO-03": {
+      "image": "/assets/horlogerie-lunette-1.jpg",
+      "ratio": "1 / 1"
+    },
+    "HORLO-03b": {
+      "image": "/assets/horlogerie-lunette-2.jpg",
+      "ratio": "1 / 1"
+    },
+    "BAN-INDUS": {
+      "image": ""
+    },
+    "INDUS-01": {
+      "image": "/assets/marche-industrie-rotor.jpg"
+    },
+    "INDUS-02": {
+      "image": ""
+    },
+    "INDUS-03": {
+      "image": "/assets/industrie-conteneur.jpg"
+    },
+    "INDUS-04": {
+      "image": ""
+    },
+    "INDUS-05": {
+      "image": "/assets/industrie-supports-cuisson.jpg"
+    },
+    "INDUS-06": {
+      "image": ""
     }
   }
 }

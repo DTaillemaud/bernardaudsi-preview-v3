@@ -49,3 +49,12 @@ Les textes de presentation et d'historique du document editorial fourni restent 
 - Depots PVD (plots colores) : ressource Bernardaud.
 - Horlogerie (cadrans, lunettes, bagues, boitiers en zircone) : images generees par IA, indiquees comme telles sur la page. Les images portant un filigrane d'outil l'ont conserve. A confirmer avant toute mise en ligne definitive : conditions d'utilisation de l'outil et ressemblance avec des modeles existants.
 - Schema « ecosysteme de recherche » (Pole europeen de la ceramique, IRCER, CITRA, CTTC) : visuel fourni, logos de leurs titulaires.
+
+### Complements du 5 novembre 2026 (version 3)
+
+- Emaillage d'une assiette (bandeau de l'Histoire, recadrage) : https://bernardaudsi.com/wp-content/uploads/2026/05/SavoirFaire_Emaillage_AssietteAstre_4-%C2%A9-OdieuxBoby.jpg ; credit OdieuxBoby.
+- Bandeau et photo de matière de Céramiques techniques : image de fond de « Range of materials & performances », page 4 de la brochure de protection balistique (leaflet BSI fourni par le demandeur), extraite du PDF.
+- Bandeau de l'Imprimerie sérigraphique : https://bernardaudsi.com/wp-content/uploads/2026/10/SavoirFaire_Impression_DecorAlbertine3%C2%A9-OdieuxBoby-scaled.jpg ; credit OdieuxBoby (image placée sous « Sérigraphie de haute précision » sur l'ancien site).
+- Structures microscopiques des matériaux (alumine, ZTA, zircone) : https://bernardaudsi.com/wp-content/uploads/2026/05/Image3.jpg, https://bernardaudsi.com/wp-content/uploads/2026/05/Image4.jpg, https://bernardaudsi.com/wp-content/uploads/2026/06/Image4.jpg (pages de l'ancien site ; l'ancien site utilise la même image pour la porcelaine technique, l'alumine et l'alumine haute pureté : à vérifier avec Charles A).
+- Page Défense : photo de couverture, schéma « plaque + support, plaque intégrée, gilet » et pictogrammes des applications extraits de la brochure de protection balistique (leaflet BSI fourni par le demandeur), pages 1 et 3.
+- Image d'accueil : vue aérienne de l'usine d'Oradour-sur-Glane (`usine-oradour-vue-aerienne.webp`, 2 000 px de large, tirée du fichier `DroneOradour_BD.jpg` fourni par Damien le 5 novembre 2026 ; auteur et droits de la prise de vue à confirmer).
