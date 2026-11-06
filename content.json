@@ -339,10 +339,8 @@
               "title": "Post-traitement",
               "body": "Usinage, polissage et finitions de surface pour atteindre les dimensions, états de surface et niveaux de précision requis.",
               "refs": [
-                "CERAM-04",
-                "CERAM-04b"
-              ],
-              "gallery": true
+                "CERAM-04"
+              ]
             },
             {
               "title": "Ajout de fonctions",
@@ -1320,10 +1318,8 @@
               "title": "Post-processing",
               "body": "Machining, polishing and surface finishing to reach the required dimensions, surface finishes and precision levels.",
               "refs": [
-                "CERAM-04",
-                "CERAM-04b"
-              ],
-              "gallery": true
+                "CERAM-04"
+              ]
             },
             {
               "title": "Added functions",
@@ -2366,9 +2362,9 @@
       "pos": "45% 50%"
     },
     "CERAM-04": {
-      "image": "/assets/ceram-04-post-traitement.jpg",
+      "image": "/assets/ceram-04b-decoupe-jet-eau.jpg",
       "ratio": "4 / 3",
-      "pos": "50% 50%"
+      "pos": "55% 35%"
     },
     "CERAM-05": {
       "image": "/assets/ceram-05-ajout-de-fonctions.jpg",
@@ -2543,11 +2539,6 @@
     },
     "OUTIL-CARTE": {
       "ratio": "4 / 3"
-    },
-    "CERAM-04b": {
-      "image": "/assets/ceram-04b-decoupe-jet-eau.jpg",
-      "ratio": "4 / 3",
-      "pos": "55% 35%"
     }
   }
 }
