@@ -79,7 +79,7 @@
     "armourParts": "/assets/defense-pieces.jpg",
     "testTunnel": "/assets/defense-essais-tunnel.jpg",
     "testPlates": "/assets/defense-essais-plaques.jpg",
-    "siteOradour": "/assets/site-oradour.jpg",
+    "siteOradour": "/assets/usine-oradour-vue-aerienne.webp",
     "siteLimogesCentre": "/assets/site-limoges-centre.jpg",
     "siteLimogesNord": "/assets/site-limoges-nord.jpg",
     "siteAixe": "/assets/site-aixe.jpg",
@@ -2362,14 +2362,14 @@
       "pos": "45% 50%"
     },
     "CERAM-04": {
-      "image": "/assets/ceram-04b-decoupe-jet-eau.jpg",
+      "image": "/assets/ceram-04-post-traitement.jpg",
       "ratio": "4 / 3",
-      "pos": "55% 35%"
+      "pos": "50% 0%"
     },
     "CERAM-05": {
-      "image": "/assets/ceram-05-ajout-de-fonctions.jpg",
+      "image": "/assets/ceram-05-ajout-de-fonctions-v2.jpg",
       "ratio": "4 / 3",
-      "pos": "60% 50%"
+      "pos": "50% 50%"
     },
     "CERAM-06": {
       "image": "/assets/ceram-06-controles-qualite.jpg",
@@ -2415,10 +2415,14 @@
       "pos": "45% 50%"
     },
     "SURF-02": {
-      "image": ""
+      "image": "/assets/surf-02-production.jpg",
+      "ratio": "4 / 3",
+      "pos": "50% 50%"
     },
     "SURF-03": {
-      "image": ""
+      "image": "/assets/surf-03-controle-qualite.jpg",
+      "ratio": "4 / 3",
+      "pos": "50% 50%"
     },
     "BAN-MAT": {
       "image": "/assets/bandeau-ceramique-poudre.jpg",
@@ -2516,6 +2520,11 @@
       "image": "/assets/horlogerie-lunette-2.jpg",
       "ratio": "1 / 1"
     },
+    "HORLO-04": {
+      "image": "/assets/horlo-04-savoir-faire-manuel.jpg",
+      "ratio": "4 / 3",
+      "pos": "50% 50%"
+    },
     "BAN-INDUS": {
       "image": ""
     },
@@ -2523,19 +2532,19 @@
       "image": "/assets/marche-industrie-rotor.jpg"
     },
     "INDUS-02": {
-      "image": ""
+      "image": "/assets/indus-02-durete-usure.jpg"
     },
     "INDUS-03": {
       "image": "/assets/industrie-conteneur.jpg"
     },
     "INDUS-04": {
-      "image": ""
+      "image": "/assets/ceram-05-ajout-de-fonctions-v2.jpg"
     },
     "INDUS-05": {
       "image": "/assets/industrie-supports-cuisson.jpg"
     },
     "INDUS-06": {
-      "image": ""
+      "image": "/assets/indus-06-traitements-de-surface.jpg"
     },
     "OUTIL-CARTE": {
       "ratio": "4 / 3"
