@@ -199,7 +199,7 @@
       },
       "pages": {
         "presentation": {
-          "title": "Une production 100 % française en Haute-Vienne",
+          "title": "Présentation générale",
           "short": "Présentation générale",
           "intro": "Bernardaud Solutions Industrielles regroupe les activités de céramiques techniques, sérigraphie, décoration et traitement de surface du groupe.",
           "metrics": [
@@ -885,11 +885,11 @@
         },
         "horlogerie": {
           "title": "Horlogerie",
-          "intro": "Bernardaud Solutions Industrielles met à disposition des maisons horlogères 2 savoir-faire : la production de pièces, en porcelaine ou céramique, finies ou semi-finies et la décoration de pièces horlogères, par sérigraphie ou à la main. Ces savoir-faire peuvent être mobilisés aussi bien pour des pièces uniques (métier d’art) que pour des productions en série.",
+          "intro": "Bernardaud Solutions Industrielles met à disposition des maisons horlogères ses capacités en céramiques techniques, impression sérigraphique et décoration pour le développement et la production de composants à forte exigence de précision, de finition et de répétabilité. Ces savoir-faire peuvent être mobilisés aussi bien pour des pièces uniques et pièces d’art que pour des productions en grande série.",
           "blocks": [
             {
               "title": "Céramiques techniques",
-              "body": "Développement et fabrication de pièces finies (cadrans), lunettes, ou semi-finies (maillons et boîtiers en porcelaine ou en céramique) avec maîtrise des géométries, des états de surface, des couleurs et de la répétabilité en série.",
+              "body": "Développement et fabrication de pièces finies (cadrans), lunettes, ou semi-finies (maillons et boîtiers) avec maîtrise des géométries, des états de surface, des couleurs et de la répétabilité en série.",
               "refs": [
                 "HORLO-01",
                 "HORLO-01b"
@@ -1180,7 +1180,7 @@
       },
       "pages": {
         "presentation": {
-          "title": "100% French production in Haute-Vienne",
+          "title": "General overview",
           "short": "Overview",
           "intro": "Bernardaud Solutions Industrielles brings together the group’s technical ceramics, screen printing, decoration and surface treatment activities.",
           "metrics": [
@@ -1866,11 +1866,11 @@
         },
         "horlogerie": {
           "title": "Watchmaking",
-          "intro": "Bernardaud Solutions Industrielles offers watchmaking houses 2 areas of expertise: the production of finished or semi-finished parts in porcelain or ceramic, and the decoration of watch parts, by screen printing or by hand. These skills can be used for one-off pieces (craft) as well as for series production.",
+          "intro": "Bernardaud Solutions Industrielles offers watchmaking houses its capabilities in technical ceramics, screen printing and decoration for the development and production of components with high requirements for precision, finish and repeatability. These skills can be used for one-off pieces and art pieces as well as for large-series production.",
           "blocks": [
             {
               "title": "Technical ceramics",
-              "body": "Development and manufacture of finished parts (dials), bezels, or semi-finished parts (links and cases in porcelain or ceramic) with control of geometries, surface finishes, colours and series repeatability.",
+              "body": "Development and manufacture of finished parts (dials), bezels, or semi-finished parts (links and cases) with control of geometries, surface finishes, colours and series repeatability.",
               "refs": [
                 "HORLO-01",
                 "HORLO-01b"
