@@ -252,7 +252,8 @@ function industrial() {
   const id = "outil-industriel";
   const data = page(id);
   const photos = `<section class="section site-photos-section"><div class="container"><div class="site-photos">${data.photos.map(item => `<figure data-reveal>${picture(item.image, item.caption)}<figcaption>${esc(item.caption)}</figcaption></figure>`).join("")}</div></div></section>`;
-  const map = `<section class="section site-map-section"><div class="container"><div class="site-map" data-reveal>${slotFigure("OUTIL-CARTE", lang === "fr" ? "Carte de France situant les sites de production Bernardaud" : "Map of France showing the Bernardaud production sites")}</div></div></section>`;
+  // La carte n'apparaît que lorsque sa photo est renseignée dans content.slots (OUTIL-CARTE) : pas d'encart vide en attendant.
+  const map = slotInfo("OUTIL-CARTE").image ? `<section class="section site-map-section"><div class="container"><div class="site-map" data-reveal>${slotFigure("OUTIL-CARTE", lang === "fr" ? "Carte de France situant les sites de production Bernardaud" : "Map of France showing the Bernardaud production sites")}</div></div></section>` : "";
   return `${pageTop(id)}${photos}${map}${sites(data.sites)}`;
 }
 
