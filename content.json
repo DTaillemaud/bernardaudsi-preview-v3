@@ -201,73 +201,48 @@
         "presentation": {
           "title": "Présentation générale",
           "short": "Présentation générale",
-          "intro": "Bernardaud Solutions Industrielles regroupe les activités de céramiques techniques, sérigraphie, décoration et traitement de surface du groupe.",
-          "metrics": [
-            {
-              "value": "6",
-              "label": "générations, un actionnariat familial"
-            },
-            {
-              "value": "60 000 m²",
-              "label": "d’installations industrielles"
-            },
-            {
-              "value": "750",
-              "label": "collaborateurs : ouvriers, ingénieurs, chercheurs"
-            },
-            {
-              "value": "ISO 9001 | ISO 14001",
-              "label": "systèmes de management certifiés"
-            }
-          ],
+          "intro": "Bernardaud Solutions Industrielles ouvre aux marchés industriels les équipements, procédés et capacités de production du groupe Bernardaud, développés depuis plus de 160 ans dans ses usines de Haute-Vienne.",
           "sections": [
             {
-              "title": "Six générations, un actionnariat familial",
-              "body": "Depuis 1863 Bernardaud exploite quatre sites de production en Haute-Vienne regroupant des activités de fabrication céramique, sérigraphie, décoration et traitement de surface, dans le cadre de systèmes de management certifiés ISO 9001 et ISO 14001. Entreprise familiale depuis six générations, Bernardaud associe une production intégrée en Haute-Vienne à une présence commerciale internationale.",
+              "title": "Une puissance industrielle de 60 000 m² et 750 collaborateurs",
+              "body": "Bernardaud exploite quatre sites industriels en Haute-Vienne, représentant 60 000 m² d’installations et réunissant 750 collaborateurs : opérateurs qualifiés, techniciens, ingénieurs et chercheurs.",
               "paragraphs": [
-                "La famille Bernardaud reste directement impliquée dans la direction et les activités du groupe, ce qui favorise une prise de décision rapide et des investissements industriels de long terme."
+                "Ces sites disposent d’équipements de fabrication céramique, de cuisson, d’impression, de décoration et de traitement de surface, permettant de réaliser des prototypes, des pièces spécifiques et des productions en grande série."
               ],
-              "refs": [
-                "PRES-01"
-              ]
-            },
-            {
-              "title": "Des procédés complémentaires",
-              "body": "Céramiques techniques, sérigraphie, décoration et traitement de surface peuvent être utilisés séparément ou combinés sur un même projet industriel.",
-              "refs": [
-                "PRES-02"
-              ]
-            },
-            {
-              "title": "Une production intégrée",
-              "body": "60 000 m² d’installations industrielles et 750 collaborateurs, ouvriers, ingénieurs et chercheurs, réunis sur quatre sites en Haute-Vienne.",
               "refs": [
                 "PRES-03"
               ]
             },
             {
-              "title": "Une présence internationale",
-              "body": "Bernardaud est présent en Chine, au Japon et aux États-Unis. 75 % des ventes sont réalisées à l’export.",
-              "refs": [
-                "PRES-04"
-              ]
-            },
-            {
-              "title": "ISO 9001 et ISO 14001",
-              "body": "Les sites de production sont certifiés ISO 9001 pour le management de la qualité et ISO 14001 pour le management environnemental. La démarche RSE fait l’objet d’une évaluation EcoVadis.",
+              "title": "Des systèmes de management certifiés ISO 9001 et ISO 14001",
+              "body": "Le site industriel d’Oradour-sur-Glane est certifié ISO 9001 et ISO 14001. Ces systèmes de management encadrent la qualité, la maîtrise des procédés de fabrication et la gestion des impacts environnementaux.",
               "refs": [
                 "PRES-05"
               ],
               "certificates": true
             },
             {
-              "title": "Un écosystème local de recherche et développement",
-              "body": "Implantée au sein du pôle européen de la céramique à Limoges, Bernardaud Solutions Industrielles s’appuie sur un environnement qui associe recherche, transfert de technologies et expertise industrielle.",
+              "title": "Des capacités intégrées de recherche, développement et ingénierie",
+              "body": "Bernardaud dispose de laboratoires de R&D, de bureaux d’études et de moyens de prototypage internes. Ces équipes travaillent avec les clients à tous les niveaux de maturité technologique (TRL), depuis les premiers travaux de recherche et les preuves de concept jusqu’à la qualification des procédés et à la production industrielle.",
               "paragraphs": [
-                "En complément des moyens internes, Bernardaud Solutions Industrielles travaille avec l’IRCER (Institut de recherche sur les céramiques), le CTTC (Centre de transfert de technologies céramiques), le CITRA (traitements de surface) et le CEDREM, pour les phases de recherche, de caractérisation et de développement."
+                "Ces capacités sont complétées par l’environnement scientifique et technique du bassin céramique de Limoges, avec des partenaires comme l’IRCER, le CTTC, le CITRA et le CEDREM, mobilisés pour des travaux de recherche, de caractérisation et d’essais spécifiques."
               ],
               "refs": [
                 "PRES-06"
+              ]
+            },
+            {
+              "title": "Une présence commerciale internationale",
+              "body": "Bernardaud dispose d’implantations commerciales aux États-Unis, au Japon et en Chine et distribue ses produits dans plus de 130 pays. Cette organisation permet de travailler directement avec des clients internationaux tout en conservant sa production industrielle en Haute-Vienne.",
+              "refs": [
+                "PRES-04"
+              ]
+            },
+            {
+              "title": "Une entreprise familiale indépendante depuis 1863",
+              "body": "Fondée à Limoges en 1863, Bernardaud est aujourd’hui détenue et dirigée par la sixième génération de la famille fondatrice. Cet actionnariat indépendant, directement impliqué dans la gestion de l’entreprise, permet de conduire une politique d’investissement industriel sur le long terme.",
+              "refs": [
+                "PRES-01"
               ]
             }
           ],
@@ -281,7 +256,11 @@
               "image": "isoCert14001",
               "title": "Certificat ISO 14001:2015"
             }
-          ]
+          ],
+          "introExtra": [
+            "L’activité couvre la fabrication à façon de composants en céramiques techniques, l’impression sérigraphique, la décoration et les traitements de surface. Elle prend également en charge des développements industriels sur cahier des charges, en combinant les procédés existants ou en développant de nouveaux moyens de fabrication."
+          ],
+          "groupTitle": "Le groupe Bernardaud"
         },
         "offre": {
           "title": "Offre",
@@ -1034,15 +1013,20 @@
           ]
         },
         "histoire": {
-          "title": "Bernardaud : L’Intelligence de la Main, la Puissance de l’Industrie",
+          "title": "Plus de 160 ans d’histoire industrielle",
           "short": "Histoire",
-          "intro": "Ancrée depuis 1863 au cœur de Limoges, Bernardaud incarne l’excellence d’un territoire indissociable de l’histoire de la porcelaine. En tant qu’acteur majeur de l’économie locale, notre usine perpétue un héritage français unique, transformant une tradition artisanale en une puissance industrielle de premier plan.",
+          "intro": "Depuis 1863, Bernardaud fabrique de la porcelaine à Limoges. Au fil des générations, l’entreprise a régulièrement investi dans de nouveaux équipements, procédés et capacités de production.",
           "ref": "HIST",
-          "story": [
+          "introExtra": [
+            "Initialement consacrées à la porcelaine de table, ces capacités industrielles se sont progressivement étendues à de nouvelles applications et à de nouveaux matériaux, jusqu’aux céramiques techniques et aux traitements de surface."
+          ],
+          "timelineTitle": "Les grandes étapes de notre développement",
+          "timeline": [
             {
+              "year": "1863",
+              "title": "Création de la manufacture à Limoges",
               "paragraphs": [
-                "Notre trajectoire est celle d’une mutation réussie : si les arts décoratifs français et le travail de nos artisans demeurent le socle de notre identité, Bernardaud est aujourd’hui une entreprise industrielle moderne, à la pointe des innovations technologiques du producteur céramique opérant sur 4 sites de production et exportant dans le monde entier.",
-                "Aujourd’hui, notre expertise s’étend à la fabrication de pièces techniques complexes. Grâce à une maîtrise pointue des process de fabrication et des propriétés des céramiques, nous mettons notre outil de production au service de secteurs industriels les plus exigeants."
+                "La manufacture est fondée à Limoges, au cœur du bassin porcelainier français. Elle se spécialise dans la fabrication de porcelaine et développe progressivement ses capacités de production et ses marchés."
               ],
               "refs": [
                 "HIST-01"
@@ -1050,21 +1034,105 @@
               "alt": "Dessin de la manufacture Bernardaud"
             },
             {
+              "year": "1911",
+              "title": "Première implantation commerciale aux États-Unis",
               "paragraphs": [
-                "Depuis sa création en 1863, la Maison Bernardaud illustre le passage d’un savoir-faire artisanal, où chaque pièce de porcelaine était façonnée et décorée à la main, vers une production progressivement mécanisée et industrialisée."
+                "Bernardaud ouvre un bureau à New York, marquant le début d’une implantation commerciale permanente sur le marché américain."
               ],
               "refs": [
-                "HIST-03",
-                "HIST-04"
-              ]
+                "HIST-1911"
+              ],
+              "alt": "Première implantation commerciale aux États-Unis"
             },
             {
+              "year": "1949",
+              "title": "Introduction du four tunnel",
               "paragraphs": [
-                "Aujourd’hui, tout en intégrant des techniques modernes et automatisées, l’entreprise continue de valoriser le travail artistique et la création, mêlant tradition et innovation jusqu’en 2026."
+                "Bernardaud installe le premier four tunnel à gaz en France, fonctionnant en continu. Cette technologie améliore la régularité des cuissons, réduit les défauts et augmente les capacités de production."
               ],
               "refs": [
                 "HIST-05"
-              ]
+              ],
+              "alt": "Four tunnel Bernardaud"
+            },
+            {
+              "year": "1979",
+              "title": "Ouverture de l’usine d’Oradour-sur-Glane",
+              "paragraphs": [
+                "Bernardaud inaugure une nouvelle usine consacrée à la fabrication de porcelaine blanche. La séparation des activités de fabrication et de décoration permet de moderniser les installations et d’accroître les volumes de production."
+              ],
+              "refs": [
+                "HIST-1979"
+              ],
+              "alt": "Ouverture de l’usine d’Oradour-sur-Glane"
+            },
+            {
+              "year": "1986",
+              "title": "Acquisition de l’Ancienne Manufacture Royale",
+              "paragraphs": [
+                "Bernardaud acquiert l’Ancienne Manufacture Royale, fondée au XVIIIe siècle. Cette acquisition renforce les capacités industrielles du groupe, avec notamment le site de production d’Aixe-sur-Vienne, et élargit son patrimoine technique."
+              ],
+              "refs": [
+                "HIST-1986"
+              ],
+              "alt": "Acquisition de l’Ancienne Manufacture Royale"
+            },
+            {
+              "year": "Années 2010",
+              "title": "Diversification vers les céramiques techniques",
+              "paragraphs": [
+                "Les activités de développement industriel s’étendent à de nouvelles familles de matériaux et à des applications dans la défense, l’énergie et d’autres secteurs industriels.",
+                "L’alumine, la zircone et les composites céramiques viennent compléter les formulations historiques. Les moyens de mise en forme, notamment l’injection céramique, les équipements de frittage et les procédés de traitement de surface sont mobilisés pour fabriquer des composants répondant à de nouvelles contraintes techniques."
+              ],
+              "refs": [
+                "HIST-2010"
+              ],
+              "alt": "Diversification vers les céramiques techniques"
+            },
+            {
+              "year": "2018",
+              "title": "Création de la filiale japonaise",
+              "paragraphs": [
+                "Bernardaud crée sa filiale au Japon et renforce sa présence commerciale à Tokyo, consolidant sa position sur l’un de ses principaux marchés internationaux."
+              ],
+              "refs": [
+                "HIST-2018"
+              ],
+              "alt": "Création de la filiale japonaise"
+            },
+            {
+              "year": "2024",
+              "title": "Acquisition de la manufacture Haviland",
+              "paragraphs": [
+                "L’acquisition de la manufacture Haviland élargit les capacités de production et les équipes industrielles du groupe en Haute-Vienne."
+              ],
+              "refs": [
+                "HIST-2024"
+              ],
+              "alt": "Acquisition de la manufacture Haviland"
+            },
+            {
+              "year": "2025",
+              "title": "Création de la filiale chinoise",
+              "paragraphs": [
+                "L’ouverture d’une filiale en Chine renforce la présence directe de Bernardaud sur le marché chinois et complète ses implantations commerciales internationales."
+              ],
+              "refs": [
+                "HIST-2025"
+              ],
+              "alt": "Création de la filiale chinoise"
+            },
+            {
+              "year": "Aujourd’hui",
+              "title": "De nouveaux marchés industriels",
+              "paragraphs": [
+                "Les procédés acquis et développés au fil des décennies (formulation des matières, mise en forme, cuisson, injection céramique, sérigraphie et traitements de surface) sont désormais utilisés pour des applications dépassant les métiers historiques de la porcelaine.",
+                "Bernardaud Solutions Industrielles met ces capacités à disposition de clients industriels pour la fabrication de composants en céramiques techniques, les prestations d’impression et de traitement de surface, ainsi que le développement de nouveaux produits et procédés sur cahier des charges."
+              ],
+              "refs": [
+                "HIST-AUJ"
+              ],
+              "alt": "De nouveaux marchés industriels"
             }
           ]
         }
@@ -1180,73 +1248,48 @@
         "presentation": {
           "title": "General overview",
           "short": "Overview",
-          "intro": "Bernardaud Solutions Industrielles brings together the group’s technical ceramics, screen printing, decoration and surface treatment activities.",
-          "metrics": [
-            {
-              "value": "6",
-              "label": "generations, family ownership"
-            },
-            {
-              "value": "60,000 m²",
-              "label": "of industrial facilities"
-            },
-            {
-              "value": "750",
-              "label": "employees: workers, engineers, researchers"
-            },
-            {
-              "value": "ISO 9001 | ISO 14001",
-              "label": "certified management systems"
-            }
-          ],
+          "intro": "Bernardaud Solutions Industrielles opens up to industrial markets the equipment, processes and production capacity of the Bernardaud group, developed over more than 160 years in its factories in Haute-Vienne.",
           "sections": [
             {
-              "title": "Six generations, family ownership",
-              "body": "Since 1863 Bernardaud has operated four production sites in Haute-Vienne covering ceramic manufacturing, screen printing, decoration and surface treatment, under management systems certified ISO 9001 and ISO 14001. A family business for six generations, Bernardaud combines integrated production in Haute-Vienne with an international commercial presence.",
+              "title": "An industrial power of 60,000 m² and 750 employees",
+              "body": "Bernardaud operates four industrial sites in Haute-Vienne, representing 60,000 m² of facilities and bringing together 750 employees: skilled operators, technicians, engineers and researchers.",
               "paragraphs": [
-                "The Bernardaud family remains directly involved in the management and activities of the group, which supports fast decisions and long-term industrial investment."
+                "These sites are equipped for ceramic manufacturing, firing, printing, decoration and surface treatment, making it possible to produce prototypes, specific parts and large-scale series."
               ],
-              "refs": [
-                "PRES-01"
-              ]
-            },
-            {
-              "title": "Complementary processes",
-              "body": "Technical ceramics, screen printing, decoration and surface treatment can be used separately or combined on a single industrial project.",
-              "refs": [
-                "PRES-02"
-              ]
-            },
-            {
-              "title": "Integrated production",
-              "body": "60,000 m² of industrial facilities and 750 employees, workers, engineers and researchers, across four sites in Haute-Vienne.",
               "refs": [
                 "PRES-03"
               ]
             },
             {
-              "title": "An international presence",
-              "body": "Bernardaud is present in China, Japan and the United States. 75% of sales are made abroad.",
-              "refs": [
-                "PRES-04"
-              ]
-            },
-            {
-              "title": "ISO 9001 and ISO 14001",
-              "body": "The production sites are certified ISO 9001 for quality management and ISO 14001 for environmental management. The CSR approach is assessed by EcoVadis.",
+              "title": "Management systems certified ISO 9001 and ISO 14001",
+              "body": "The Oradour-sur-Glane industrial site is certified ISO 9001 and ISO 14001. These management systems govern quality, control of manufacturing processes and management of environmental impacts.",
               "refs": [
                 "PRES-05"
               ],
               "certificates": true
             },
             {
-              "title": "A local research and development ecosystem",
-              "body": "Located within the European ceramics hub in Limoges, Bernardaud Solutions Industrielles relies on an environment that combines research, technology transfer and industrial expertise.",
+              "title": "Integrated research, development and engineering capabilities",
+              "body": "Bernardaud has R&D laboratories, design offices and in-house prototyping facilities. These teams work with customers at every technology readiness level (TRL), from initial research and proofs of concept through process qualification to industrial production.",
               "paragraphs": [
-                "In addition to its in-house resources, Bernardaud Solutions Industrielles works with IRCER (Institute for Ceramic Research), CTTC (Ceramic Technology Transfer Centre), CITRA (surface treatments) and CEDREM, for research, characterisation and development phases."
+                "These capabilities are complemented by the scientific and technical environment of the Limoges ceramics cluster, with partners such as IRCER, CTTC, CITRA and CEDREM, called on for research, characterisation and specific testing."
               ],
               "refs": [
                 "PRES-06"
+              ]
+            },
+            {
+              "title": "An international commercial presence",
+              "body": "Bernardaud has commercial operations in the United States, Japan and China and distributes its products in more than 130 countries. This organisation makes it possible to work directly with international customers while keeping its industrial production in Haute-Vienne.",
+              "refs": [
+                "PRES-04"
+              ]
+            },
+            {
+              "title": "An independent family company since 1863",
+              "body": "Founded in Limoges in 1863, Bernardaud is today owned and run by the sixth generation of the founding family. This independent ownership, directly involved in the management of the company, allows a long-term industrial investment policy.",
+              "refs": [
+                "PRES-01"
               ]
             }
           ],
@@ -1260,7 +1303,11 @@
               "image": "isoCert14001",
               "title": "ISO 14001:2015 certificate"
             }
-          ]
+          ],
+          "introExtra": [
+            "The business covers contract manufacturing of technical ceramic components, screen printing, decoration and surface treatments. It also handles industrial developments to customer specifications, combining existing processes or developing new manufacturing means."
+          ],
+          "groupTitle": "The Bernardaud group"
         },
         "offre": {
           "title": "Offer",
@@ -2013,15 +2060,20 @@
           ]
         },
         "histoire": {
-          "title": "Bernardaud: The Intelligence of the Hand, the Power of Industry",
+          "title": "Over 160 years of industrial history",
           "short": "History",
-          "intro": "Established in Limoges since 1863, Bernardaud embodies the excellence of a region inseparable from the history of porcelain. As a major player in the local economy, our factory sustains a unique French heritage, turning an artisanal tradition into a leading industrial force.",
+          "intro": "Since 1863, Bernardaud has been making porcelain in Limoges. Over the generations, the company has regularly invested in new equipment, processes and production capacity.",
           "ref": "HIST",
-          "story": [
+          "introExtra": [
+            "Originally devoted to tableware porcelain, these industrial capabilities have gradually extended to new applications and new materials, up to technical ceramics and surface treatments."
+          ],
+          "timelineTitle": "Key milestones in our development",
+          "timeline": [
             {
+              "year": "1863",
+              "title": "Founding of the manufacture in Limoges",
               "paragraphs": [
-                "Our path is one of successful transformation: while French decorative arts and the work of our craftspeople remain the foundation of our identity, Bernardaud is today a modern industrial company, at the cutting edge of the technological innovations of the ceramics producer, operating on 4 production sites and exporting worldwide.",
-                "Today, our expertise extends to the manufacture of complex technical parts. Thanks to in-depth mastery of manufacturing processes and ceramic properties, we put our production tools at the service of the most demanding industrial sectors."
+                "The manufacture is founded in Limoges, at the heart of the French porcelain basin. It specialises in porcelain production and gradually develops its production capacity and its markets."
               ],
               "refs": [
                 "HIST-01"
@@ -2029,21 +2081,105 @@
               "alt": "Drawing of the Bernardaud manufacture"
             },
             {
+              "year": "1911",
+              "title": "First commercial presence in the United States",
               "paragraphs": [
-                "Since its founding in 1863, the House of Bernardaud has illustrated the shift from artisanal know-how, where every piece of porcelain was shaped and decorated by hand, to progressively mechanised and industrialised production."
+                "Bernardaud opens an office in New York, marking the start of a permanent commercial presence in the American market."
               ],
               "refs": [
-                "HIST-03",
-                "HIST-04"
-              ]
+                "HIST-1911"
+              ],
+              "alt": "First commercial presence in the United States"
             },
             {
+              "year": "1949",
+              "title": "Introduction of the tunnel kiln",
               "paragraphs": [
-                "Today, while integrating modern and automated techniques, the company continues to value artistic work and creation, combining tradition and innovation through to 2026."
+                "Bernardaud installs the first continuous gas-fired tunnel kiln in France. This technology makes firing more consistent, reduces defects and increases production capacity."
               ],
               "refs": [
                 "HIST-05"
-              ]
+              ],
+              "alt": "Bernardaud tunnel kiln"
+            },
+            {
+              "year": "1979",
+              "title": "Opening of the Oradour-sur-Glane factory",
+              "paragraphs": [
+                "Bernardaud inaugurates a new factory devoted to the production of white porcelain. Separating manufacturing from decoration makes it possible to modernise the facilities and increase production volumes."
+              ],
+              "refs": [
+                "HIST-1979"
+              ],
+              "alt": "Opening of the Oradour-sur-Glane factory"
+            },
+            {
+              "year": "1986",
+              "title": "Acquisition of the Ancienne Manufacture Royale",
+              "paragraphs": [
+                "Bernardaud acquires the Ancienne Manufacture Royale, founded in the 18th century. This acquisition strengthens the group’s industrial capacity, notably with the production site at Aixe-sur-Vienne, and broadens its technical heritage."
+              ],
+              "refs": [
+                "HIST-1986"
+              ],
+              "alt": "Acquisition of the Ancienne Manufacture Royale"
+            },
+            {
+              "year": "2010s",
+              "title": "Diversification into technical ceramics",
+              "paragraphs": [
+                "Industrial development activities extend to new families of materials and to applications in defence, energy and other industrial sectors.",
+                "Alumina, zirconia and ceramic composites complement the historical formulations. Forming methods, notably ceramic injection moulding, sintering equipment and surface treatment processes, are used to produce components that meet new technical requirements."
+              ],
+              "refs": [
+                "HIST-2010"
+              ],
+              "alt": "Diversification into technical ceramics"
+            },
+            {
+              "year": "2018",
+              "title": "Creation of the Japanese subsidiary",
+              "paragraphs": [
+                "Bernardaud creates its subsidiary in Japan and strengthens its commercial presence in Tokyo, consolidating its position in one of its main international markets."
+              ],
+              "refs": [
+                "HIST-2018"
+              ],
+              "alt": "Creation of the Japanese subsidiary"
+            },
+            {
+              "year": "2024",
+              "title": "Acquisition of the Haviland manufacture",
+              "paragraphs": [
+                "The acquisition of the Haviland manufacture broadens the group’s production capacity and industrial teams in Haute-Vienne."
+              ],
+              "refs": [
+                "HIST-2024"
+              ],
+              "alt": "Acquisition of the Haviland manufacture"
+            },
+            {
+              "year": "2025",
+              "title": "Creation of the Chinese subsidiary",
+              "paragraphs": [
+                "The opening of a subsidiary in China reinforces Bernardaud’s direct presence in the Chinese market and completes its international commercial network."
+              ],
+              "refs": [
+                "HIST-2025"
+              ],
+              "alt": "Creation of the Chinese subsidiary"
+            },
+            {
+              "year": "Today",
+              "title": "New industrial markets",
+              "paragraphs": [
+                "The processes acquired and developed over the decades (material formulation, forming, firing, ceramic injection moulding, screen printing and surface treatments) are now used for applications beyond the historical porcelain trades.",
+                "Bernardaud Solutions Industrielles makes these capabilities available to industrial customers for the manufacture of technical ceramic components, printing and surface treatment services, and the development of new products and processes to specification."
+              ],
+              "refs": [
+                "HIST-AUJ"
+              ],
+              "alt": "New industrial markets"
             }
           ]
         }
@@ -2341,6 +2477,38 @@
         "fr": "Four tunnel Bernardaud",
         "en": "Bernardaud tunnel kiln"
       }
+    },
+    "HIST-1911": {
+      "image": "",
+      "ratio": "4 / 3"
+    },
+    "HIST-1979": {
+      "image": "",
+      "ratio": "4 / 3"
+    },
+    "HIST-1986": {
+      "image": "",
+      "ratio": "4 / 3"
+    },
+    "HIST-2010": {
+      "image": "",
+      "ratio": "4 / 3"
+    },
+    "HIST-2018": {
+      "image": "",
+      "ratio": "4 / 3"
+    },
+    "HIST-2024": {
+      "image": "",
+      "ratio": "4 / 3"
+    },
+    "HIST-2025": {
+      "image": "",
+      "ratio": "4 / 3"
+    },
+    "HIST-AUJ": {
+      "image": "",
+      "ratio": "4 / 3"
     },
     "BAN-CERAM": {
       "image": "/assets/bandeau-ceramique-poudre.jpg",

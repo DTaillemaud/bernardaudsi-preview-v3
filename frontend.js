@@ -234,18 +234,19 @@ function sites(list) {
 function generalPresentation() {
   const id = "presentation";
   const data = page(id);
-  return `${pageTop(id)}${metrics(data.metrics)}<section class="section points-section"><div class="container">${points(data.sections)}</div></section>`;
+  const group = data.groupTitle ? `<div class="steps-heading" data-reveal><h2>${esc(data.groupTitle)}</h2></div>` : "";
+  return `${pageTop(id)}${data.metrics ? metrics(data.metrics) : ""}<section class="section points-section"><div class="container">${group}${points(data.sections)}</div></section>`;
 }
 
-// Texte libre : paragraphes à la suite, photos de part et d'autre, sans numéros ni titres.
-function story(blocks = []) {
-  return `<div class="story">${blocks.map(block => `<article class="story-block" data-reveal><div class="story-text">${block.paragraphs.map(text => `<p>${esc(text)}</p>`).join("")}</div><div class="story-media${block.refs.length > 1 ? " is-pair" : ""}">${block.refs.map(ref => slotFigure(ref, block.alt)).join("")}</div></article>`).join("")}</div>`;
+// Frise de l'histoire : une date, un titre, un texte ; la photo de l'étape (refs) est à droite quand il y en a une.
+function timeline(items = []) {
+  return `<ol class="timeline">${items.map(item => `<li data-reveal><p class="timeline-year">${esc(item.year)}</p><div class="timeline-text"><h3>${esc(item.title)}</h3>${item.paragraphs.map(text => `<p>${esc(text)}</p>`).join("")}</div>${item.refs?.length ? `<div class="timeline-media">${item.refs.map(ref => slotFigure(ref, item.alt || item.title)).join("")}</div>` : ""}</li>`).join("")}</ol>`;
 }
 
 function historyPage() {
   const id = "histoire";
   const data = page(id);
-  return `${pageTop(id)}<section class="section story-section"><div class="container">${story(data.story)}</div></section>`;
+  return `${pageTop(id)}<section class="section timeline-section"><div class="container"><div class="steps-heading" data-reveal><h2>${esc(data.timelineTitle)}</h2></div>${timeline(data.timeline)}</div></section>`;
 }
 
 function industrial() {
