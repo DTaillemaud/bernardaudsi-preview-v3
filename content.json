@@ -1064,7 +1064,7 @@
               "refs": [
                 "HIST-1979"
               ],
-              "alt": "Ouverture de l’usine d’Oradour-sur-Glane"
+              "alt": "Vue aérienne de l’usine Bernardaud d’Oradour-sur-Glane"
             },
             {
               "year": "1986",
@@ -2111,7 +2111,7 @@
               "refs": [
                 "HIST-1979"
               ],
-              "alt": "Opening of the Oradour-sur-Glane factory"
+              "alt": "Aerial view of the Bernardaud factory in Oradour-sur-Glane"
             },
             {
               "year": "1986",
@@ -2483,8 +2483,8 @@
       "fit": "vignette"
     },
     "HIST-1979": {
-      "image": "",
-      "ratio": "4 / 3"
+      "image": "/assets/usine-oradour-vue-aerienne.webp",
+      "ratio": "3 / 2"
     },
     "HIST-1986": {
       "image": "/assets/hist-1986-manufacture-royale.webp",
