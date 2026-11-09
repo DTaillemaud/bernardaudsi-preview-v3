@@ -330,9 +330,123 @@ function contactBand() {
   return `<section class="contact-band"><div class="container" data-reveal><p class="eyebrow">Bernardaud Solutions Industrielles</p><div><h2>${esc(page("contact").title)}</h2>${link("contact", `<span class="sr-only">${esc(t("ui.contact"))}</span>${icon("ArrowUpRight")}`, "contact-arrow")}</div><p>${esc(page("contact").intro)}</p></div></section>`;
 }
 
+// Formulaire de contact de l'aperçu. Cette page est statique (GitHub Pages) : elle ne peut envoyer aucun e-mail.
+// Le formulaire est donc complet et contrôlé comme celui du site définitif, mais il n'envoie rien et le dit clairement.
+const topicPages = ["ceramiques-techniques", "serigraphie", "traitements-de-surface"];
+const formLabel = name => t(`ui.form${name[0].toUpperCase()}${name.slice(1)}`);
+
+function contactForm() {
+  const optional = ` <span class="optional">(${esc(t("ui.formOptional"))})</span>`;
+  const row = (name, control, required, isOptional = false) => `<div class="field"><label class="field-label" for="cf-${name}">${esc(formLabel(name))}${required ? ' <span aria-hidden="true">*</span>' : ""}${isOptional ? optional : ""}</label>${control}${required ? `<p class="field-error" id="cf-${name}-error" hidden></p>` : ""}</div>`;
+  const input = (name, type, autocomplete, max, required) => `<input id="cf-${name}" name="${name}" type="${type}" autocomplete="${autocomplete}" maxlength="${max}"${type === "email" ? ' inputmode="email"' : type === "tel" ? ' inputmode="tel"' : ""}${required ? ` required aria-required="true" aria-describedby="cf-${name}-error"` : ""}>`;
+  const topics = `${topicPages.map(id => `<label class="topic"><input type="radio" name="topic" value="${id}"><span>${esc(title(id))}</span></label>`).join("")}<label class="topic"><input type="radio" name="topic" value="autre"><span>${esc(t("ui.formTopicOther"))}</span></label>`;
+  return `<form class="contact-form" novalidate data-contact-form>`
+    + `<div class="form-summary" role="alert" tabindex="-1" data-form-summary hidden></div><p class="form-note">${esc(t("ui.formRequiredNote"))}</p>`
+    + `<div class="form-grid">${row("name", input("name", "text", "name", 120, true), true)}${row("company", input("company", "text", "organization", 120, false), false, true)}${row("email", input("email", "email", "email", 254, true), true)}${row("phone", input("phone", "tel", "tel", 40, false), false, true)}</div>`
+    + `<fieldset class="field"><legend class="field-label">${esc(t("ui.formTopic"))}${optional}</legend><div class="topic-options">${topics}</div></fieldset>`
+    + row("message", `<textarea id="cf-message" name="message" rows="6" maxlength="5000" required aria-required="true" aria-describedby="cf-message-error"></textarea>`, true)
+    + `<div class="field consent"><label class="check"><input id="cf-consent" type="checkbox" name="consent" value="1" required aria-required="true" aria-describedby="cf-consent-error"><span>${esc(t("ui.formConsent"))} <a href="${localURL(`confidentialite${staticPreview ? "/" : ""}`)}">${esc(t("ui.formPrivacyLink"))}</a></span></label><p class="field-error" id="cf-consent-error" hidden></p></div>`
+    + `<div class="form-actions"><button type="submit" class="button primary"><span data-send-label>${esc(t("ui.formSend"))}</span>${icon("Mail")}</button></div></form>`;
+}
+
+function bindContactForm() {
+  const form = document.querySelector("[data-contact-form]");
+  if (!form) return;
+  const summary = form.querySelector("[data-form-summary]");
+  const required = ["name", "email", "message", "consent"];
+  const messageFor = code => t(`ui.formErr${code[0].toUpperCase()}${code.slice(1)}`);
+
+  const setFieldError = (name, code) => {
+    const input = form.elements[name];
+    input.closest(".field").setAttribute("data-invalid", "");
+    input.setAttribute("aria-invalid", "true");
+    const error = form.querySelector(`#cf-${name}-error`);
+    error.textContent = messageFor(code);
+    error.hidden = false;
+  };
+  const clearFieldError = name => {
+    const input = form.elements[name];
+    input.closest(".field").removeAttribute("data-invalid");
+    input.removeAttribute("aria-invalid");
+    const error = form.querySelector(`#cf-${name}-error`);
+    error.hidden = true;
+    error.textContent = "";
+    // Plus aucun champ en erreur : le résumé n'a plus de raison d'être.
+    if (!form.querySelector(".field[data-invalid]")) {
+      summary.hidden = true;
+      summary.textContent = "";
+    }
+  };
+  const clearErrors = () => {
+    summary.hidden = true;
+    summary.textContent = "";
+    required.forEach(clearFieldError);
+  };
+  const check = name => {
+    const value = form.elements[name].value.trim();
+    if (name === "name") return value ? "" : "required";
+    if (name === "email") return !value ? "required" : /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? "" : "email";
+    if (name === "message") return !value ? "required" : value.length < 10 ? "short" : value.length > 5000 ? "long" : "";
+    return form.elements.consent.checked ? "" : "consent";
+  };
+  const showErrors = errors => {
+    clearErrors();
+    const items = [];
+    for (const [name, code] of Object.entries(errors)) {
+      setFieldError(name, code);
+      items.push(`<li><a href="#cf-${name}" data-focus="cf-${name}">${name === "consent" ? "" : `${esc(formLabel(name))} : `}${esc(messageFor(code))}</a></li>`);
+    }
+    summary.innerHTML = `<p>${esc(t("ui.formErrorTitle"))}</p><ul>${items.join("")}</ul>`;
+    summary.hidden = false;
+    summary.focus();
+  };
+
+  summary.addEventListener("click", event => {
+    const anchor = event.target.closest("a[data-focus]");
+    if (!anchor) return;
+    event.preventDefault();
+    form.querySelector(`#${anchor.dataset.focus}`)?.focus();
+  });
+  form.addEventListener("focusout", event => {
+    const name = event.target.name;
+    if (!["name", "email", "message"].includes(name)) return;
+    const code = check(name);
+    if (code && event.target.value.trim()) setFieldError(name, code);
+    else if (!code) clearFieldError(name);
+  });
+  form.addEventListener("input", event => {
+    const name = event.target.name;
+    if (required.includes(name) && event.target.closest(".field").hasAttribute("data-invalid") && !check(name)) clearFieldError(name);
+  });
+  form.elements.consent.addEventListener("change", () => {
+    if (!check("consent")) clearFieldError("consent");
+  });
+
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    const errors = {};
+    required.forEach(name => {
+      const code = check(name);
+      if (code) errors[name] = code;
+    });
+    if (Object.keys(errors).length) {
+      showErrors(errors);
+      return;
+    }
+    // Aperçu : rien n'est envoyé, et la page le dit à la place du formulaire.
+    const panel = document.createElement("div");
+    panel.className = "form-success";
+    panel.setAttribute("role", "status");
+    panel.tabIndex = -1;
+    panel.innerHTML = `${icon("Mail")}<div><h3>${esc(t("ui.formPreviewTitle"))}</h3><p>${esc(t("ui.formPreviewBody"))}</p></div>`;
+    form.replaceWith(panel);
+    panel.focus();
+  });
+}
+
 function contact() {
   const settings = content.settings;
-  return `${pageTop("contact")}<section class="section contact-section"><div class="container contact-layout"><div class="contact-copy" data-reveal><h2>${esc(t("ui.contactDetails"))}</h2><p>${esc(t("ui.contactIntro"))}</p><a class="button primary" href="mailto:${esc(settings.contactEmail)}?subject=${encodeURIComponent(t("ui.contactSubject"))}">${esc(get("contact.button"))}${icon("Mail")}</a></div><div class="contact-details" data-reveal><div>${icon("Mail")}<div><span>${esc(t("ui.email"))}</span><a href="mailto:${esc(settings.contactEmail)}">${esc(settings.contactEmail)}</a></div></div><div>${icon("Phone")}<div><span>${esc(t("ui.phone"))}</span><a href="tel:${esc(settings.contactPhone.replace("(0)", "").replace(/[^+\d]/g, ""))}">${esc(settings.contactPhone)}</a></div></div><div>${icon("MapPin")}<div><span>${esc(t("ui.address"))}</span><p>${esc(settings.address)}</p></div></div></div></div></section><section class="contact-photo">${picture("industrial", lang === "fr" ? "La manufacture Bernardaud à Limoges" : "The Bernardaud manufacture in Limoges")}</section>`;
+  return `${pageTop("contact")}<section class="section contact-section"><div class="container contact-layout"><div class="contact-copy" data-reveal><h2>${esc(t("ui.contactDetails"))}</h2><p>${esc(t("ui.contactIntro"))}</p>${contactForm()}</div><div class="contact-details" data-reveal><div>${icon("Mail")}<div><span>${esc(t("ui.email"))}</span><a href="mailto:${esc(settings.contactEmail)}">${esc(settings.contactEmail)}</a></div></div><div>${icon("Phone")}<div><span>${esc(t("ui.phone"))}</span><a href="tel:${esc(settings.contactPhone.replace("(0)", "").replace(/[^+\d]/g, ""))}">${esc(settings.contactPhone)}</a></div></div><div>${icon("MapPin")}<div><span>${esc(t("ui.address"))}</span><p>${esc(settings.address)}</p></div></div></div></div></section><section class="contact-photo">${picture("industrial", lang === "fr" ? "La manufacture Bernardaud à Limoges" : "The Bernardaud manufacture in Limoges")}</section>`;
 }
 
 function renderFooter() {
@@ -472,6 +586,7 @@ function render() {
   cookieBanner();
   bindHeader();
   applySlotStyles();
+  bindContactForm();
   initMotion();
   updateScroll();
 }

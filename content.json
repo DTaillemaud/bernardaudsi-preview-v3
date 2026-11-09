@@ -3,7 +3,7 @@
     "siteName": "Bernardaud Solutions Industrielles",
     "baseline": "Céramiques techniques, sérigraphie et traitements de surface",
     "defaultLang": "fr",
-    "contactEmail": "contact@bernardaud.com",
+    "contactEmail": "contact-bsi@bernardaud.com",
     "contactPhone": "+33 (0)5 55 10 55 50",
     "address": "19 rue Pierre Bernardaud, 87100 Limoges, France"
   },
@@ -181,7 +181,37 @@
           "Mécaniques",
           "Thermiques",
           "Électriques"
-        ]
+        ],
+        "formName": "Nom et prénom",
+        "formCompany": "Société",
+        "formEmail": "Adresse e-mail",
+        "formPhone": "Téléphone",
+        "formTopic": "Votre besoin concerne",
+        "formTopicOther": "Autre demande",
+        "formMessage": "Votre message",
+        "formConsent": "J’accepte que ces informations soient utilisées pour répondre à ma demande.",
+        "formPrivacyLink": "Politique de confidentialité",
+        "formOptional": "facultatif",
+        "formRequiredNote": "Les champs marqués d’un * sont obligatoires.",
+        "formSend": "Envoyer le message",
+        "formSending": "Envoi en cours…",
+        "formSentTitle": "Message envoyé",
+        "formSentBody": "Merci, votre message a bien été transmis à l’équipe de Bernardaud Solutions Industrielles, qui reviendra vers vous dès que possible.",
+        "formErrorTitle": "Merci de corriger les points suivants avant d’envoyer le message :",
+        "formErrRequired": "Ce champ est obligatoire.",
+        "formErrEmail": "Saisissez une adresse e-mail valide, par exemple nom@societe.com.",
+        "formErrShort": "Votre message est trop court (10 caractères au moins).",
+        "formErrLong": "Votre message est trop long (5 000 caractères au plus).",
+        "formErrLinks": "Votre message contient trop de liens : retirez-en pour pouvoir l’envoyer.",
+        "formErrConsent": "Cochez cette case pour que nous puissions vous répondre.",
+        "formErrExpired": "Le formulaire est resté ouvert trop longtemps. Rechargez la page, puis envoyez à nouveau votre message.",
+        "formErrFast": "Merci de patienter quelques secondes, puis de renvoyer votre message.",
+        "formErrRate": "Trop de messages ont été envoyés depuis votre connexion. Réessayez dans une heure ou écrivez-nous directement par e-mail.",
+        "formErrSend": "Le message n’a pas pu être envoyé. Réessayez dans un instant ou écrivez-nous directement par e-mail.",
+        "formErrOrigin": "Le message n’a pas pu être envoyé. Réessayez dans un instant ou écrivez-nous directement par e-mail.",
+        "formErrNetwork": "Connexion impossible. Vérifiez votre réseau, puis réessayez.",
+        "formPreviewTitle": "Aperçu : message non envoyé",
+        "formPreviewBody": "Ceci est la version d’aperçu du site : le formulaire est prêt et contrôlé, mais aucun message n’est envoyé ni enregistré. Il fonctionnera sur le site définitif."
       },
       "home": {
         "eyebrow": "Limoges, France · Depuis 1863",
@@ -1003,12 +1033,12 @@
               "body": "Le choix de langue et le choix de cookies sont conservés dans le stockage local de votre navigateur. Aucun outil publicitaire ou de mesure d’audience n’est activé."
             },
             {
-              "title": "Contact par e-mail",
-              "body": "Les liens de contact ouvrent votre messagerie. Aucun message n’est envoyé automatiquement et aucun formulaire de contact n’est enregistré par cette version."
+              "title": "Contact par e-mail et formulaire",
+              "body": "Les liens de contact ouvrent votre messagerie. Le formulaire de contact de cet aperçu n’envoie rien : ce que vous y saisissez reste dans votre navigateur et n’est ni envoyé ni enregistré."
             },
             {
               "title": "Contenu & ressources",
-              "body": "Cet aperçu est hébergé sur GitHub Pages. Les images, les polices et les icônes sont servies par l’hébergeur. Aucun backoffice ni formulaire de collecte n’est disponible dans cet aperçu."
+              "body": "Cet aperçu est hébergé sur GitHub Pages. Les images, les polices et les icônes sont servies par l’hébergeur. Aucun backoffice n’est disponible dans cet aperçu et aucune donnée n’y est collectée."
             }
           ]
         },
@@ -1228,7 +1258,37 @@
           "Mechanical",
           "Thermal",
           "Electrical"
-        ]
+        ],
+        "formName": "Full name",
+        "formCompany": "Company",
+        "formEmail": "Email address",
+        "formPhone": "Phone",
+        "formTopic": "Your request concerns",
+        "formTopicOther": "Other request",
+        "formMessage": "Your message",
+        "formConsent": "I agree that this information may be used to reply to my request.",
+        "formPrivacyLink": "Privacy policy",
+        "formOptional": "optional",
+        "formRequiredNote": "Fields marked with * are required.",
+        "formSend": "Send message",
+        "formSending": "Sending…",
+        "formSentTitle": "Message sent",
+        "formSentBody": "Thank you, your message has been sent to the Bernardaud Solutions Industrielles team, who will get back to you as soon as possible.",
+        "formErrorTitle": "Please correct the following before sending your message:",
+        "formErrRequired": "This field is required.",
+        "formErrEmail": "Enter a valid email address, for example name@company.com.",
+        "formErrShort": "Your message is too short (at least 10 characters).",
+        "formErrLong": "Your message is too long (5,000 characters maximum).",
+        "formErrLinks": "Your message contains too many links: please remove some to send it.",
+        "formErrConsent": "Please tick this box so that we can reply to you.",
+        "formErrExpired": "The form has been open for too long. Reload the page, then send your message again.",
+        "formErrFast": "Please wait a few seconds, then send your message again.",
+        "formErrRate": "Too many messages have been sent from your connection. Try again in an hour or write to us directly by email.",
+        "formErrSend": "The message could not be sent. Try again in a moment or write to us directly by email.",
+        "formErrOrigin": "The message could not be sent. Try again in a moment or write to us directly by email.",
+        "formErrNetwork": "Connection failed. Check your network, then try again.",
+        "formPreviewTitle": "Preview: message not sent",
+        "formPreviewBody": "This is the preview version of the website: the form is ready and checked, but no message is sent or stored. It will work on the final website."
       },
       "home": {
         "eyebrow": "Limoges, France · Since 1863",
@@ -2050,12 +2110,12 @@
               "body": "Language and cookie choices are kept in your browser’s local storage. No advertising or audience measurement tools are active."
             },
             {
-              "title": "Contact by email",
-              "body": "Contact links open your email application. No message is sent automatically and this version stores no contact form."
+              "title": "Contact by email and form",
+              "body": "Contact links open your email application. The contact form in this preview sends nothing: what you type stays in your browser and is neither sent nor stored."
             },
             {
               "title": "Content & resources",
-              "body": "This preview is hosted on GitHub Pages. Images, fonts and icons are served by the host. No administration or data collection form is available in this preview."
+              "body": "This preview is hosted on GitHub Pages. Images, fonts and icons are served by the host. No administration area is available in this preview and no data is collected."
             }
           ]
         },

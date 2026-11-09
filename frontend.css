@@ -22,6 +22,8 @@
   --line: #dce2e5;
   --mist: #f1f4f5;
   --white: #ffffff;
+  --field-line: #74858f;
+  --danger: #a4262c;
   --teal: #2f6a72;
   --gutter: 48px;
   --header-height: 92px;
@@ -895,3 +897,53 @@ html[data-reperes="on"] .photo-placeholder::before { display: none; }
 .agenda-table tbody th { font-weight: 600; }
 .site-map-section { padding-bottom: 0; }
 .site-map { max-width: 760px; margin-inline: auto; }
+
+/* Formulaire de contact : champs de 52 px de haut comme les boutons, texte de 16 px (pas de zoom sur téléphone),
+   contour à 3,4:1 sur le blanc, erreur en rouge foncé (7:1) toujours accompagnée d'un texte. */
+.contact-form { display: grid; gap: 24px; max-width: 640px; }
+.contact-copy .contact-form p, .contact-copy .form-success p { margin: 0; max-width: none; font-size: inherit; }
+.form-note { font-size: 13px; color: var(--muted); }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px 20px; }
+.field { display: grid; align-content: start; gap: 8px; min-width: 0; margin: 0; padding: 0; border: 0; }
+.field-label { padding: 0; font-size: 13px; font-weight: 600; color: var(--navy); }
+legend.field-label { margin-bottom: 8px; }
+.optional { font-weight: 400; color: var(--muted); }
+.field input[type="text"], .field input[type="email"], .field input[type="tel"], .field textarea { width: 100%; min-height: 52px; padding: 14px 16px; border: 1px solid var(--field-line); border-radius: 2px; background: var(--white); color: var(--navy); font-size: 16px; line-height: 1.5; transition: border-color .2s, box-shadow .2s; }
+.field textarea { min-height: 170px; resize: vertical; }
+.field input:hover, .field textarea:hover { border-color: var(--navy); }
+.field input:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; border-color: var(--teal); }
+.field[data-invalid] input[type="text"], .field[data-invalid] input[type="email"], .field[data-invalid] input[type="tel"], .field[data-invalid] textarea { border-color: var(--danger); box-shadow: inset 3px 0 0 var(--danger); }
+.field-error { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--danger); }
+.topic-options { display: flex; flex-wrap: wrap; gap: 10px; }
+.topic { position: relative; display: block; }
+.topic input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.topic span { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; border: 1px solid var(--field-line); border-radius: 2px; background: var(--white); color: var(--navy); font-size: 14px; font-weight: 500; line-height: 1.4; transition: background .2s, color .2s, border-color .2s; }
+.topic:hover span { border-color: var(--navy); }
+.topic input:checked + span { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.topic input:focus-visible + span { outline: 2px solid var(--teal); outline-offset: 2px; }
+.check { display: flex; align-items: flex-start; gap: 14px; min-height: 44px; padding-block: 6px; font-size: 14px; line-height: 1.6; color: var(--text); cursor: pointer; }
+.check input { flex: none; width: 22px; height: 22px; margin: 1px 0 0; accent-color: var(--navy); cursor: pointer; }
+.check a { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
+.field[data-invalid] .check { color: var(--danger); }
+.field-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.form-actions .button { min-width: 240px; }
+.form-actions .button[disabled] { opacity: .65; cursor: progress; }
+.form-status { min-height: 0; font-size: 14px; color: var(--muted); }
+.form-summary { padding: 16px 20px; border: 1px solid var(--danger); border-left-width: 4px; background: #fbf1f1; color: var(--navy); font-size: 15px; }
+.form-summary[hidden] { display: none; }
+.form-summary:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+.contact-copy .form-summary p { font-weight: 600; }
+.form-summary ul { margin: 10px 0 0; padding-left: 20px; }
+.form-summary li + li { margin-top: 6px; }
+.form-summary a { color: var(--danger); text-decoration: underline; text-underline-offset: 3px; }
+.form-success { display: flex; align-items: flex-start; gap: 20px; max-width: 640px; padding: 28px; border-left: 4px solid var(--teal); background: var(--mist); }
+.form-success .icon { flex: none; width: 28px; height: 28px; color: var(--teal); }
+.form-success h3 { margin: 0 0 8px; font-size: 22px; font-weight: 500; }
+.form-success:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+@media (max-width: 640px) {
+  .form-actions .button { width: 100%; }
+  .form-success { padding: 22px 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .field input, .field textarea, .topic span { transition: none; }
+}
