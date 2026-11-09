@@ -1042,7 +1042,7 @@
               "refs": [
                 "HIST-1911"
               ],
-              "alt": "Première implantation commerciale aux États-Unis"
+              "alt": "En-tête d’une facture ancienne de L. Bernardaud & Co., French China, New York"
             },
             {
               "year": "1949",
@@ -1075,7 +1075,7 @@
               "refs": [
                 "HIST-1986"
               ],
-              "alt": "Acquisition de l’Ancienne Manufacture Royale"
+              "alt": "Assiettes et tasse en porcelaine à décor floral et filet d’or"
             },
             {
               "year": "Années 2010",
@@ -1087,7 +1087,7 @@
               "refs": [
                 "HIST-2010"
               ],
-              "alt": "Diversification vers les céramiques techniques"
+              "alt": "Échantillons de céramiques techniques posés sur un plan de travail"
             },
             {
               "year": "2018",
@@ -1098,7 +1098,7 @@
               "refs": [
                 "HIST-2018"
               ],
-              "alt": "Création de la filiale japonaise"
+              "alt": "Page d’accueil du site de Bernardaud au Japon"
             },
             {
               "year": "2024",
@@ -1109,7 +1109,7 @@
               "refs": [
                 "HIST-2024"
               ],
-              "alt": "Acquisition de la manufacture Haviland"
+              "alt": "Façade de la manufacture Haviland"
             },
             {
               "year": "2025",
@@ -1120,7 +1120,7 @@
               "refs": [
                 "HIST-2025"
               ],
-              "alt": "Création de la filiale chinoise"
+              "alt": "Coupe du ruban lors de l’inauguration d’une boutique Bernardaud"
             },
             {
               "year": "Aujourd’hui",
@@ -1132,7 +1132,7 @@
               "refs": [
                 "HIST-AUJ"
               ],
-              "alt": "De nouveaux marchés industriels"
+              "alt": "Machine de sérigraphie dans l’atelier de Bernardaud"
             }
           ]
         }
@@ -2089,7 +2089,7 @@
               "refs": [
                 "HIST-1911"
               ],
-              "alt": "First commercial presence in the United States"
+              "alt": "Letterhead of an old invoice from L. Bernardaud & Co., French China, New York"
             },
             {
               "year": "1949",
@@ -2122,7 +2122,7 @@
               "refs": [
                 "HIST-1986"
               ],
-              "alt": "Acquisition of the Ancienne Manufacture Royale"
+              "alt": "Porcelain plates and cup with floral decoration and gold rim"
             },
             {
               "year": "2010s",
@@ -2134,7 +2134,7 @@
               "refs": [
                 "HIST-2010"
               ],
-              "alt": "Diversification into technical ceramics"
+              "alt": "Technical ceramic samples on a workbench"
             },
             {
               "year": "2018",
@@ -2145,7 +2145,7 @@
               "refs": [
                 "HIST-2018"
               ],
-              "alt": "Creation of the Japanese subsidiary"
+              "alt": "Home page of the Bernardaud website in Japan"
             },
             {
               "year": "2024",
@@ -2156,7 +2156,7 @@
               "refs": [
                 "HIST-2024"
               ],
-              "alt": "Acquisition of the Haviland manufacture"
+              "alt": "Front of the Haviland manufacture"
             },
             {
               "year": "2025",
@@ -2167,7 +2167,7 @@
               "refs": [
                 "HIST-2025"
               ],
-              "alt": "Creation of the Chinese subsidiary"
+              "alt": "Ribbon-cutting at the opening of a Bernardaud boutique"
             },
             {
               "year": "Today",
@@ -2179,7 +2179,7 @@
               "refs": [
                 "HIST-AUJ"
               ],
-              "alt": "New industrial markets"
+              "alt": "Screen-printing machine in the Bernardaud workshop"
             }
           ]
         }
@@ -2479,36 +2479,36 @@
       }
     },
     "HIST-1911": {
-      "image": "",
-      "ratio": "4 / 3"
+      "image": "/assets/hist-1911-bureau-new-york.webp",
+      "fit": "vignette"
     },
     "HIST-1979": {
       "image": "",
       "ratio": "4 / 3"
     },
     "HIST-1986": {
-      "image": "",
-      "ratio": "4 / 3"
+      "image": "/assets/hist-1986-manufacture-royale.webp",
+      "ratio": "3 / 2"
     },
     "HIST-2010": {
-      "image": "",
-      "ratio": "4 / 3"
+      "image": "/assets/hist-2010-ceramiques-techniques.webp",
+      "ratio": "3 / 2"
     },
     "HIST-2018": {
-      "image": "",
-      "ratio": "4 / 3"
+      "image": "/assets/hist-2018-filiale-japon.webp",
+      "fit": "vignette"
     },
     "HIST-2024": {
-      "image": "",
-      "ratio": "4 / 3"
+      "image": "/assets/hist-2024-haviland.webp",
+      "ratio": "3 / 2"
     },
     "HIST-2025": {
-      "image": "",
-      "ratio": "4 / 3"
+      "image": "/assets/hist-2025-filiale-chine.webp",
+      "ratio": "3 / 2"
     },
     "HIST-AUJ": {
-      "image": "",
-      "ratio": "4 / 3"
+      "image": "/assets/hist-auj-serigraphie.webp",
+      "ratio": "3 / 2"
     },
     "BAN-CERAM": {
       "image": "/assets/bandeau-ceramique-poudre.jpg",
