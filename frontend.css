@@ -947,3 +947,11 @@ legend.field-label { margin-bottom: 8px; }
 @media (prefers-reduced-motion: reduce) {
   .field input, .field textarea, .topic span { transition: none; }
 }
+
+/* Bandeau des pages à photo : sur grand écran, un bandeau de 340 px de haut ne montre qu'une bande très étroite de la photo
+   (un tiers de sa hauteur à 1920 px). Il grandit donc avec la largeur de l'écran (34 % de la largeur, plafonné à 620 px)
+   pour montrer davantage de photo. Toutes les pages à photo ont la même hauteur : le bandeau ne saute pas d'un onglet à l'autre.
+   Un bandeau sans photo (Contact, Actualités, Confidentialité…) reste compact. Aucun effet sous 1100 px. */
+@media (min-width: 1101px) {
+  .page-banner.has-photo { min-height: clamp(340px, 34vw, 620px); }
+}
