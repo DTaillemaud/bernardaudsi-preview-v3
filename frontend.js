@@ -106,14 +106,16 @@ function heading(eyebrow, name, intro, action = "") {
 
 // Accueil : titres et visuels seulement, sans texte sous les cartes.
 function offerCards() {
-  const slots = ["technicalParts", "serigraphySps", "pvd"];
+  const slots = ["technicalParts", "serigraphyBirds", "pvd"];
   const items = page("offre").items;
   return `<div class="offer-grid offer-grid-3">${offers.map((id, i) => `<article class="offer-card" data-reveal>${link(id, `<div class="offer-photo">${picture(slots[i], items[i].title)}<span class="photo-arrow">${icon("ArrowUpRight")}</span></div><div class="offer-copy"><span class="offer-number">0${i + 1}</span><h3>${esc(items[i].title)}</h3></div>`)}</article>`).join("")}</div>`;
 }
 
 function marketCards(detailed = false) {
   const slots = ["marketDefense", "marketWatch", "marketIndustry"];
-  return `<div class="offer-grid offer-grid-3">${markets.map((id, i) => `<article class="offer-card" data-reveal>${link(id, `<div class="offer-photo">${picture(slots[i], title(id))}<span class="photo-arrow">${icon("ArrowUpRight")}</span></div><div class="offer-copy"><span class="offer-number">0${i + 1}</span><h3>${esc(title(id))}</h3>${detailed ? `<p>${esc(page("marches").cards[id])}</p>` : ""}</div>`)}</article>`).join("")}</div>`;
+  // La photo de l'Industrie est un gros plan déjà serré : on la montre en entier plutôt que rognée.
+  const whole = ["", "", " is-whole"];
+  return `<div class="offer-grid offer-grid-3">${markets.map((id, i) => `<article class="offer-card" data-reveal>${link(id, `<div class="offer-photo${whole[i]}">${picture(slots[i], title(id))}<span class="photo-arrow">${icon("ArrowUpRight")}</span></div><div class="offer-copy"><span class="offer-number">0${i + 1}</span><h3>${esc(title(id))}</h3>${detailed ? `<p>${esc(page("marches").cards[id])}</p>` : ""}</div>`)}</article>`).join("")}</div>`;
 }
 
 function subTabs(id) {
@@ -148,8 +150,27 @@ function ceramicsDetail() {
   return `${pageTop(id)}${stepsBlock(page(id).steps)}`;
 }
 
+// Vidéo d'ambiance de l'accueil (facultative) : emplacement HERO-VIDEO de content.slots (video = MP4, webm = WebM, l'un ou l'autre).
+// Muette, en boucle, sans commandes ; elle ne se charge pas si le visiteur a demandé moins d'animations ou économise ses données.
+// La photo reste dessous : elle s'affiche seule tant que la vidéo ne démarre pas, ou si elle ne peut pas démarrer.
+function heroVideo() {
+  const info = content.slots?.["HERO-VIDEO"] || {};
+  if (!info.video && !info.webm) return "";
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches || navigator.connection?.saveData) return "";
+  const sources = [info.webm && `<source src="${esc(localURL(info.webm))}" type="video/webm">`, info.video && `<source src="${esc(localURL(info.video))}" type="video/mp4">`].filter(Boolean).join("");
+  return `<video class="hero-video" muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1" poster="${esc(localURL(content.images.hero))}">${sources}</video>`;
+}
+
+function startHeroVideo() {
+  document.querySelectorAll(".hero-video").forEach(video => {
+    video.muted = true;
+    video.addEventListener("playing", () => video.classList.add("is-playing"), { once: true });
+    video.play().catch(() => {});
+  });
+}
+
 function home() {
-  return `<section class="home-hero"><div class="hero-media">${picture("hero", lang === "fr" ? "Vue aérienne du site Bernardaud d’Oradour-sur-Glane" : "Aerial view of the Bernardaud site in Oradour-sur-Glane", "hero-photo", true)}</div>
+  return `<section class="home-hero"><div class="hero-media">${picture("hero", lang === "fr" ? "Vue aérienne du site Bernardaud d’Oradour-sur-Glane" : "Aerial view of the Bernardaud site in Oradour-sur-Glane", "hero-photo", true)}${heroVideo()}</div>
     <div class="container hero-content"><p class="hero-eyebrow">${esc(t("home.eyebrow"))}</p><h1><span>${esc(t("home.title"))}</span> ${esc(t("home.subtitle"))}</h1><p class="hero-lead">${esc(t("home.intro"))}</p><div class="hero-actions">${link("contact", esc(t("home.primary")), "button light", true)}</div></div>
     <div class="hero-bottom container"><a class="scroll-link" href="#savoir-faire">${icon("ArrowDown")}<span>${esc(t("home.scroll"))}</span></a><span class="hero-caption"><span class="image-caption">${esc(t("home.caption"))}</span></span></div></section>
     <section class="section" id="savoir-faire"><div class="container">${heading(t("ui.expertise"), t("home.offerTitle"), t("home.offerIntro"))}${offerCards()}</div></section>
@@ -183,12 +204,18 @@ function pageIntro(id) {
 const pageTop = id => `${pageHero(id)}${subTabs(id)}${pageIntro(id)}`;
 
 // Points numérotés, chacun avec sa photo à droite (emplacements de content.slots).
+// Certificats ISO : deux liens de téléchargement sous le texte du point (pas d'aperçu des pages bleues).
 function certificateLinks() {
-  return `<div class="certificate-row">${page("presentation").certificates.map(item => `<a class="certificate" href="${esc(localURL(content.images[item.image]))}" target="_blank" rel="noopener">${picture(item.image, item.title)}<span>${esc(item.title)}</span></a>`).join("")}</div>`;
+  const fileName = item => {
+    const source = content.images[item.image];
+    const base = item.title.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    return base + (source.match(/\.[a-z0-9]+$/i)?.[0] || "");
+  };
+  return `<ul class="download-list">${page("presentation").certificates.map(item => `<li><a class="download-link" href="${esc(localURL(content.images[item.image]))}" download="${esc(fileName(item))}">${icon("Download")}<span class="download-title">${esc(item.title)}</span><span class="download-action">${esc(t("ui.download"))}</span></a></li>`).join("")}</ul>`;
 }
 
 function points(items = []) {
-  return `<div class="points">${items.map((item, i) => `<article data-reveal><div class="point-text"><span class="detail-number">${String(i + 1).padStart(2, "0")}</span><h2>${esc(item.title)}</h2>${item.body ? `<p>${esc(item.body)}</p>` : ""}${(item.paragraphs || []).map(text => `<p>${esc(text)}</p>`).join("")}${bulletList(item.points)}</div><div class="point-media${item.gallery ? ` is-gallery cols-${item.refs.length}` : ""}">${(item.refs || []).map(ref => slotFigure(ref, item.title)).join("")}${item.certificates ? certificateLinks() : ""}</div></article>`).join("")}</div>`;
+  return `<div class="points">${items.map((item, i) => `<article data-reveal><div class="point-text"><span class="detail-number">${String(i + 1).padStart(2, "0")}</span><h2>${esc(item.title)}</h2>${item.body ? `<p>${esc(item.body)}</p>` : ""}${(item.paragraphs || []).map(text => `<p>${esc(text)}</p>`).join("")}${bulletList(item.points)}${item.certificates ? certificateLinks() : ""}</div><div class="point-media${item.gallery ? ` is-gallery cols-${item.refs.length}` : ""}">${(item.refs || []).map(ref => slotFigure(ref, item.title)).join("")}</div></article>`).join("")}</div>`;
 }
 
 function bulletList(items = []) {
@@ -279,7 +306,7 @@ function defensePage() {
 function watchPage() {
   const id = "horlogerie";
   const data = page(id);
-  return `${pageTop(id)}<section class="section points-section"><div class="container">${points(data.blocks)}<p class="strip-note">${esc(t("ui.illustration"))}</p></div></section>`;
+  return `${pageTop(id)}<section class="section points-section"><div class="container">${points(data.blocks)}</div></section>`;
 }
 
 function industryPage() {
@@ -586,6 +613,7 @@ function render() {
   cookieBanner();
   bindHeader();
   applySlotStyles();
+  startHeroVideo();
   bindContactForm();
   initMotion();
   updateScroll();

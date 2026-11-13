@@ -118,15 +118,12 @@ ul { list-style: none; margin: 0; padding: 0; }
 .home-hero { height: min(max(740px, 29.4vw), calc(100svh - 164px)); min-height: 490px; position: relative; display: flex; flex-direction: column; justify-content: center; color: var(--white); isolation: isolate; background: var(--navy); overflow: hidden; }
 .hero-media { position: absolute; inset: 0; z-index: -2; overflow: hidden; container-type: size; }
 .hero-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #081a35ec 0%, #081a35cc 30%, #081a3550 62%, #081a3500 100%); }
-.hero-photo { width: 100%; height: 112%; object-fit: cover; object-position: 70% 100%; transform: translateY(var(--parallax, 0px)) scale(1.02); animation: photo-in 1.7s var(--ease) both; }
-/* Très grands écrans : la photo prend toute la largeur, donc une bande de plus en plus mince de sa hauteur reste visible.
-   Au lieu de la caler en bas, on la recentre sur l'usine (entre 48 % et 82 % de la hauteur de la photo). Rien ne change sous un rapport largeur/hauteur de 2,7. */
-@container (min-aspect-ratio: 27/10) { .hero-photo { object-position: 70% 96%; } }
-@container (min-aspect-ratio: 3/1) { .hero-photo { object-position: 70% 89%; } }
-@container (min-aspect-ratio: 33/10) { .hero-photo { object-position: 70% 85%; } }
-@container (min-aspect-ratio: 37/10) { .hero-photo { object-position: 70% 80%; } }
-@container (min-aspect-ratio: 43/10) { .hero-photo { object-position: 70% 77%; } }
-@container (min-aspect-ratio: 5/1) { .hero-photo { object-position: 70% 74%; } }
+.hero-photo { width: 100%; height: 112%; object-fit: cover; object-position: 50% 58%; transform: translateY(var(--parallax, 0px)) scale(1.02); animation: photo-in 1.7s var(--ease) both; }
+/* La photo d'accueil est la vue de drone d'Oradour (retour de Charles du 2026-11-13), recadrée sur sa moitié gauche et sur la bande utile :
+   l'usine se trouve ainsi à droite du texte et non dessous. À 1,9 / 3,4 / 5 pour 1 (largeur sur hauteur du bandeau), elle reste dans la bande visible avec une seule position. */
+/* Vidéo d'ambiance facultative (emplacement HERO-VIDEO de content.slots) : posée sur la photo, qui reste visible tant qu'elle ne démarre pas. */
+.hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 112%; object-fit: cover; object-position: 50% 58%; transform: translateY(var(--parallax, 0px)) scale(1.02); opacity: 0; transition: opacity 1s var(--ease); pointer-events: none; }
+.hero-video.is-playing { opacity: 1; }
 .hero-content { padding-bottom: 34px; }
 .hero-eyebrow { font-size: 12px; font-weight: 600; color: #d5e0e9; margin-bottom: 22px; animation: content-in .85s .1s both; }
 .hero-content h1 { max-width: 690px; font-size: 58px; line-height: 1.14; font-weight: 400; animation: content-in .95s .2s both; }
@@ -664,7 +661,7 @@ tbody tr:nth-child(even) { background: var(--mist); }
   .hero-actions { gap: 18px; flex-wrap: wrap; }
   .hero-content { padding-bottom: 34px; }
   .hero-lead { max-width: 340px; font-size: 16px; }
-  .hero-photo { object-position: 55% center; }
+  .hero-photo, .hero-video { object-position: 88% center; }
   .hero-text-link { font-size: 11px; }
   .hero-actions .button { font-size: 11px; gap: 12px; }
   .offer-grid { grid-template-columns: 1fr; gap: 34px; }
@@ -758,7 +755,6 @@ tbody tr:nth-child(even) { background: var(--mist); }
 .photo-placeholder { display: grid; place-content: center; gap: 6px; aspect-ratio: var(--ratio, 4 / 3); text-align: center; color: var(--muted); border: 2px dashed #aebdc6; background: repeating-linear-gradient(135deg, #f4f7f8, #f4f7f8 14px, #ecf1f3 14px, #ecf1f3 28px); }
 .photo-placeholder span { font-size: 13px; }
 .photo-placeholder strong { font-size: 22px; letter-spacing: .06em; color: var(--navy); }
-.points .certificate-row { margin-top: 4px; }
 .points .editorial-list { margin-top: 20px; font-size: 17px; }
 /* Histoire : frise des grandes étapes (date, texte, photo facultative à droite) */
 .timeline-section { padding-top: 40px; }
@@ -814,11 +810,6 @@ html[data-reperes="on"] [data-ref] { position: relative; }
 html[data-reperes="on"] [data-ref]::before { content: attr(data-ref); position: absolute; z-index: 6; top: 8px; left: 8px; padding: 5px 8px; background: #f2c200; color: var(--navy); font-size: 12px; font-weight: 800; line-height: 1; letter-spacing: .04em; pointer-events: none; }
 html[data-reperes="on"] .page-banner[data-ref]::before { top: auto; bottom: 12px; left: auto; right: 12px; }
 html[data-reperes="on"] .photo-placeholder::before { display: none; }
-.certificate-row { display: flex; gap: 24px; flex-wrap: wrap; }
-.certificate { display: block; width: 160px; }
-.certificate img { border: 1px solid var(--line); background: var(--white); height: auto; }
-.certificate span { display: block; margin-top: 10px; font-size: 12px; color: var(--text); }
-.certificate:hover span { color: var(--teal); }
 
 /* Outil industriel */
 .site-photos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
@@ -955,3 +946,25 @@ legend.field-label { margin-bottom: 8px; }
 @media (min-width: 1101px) {
   .page-banner.has-photo { min-height: clamp(340px, 34vw, 620px); }
 }
+
+/* Retours de Charles du 2026-11-13 */
+
+/* Texte justifié (à gauche et à droite) sur toutes les pages : paragraphes et listes du contenu.
+   Les césures automatiques (langue de la page) évitent les grands blancs entre les mots. Les titres, libellés, légendes,
+   chiffres, liens de téléchargement et éléments de formulaire restent alignés à gauche. */
+main p, main li { text-align: justify; text-justify: inter-word; hyphens: auto; -webkit-hyphens: auto; }
+main :is(.eyebrow, .hero-eyebrow, .image-caption, .hero-caption, .strip-note, .offer-number, .detail-number, .material-id, .timeline-year),
+main :is(figcaption, .photo-placeholder, .metric-grid, .contact-form, .contact-details, .download-list, .material-chips, .agenda-table) :is(p, li, span, legend, label, div) { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+main :is(figcaption, .photo-placeholder, .metric-grid, .contact-form, .contact-details, .download-list, .material-chips) { text-align: left; }
+
+/* Photo de l'Industrie (accueil, Marchés) : un gros plan déjà serré, montré en entier plutôt que rognée par la carte. */
+.offer-photo.is-whole > img { object-fit: contain; background: linear-gradient(180deg, #e2e2e7 0%, #edeef2 50%, #f3f3f5 100%); }
+
+/* Certificats ISO : liens de téléchargement sous le texte du point (plus d'aperçu des pages bleues). */
+.download-list { list-style: none; display: grid; gap: 10px; max-width: 520px; margin: 26px 0 0; padding: 0; }
+.download-link { display: flex; align-items: center; gap: 14px; padding: 13px 18px; border: 1px solid var(--line); background: var(--white); color: var(--navy); font-size: 15px; line-height: 1.4; transition: border-color .25s var(--ease), background .25s var(--ease); }
+.download-link .icon { flex: none; width: 20px; height: 20px; color: var(--teal); }
+.download-title { flex: 1; font-weight: 500; }
+.download-action { flex: none; font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--teal); }
+.download-link:hover { border-color: var(--teal); background: var(--mist); }
+@media (prefers-reduced-motion: reduce) { .hero-video { display: none; } }
